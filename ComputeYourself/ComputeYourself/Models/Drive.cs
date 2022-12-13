@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Enums.Drive;
 
 namespace ComputeYourself.Models
 {
-    public abstract class Drive
+    public class Drive : BaseModel
     {
-        [Key] public int Id { get; set; }
+        [Key] 
+        public int Id { get; set; }
         public InstallationTypes InstallationType { get; set; }
         public DriveSizes DriveSize { get; set; }
         public ConnectionTypes ConnectionType { get; set; }
