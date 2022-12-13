@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Enums.PcCase;
 
 namespace ComputeYourself.Models
 {
     public class PcCase : BaseModel
     {
         [Key]
-        public SizeCompatibility SizeCompatibility { get; set; }
-        public MaxCPUCoolerHeight MaxCpuCoolerHeight { get; set; }
-        public MaxGPULength MaxGpuLength { get; set; }
+        public SizeCompatibilities SizeCompatibility { get; set; }
+        public MaxCPUCoolerHeights MaxCpuCoolerHeight { get; set; }
+        public MaxGPULengths MaxGpuLength { get; set; }
     }
 }
