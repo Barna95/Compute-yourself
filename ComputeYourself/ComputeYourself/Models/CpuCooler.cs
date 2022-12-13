@@ -1,4 +1,5 @@
 ﻿using ComputeYourself.Data.Enums.CPU;
+using ComputeYourself.Data.Enums.CpuCooler;
 
 namespace ComputeYourself.Models
 {
