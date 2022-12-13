@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Enums.GPU;
 
 namespace ComputeYourself.Models
 {
