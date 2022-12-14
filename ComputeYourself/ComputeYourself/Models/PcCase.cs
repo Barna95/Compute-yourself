@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using ComputeYourself.Data.Enums.PcCase;
 
 namespace ComputeYourself.Models
 {
@@ -7,8 +6,8 @@ namespace ComputeYourself.Models
     {
         [Key] 
         public int Id { get; set; }
-        public SizeCompatibilities SizeCompatibility { get; set; }
-        public MaxCPUCoolerHeights MaxCpuCoolerHeight { get; set; }
-        public MaxGPULengths MaxGpuLength { get; set; }
+        public int SizeCompatibility { get; set; }
+        public int MaxCpuCoolerHeight { get; set; }
+        public int MaxGpuLength { get; set; }
     }
 }
