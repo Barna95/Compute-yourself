@@ -1,3 +1,5 @@
+using Serilog;
+
 namespace ComputeYourself
 {
     public class Program
@@ -8,6 +10,13 @@ namespace ComputeYourself
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Host.UseSerilog((ctx, lc) => lc
+                .WriteTo.Console()
+                // if you want everything, change Warning() to Information()
+                .WriteTo.File("D:\\ComputeLogs\\log.txt").MinimumLevel.Information()
+                .WriteTo.File("D:\\ComputeLogs\\structuredLog.json").MinimumLevel.Information());
+
 
             var app = builder.Build();
 
