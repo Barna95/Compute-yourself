@@ -1,14 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Enums;
 using ComputeYourself.Data.Enums.Drive;
 
 namespace ComputeYourself.Models
 {
-    public class Drive : BaseModel
+    public class Drive
     {
         [Key] 
         public int Id { get; set; }
         //public InstallationTypes InstallationType { get; set; }
         //public DriveSizes DriveSize { get; set; }
+        public List<Media> Media { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public decimal Price { get; set; }
+        public ManuFacturerBrand Brand { get; set; }
+        public int Warranty { get; set; }
+        public float Rating { get; set; }
         public ConnectionTypes ConnectionType { get; set; }
         public int Capacity { get; set; }
         public int MaxWrite { get; set; }
