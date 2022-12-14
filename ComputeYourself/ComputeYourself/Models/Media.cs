@@ -6,7 +6,9 @@ namespace ComputeYourself.Models
     {
         [Key]
         public int Id { get; set; }
-
         public string MediaURL { get; set; }
+
+        //Relationship
+        public List<PcCase_Media>? PcCaseMedias { get; set; }
     }
 }
