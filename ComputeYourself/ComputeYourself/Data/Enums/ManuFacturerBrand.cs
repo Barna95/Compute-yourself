@@ -4,6 +4,7 @@
     {
         Intel,
         AMD,
+        Noctua,
         Asrock,
         Asus,
         Gigabyte,

@@ -8,7 +8,6 @@ namespace ComputeYourself.Models
     {
         [Key]
         public int Id { get; set; }
-        public List<Media> Media { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
@@ -29,7 +28,7 @@ namespace ComputeYourself.Models
         public bool Lighting { get; set; }
         public bool Windows11Support { get; set; }
         public string? Wifi { get; set; }
-        public float LANPort { get; set; }
+        public string LANPort { get; set; }
         public int LanportsNumber { get; set; }
         // Connectivity
         public int PCIe16x { get; set; }

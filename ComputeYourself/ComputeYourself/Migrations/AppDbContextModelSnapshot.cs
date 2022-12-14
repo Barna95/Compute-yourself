@@ -229,53 +229,13 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("CPUId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CpuCoolerId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("DriveId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("GPUId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MediaURL")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("MotherBoardId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PSUId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PcCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("RAMId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CPUId");
-
-                    b.HasIndex("CpuCoolerId");
-
-                    b.HasIndex("DriveId");
-
-                    b.HasIndex("GPUId");
-
-                    b.HasIndex("MotherBoardId");
-
-                    b.HasIndex("PSUId");
-
-                    b.HasIndex("PcCaseId");
-
-                    b.HasIndex("RAMId");
-
-                    b.ToTable("Media");
+                    b.ToTable("Medias");
                 });
 
             modelBuilder.Entity("ComputeYourself.Models.MotherBoard", b =>
@@ -308,8 +268,9 @@ namespace ComputeYourself.Migrations
                     b.Property<string>("Igpu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<float>("LANPort")
-                        .HasColumnType("real");
+                    b.Property<string>("LANPort")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LanportsNumber")
                         .HasColumnType("int");
@@ -464,6 +425,21 @@ namespace ComputeYourself.Migrations
                     b.ToTable("PcCases");
                 });
 
+            modelBuilder.Entity("ComputeYourself.Models.PcCase_Media", b =>
+                {
+                    b.Property<int>("PcCaseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MediaId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PcCaseId", "MediaId");
+
+                    b.HasIndex("MediaId");
+
+                    b.ToTable("PcCaseMedias");
+                });
+
             modelBuilder.Entity("ComputeYourself.Models.RAM", b =>
                 {
                     b.Property<int>("Id")
@@ -512,79 +488,33 @@ namespace ComputeYourself.Migrations
                     b.ToTable("Rams");
                 });
 
+            modelBuilder.Entity("ComputeYourself.Models.PcCase_Media", b =>
+                {
+                    b.HasOne("ComputeYourself.Models.Media", "Media")
+                        .WithMany("PcCaseMedias")
+                        .HasForeignKey("MediaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ComputeYourself.Models.PcCase", "PcCase")
+                        .WithMany("PcCaseMedias")
+                        .HasForeignKey("PcCaseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Media");
+
+                    b.Navigation("PcCase");
+                });
+
             modelBuilder.Entity("ComputeYourself.Models.Media", b =>
                 {
-                    b.HasOne("ComputeYourself.Models.CPU", null)
-                        .WithMany("Media")
-                        .HasForeignKey("CPUId");
-
-                    b.HasOne("ComputeYourself.Models.CpuCooler", null)
-                        .WithMany("Media")
-                        .HasForeignKey("CpuCoolerId");
-
-                    b.HasOne("ComputeYourself.Models.Drive", null)
-                        .WithMany("Media")
-                        .HasForeignKey("DriveId");
-
-                    b.HasOne("ComputeYourself.Models.GPU", null)
-                        .WithMany("Media")
-                        .HasForeignKey("GPUId");
-
-                    b.HasOne("ComputeYourself.Models.MotherBoard", null)
-                        .WithMany("Media")
-                        .HasForeignKey("MotherBoardId");
-
-                    b.HasOne("ComputeYourself.Models.PSU", null)
-                        .WithMany("Media")
-                        .HasForeignKey("PSUId");
-
-                    b.HasOne("ComputeYourself.Models.PcCase", null)
-                        .WithMany("Media")
-                        .HasForeignKey("PcCaseId");
-
-                    b.HasOne("ComputeYourself.Models.RAM", null)
-                        .WithMany("Media")
-                        .HasForeignKey("RAMId");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CPU", b =>
-                {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CpuCooler", b =>
-                {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Drive", b =>
-                {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.GPU", b =>
-                {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.MotherBoard", b =>
-                {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PSU", b =>
-                {
-                    b.Navigation("Media");
+                    b.Navigation("PcCaseMedias");
                 });
 
             modelBuilder.Entity("ComputeYourself.Models.PcCase", b =>
                 {
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.RAM", b =>
-                {
-                    b.Navigation("Media");
+                    b.Navigation("PcCaseMedias");
                 });
 #pragma warning restore 612, 618
         }

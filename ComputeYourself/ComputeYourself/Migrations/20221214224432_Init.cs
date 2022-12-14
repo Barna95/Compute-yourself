@@ -105,6 +105,19 @@ namespace ComputeYourself.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Medias",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MediaURL = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Medias", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MotherBoards",
                 columns: table => new
                 {
@@ -130,7 +143,7 @@ namespace ComputeYourself.Migrations
                     Lighting = table.Column<bool>(type: "bit", nullable: false),
                     Windows11Support = table.Column<bool>(type: "bit", nullable: false),
                     Wifi = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    LANPort = table.Column<float>(type: "real", nullable: false),
+                    LANPort = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LanportsNumber = table.Column<int>(type: "int", nullable: false),
                     PCIe16x = table.Column<int>(type: "int", nullable: false),
                     SATA3 = table.Column<int>(type: "int", nullable: false),
@@ -211,113 +224,38 @@ namespace ComputeYourself.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Media",
+                name: "PcCaseMedias",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MediaURL = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CPUId = table.Column<int>(type: "int", nullable: true),
-                    CpuCoolerId = table.Column<int>(type: "int", nullable: true),
-                    DriveId = table.Column<int>(type: "int", nullable: true),
-                    GPUId = table.Column<int>(type: "int", nullable: true),
-                    MotherBoardId = table.Column<int>(type: "int", nullable: true),
-                    PSUId = table.Column<int>(type: "int", nullable: true),
-                    PcCaseId = table.Column<int>(type: "int", nullable: true),
-                    RAMId = table.Column<int>(type: "int", nullable: true)
+                    PcCaseId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Media", x => x.Id);
+                    table.PrimaryKey("PK_PcCaseMedias", x => new { x.PcCaseId, x.MediaId });
                     table.ForeignKey(
-                        name: "FK_Media_CpuCoolers_CpuCoolerId",
-                        column: x => x.CpuCoolerId,
-                        principalTable: "CpuCoolers",
-                        principalColumn: "Id");
+                        name: "FK_PcCaseMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Media_Cpus_CPUId",
-                        column: x => x.CPUId,
-                        principalTable: "Cpus",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_Drives_DriveId",
-                        column: x => x.DriveId,
-                        principalTable: "Drives",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_Gpus_GPUId",
-                        column: x => x.GPUId,
-                        principalTable: "Gpus",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_MotherBoards_MotherBoardId",
-                        column: x => x.MotherBoardId,
-                        principalTable: "MotherBoards",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_PcCases_PcCaseId",
+                        name: "FK_PcCaseMedias_PcCases_PcCaseId",
                         column: x => x.PcCaseId,
                         principalTable: "PcCases",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_Psus_PSUId",
-                        column: x => x.PSUId,
-                        principalTable: "Psus",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Media_Rams_RAMId",
-                        column: x => x.RAMId,
-                        principalTable: "Rams",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Media_CpuCoolerId",
-                table: "Media",
-                column: "CpuCoolerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_CPUId",
-                table: "Media",
-                column: "CPUId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_DriveId",
-                table: "Media",
-                column: "DriveId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_GPUId",
-                table: "Media",
-                column: "GPUId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_MotherBoardId",
-                table: "Media",
-                column: "MotherBoardId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_PcCaseId",
-                table: "Media",
-                column: "PcCaseId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_PSUId",
-                table: "Media",
-                column: "PSUId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Media_RAMId",
-                table: "Media",
-                column: "RAMId");
+                name: "IX_PcCaseMedias_MediaId",
+                table: "PcCaseMedias",
+                column: "MediaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "Media");
-
             migrationBuilder.DropTable(
                 name: "CpuCoolers");
 
@@ -334,13 +272,19 @@ namespace ComputeYourself.Migrations
                 name: "MotherBoards");
 
             migrationBuilder.DropTable(
-                name: "PcCases");
+                name: "PcCaseMedias");
 
             migrationBuilder.DropTable(
                 name: "Psus");
 
             migrationBuilder.DropTable(
                 name: "Rams");
+
+            migrationBuilder.DropTable(
+                name: "Medias");
+
+            migrationBuilder.DropTable(
+                name: "PcCases");
         }
     }
 }
