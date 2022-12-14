@@ -4,6 +4,7 @@
     {
         Bronze,
         Silver,
-        Gold
+        Gold,
+        Platinum
     }
 }
