@@ -1,3 +1,5 @@
+using ComputeYourself.Data;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 namespace ComputeYourself
@@ -10,6 +12,10 @@ namespace ComputeYourself
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<AppDbContext>(options => options
+                .UseSqlServer(builder.Configuration
+                    .GetConnectionString("DefaultConnectionString")));
 
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
