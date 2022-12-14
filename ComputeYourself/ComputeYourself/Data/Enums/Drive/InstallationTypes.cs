@@ -2,4 +2,6 @@
 
 public enum InstallationTypes
 {
+    External,
+    Internal
 }

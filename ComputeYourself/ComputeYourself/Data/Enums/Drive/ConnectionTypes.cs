@@ -2,4 +2,8 @@
 
 public enum ConnectionTypes
 {
+    IDE,
+    M2,
+    SATA3,
+    PCIE
 }
