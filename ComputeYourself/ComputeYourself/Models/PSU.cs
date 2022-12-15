@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Base;
 using ComputeYourself.Data.Enums;
 using ComputeYourself.Data.Enums.PSU;
 
 namespace ComputeYourself.Models
 {
-    public class PSU
+    public class PSU : IEntityBase
     {
         [Key]
         public int Id { get; set; }
