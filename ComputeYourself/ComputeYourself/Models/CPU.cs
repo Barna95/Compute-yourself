@@ -31,5 +31,8 @@ namespace ComputeYourself.Models
         // in Ghz
         public float CoreClock { get; set; }
         public float TurboCoreClock { get; set; }
+
+        //Relationships
+        public List<Cpu_Media>? Cpu_Medias { get; set; }
     }
 }

@@ -17,5 +17,8 @@ namespace ComputeYourself.Models
         public int Warranty { get; set; }
         public float Rating { get; set; }
         public Classification? Classification { get; set; }
+
+        //Relationships
+        public List<Psu_Media>? Psu_Medias { get; set; }
     }
 }

@@ -19,5 +19,8 @@ namespace ComputeYourself.Models
         public VramTypes VramType { get; set; }
         public int RequiredPSU { get; set; }
         public int Length { get; set; }
+
+        //Relationships
+        public List<Gpu_Media>? Gpu_Medias { get; set; }
     }
 }

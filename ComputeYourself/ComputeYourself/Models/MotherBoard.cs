@@ -38,5 +38,8 @@ namespace ComputeYourself.Models
         public int USB3 { get; set; }
         public int USB31 { get; set; }
         public int USBC { get; set; }
+
+        //Relationships
+        public List<MotherBoard_Media>? MotherBoard_Medias { get; set; }
     }
 }

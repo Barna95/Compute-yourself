@@ -17,5 +17,8 @@ namespace ComputeYourself.Models
         public CoolerTypes CoolerType { get; set; }
         public int Height { get; set; }
         public CpuType CpuType { get; set; }
+
+        //Relationships
+        public List<CpuCooler_Media>? CpuCooler_Medias { get; set; }
     }
 }

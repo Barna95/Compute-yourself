@@ -5,7 +5,7 @@
 namespace ComputeYourself.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -224,6 +224,126 @@ namespace ComputeYourself.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "CpuCoolerMedias",
+                columns: table => new
+                {
+                    CpuCoolerId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CpuCoolerMedias", x => new { x.CpuCoolerId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_CpuCoolerMedias_CpuCoolers_CpuCoolerId",
+                        column: x => x.CpuCoolerId,
+                        principalTable: "CpuCoolers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CpuCoolerMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CpuMedias",
+                columns: table => new
+                {
+                    CpuId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CpuMedias", x => new { x.CpuId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_CpuMedias_Cpus_CpuId",
+                        column: x => x.CpuId,
+                        principalTable: "Cpus",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_CpuMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DriveMedias",
+                columns: table => new
+                {
+                    DriveId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DriveMedias", x => new { x.DriveId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_DriveMedias_Drives_DriveId",
+                        column: x => x.DriveId,
+                        principalTable: "Drives",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_DriveMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GpuMedias",
+                columns: table => new
+                {
+                    GpuId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GpuMedias", x => new { x.GpuId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_GpuMedias_Gpus_GpuId",
+                        column: x => x.GpuId,
+                        principalTable: "Gpus",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_GpuMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MotherBoardMedias",
+                columns: table => new
+                {
+                    MotherBoardId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MotherBoardMedias", x => new { x.MotherBoardId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_MotherBoardMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MotherBoardMedias_MotherBoards_MotherBoardId",
+                        column: x => x.MotherBoardId,
+                        principalTable: "MotherBoards",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "PcCaseMedias",
                 columns: table => new
                 {
@@ -247,15 +367,122 @@ namespace ComputeYourself.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "PsuMedias",
+                columns: table => new
+                {
+                    PsuId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PsuMedias", x => new { x.PsuId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_PsuMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PsuMedias_Psus_PsuId",
+                        column: x => x.PsuId,
+                        principalTable: "Psus",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RamMedias",
+                columns: table => new
+                {
+                    RamId = table.Column<int>(type: "int", nullable: false),
+                    MediaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RamMedias", x => new { x.RamId, x.MediaId });
+                    table.ForeignKey(
+                        name: "FK_RamMedias_Medias_MediaId",
+                        column: x => x.MediaId,
+                        principalTable: "Medias",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_RamMedias_Rams_RamId",
+                        column: x => x.RamId,
+                        principalTable: "Rams",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CpuCoolerMedias_MediaId",
+                table: "CpuCoolerMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CpuMedias_MediaId",
+                table: "CpuMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DriveMedias_MediaId",
+                table: "DriveMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_GpuMedias_MediaId",
+                table: "GpuMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MotherBoardMedias_MediaId",
+                table: "MotherBoardMedias",
+                column: "MediaId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_PcCaseMedias_MediaId",
                 table: "PcCaseMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PsuMedias_MediaId",
+                table: "PsuMedias",
+                column: "MediaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_RamMedias_MediaId",
+                table: "RamMedias",
                 column: "MediaId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "CpuCoolerMedias");
+
+            migrationBuilder.DropTable(
+                name: "CpuMedias");
+
+            migrationBuilder.DropTable(
+                name: "DriveMedias");
+
+            migrationBuilder.DropTable(
+                name: "GpuMedias");
+
+            migrationBuilder.DropTable(
+                name: "MotherBoardMedias");
+
+            migrationBuilder.DropTable(
+                name: "PcCaseMedias");
+
+            migrationBuilder.DropTable(
+                name: "PsuMedias");
+
+            migrationBuilder.DropTable(
+                name: "RamMedias");
+
             migrationBuilder.DropTable(
                 name: "CpuCoolers");
 
@@ -272,19 +499,16 @@ namespace ComputeYourself.Migrations
                 name: "MotherBoards");
 
             migrationBuilder.DropTable(
-                name: "PcCaseMedias");
+                name: "PcCases");
 
             migrationBuilder.DropTable(
                 name: "Psus");
 
             migrationBuilder.DropTable(
-                name: "Rams");
-
-            migrationBuilder.DropTable(
                 name: "Medias");
 
             migrationBuilder.DropTable(
-                name: "PcCases");
+                name: "Rams");
         }
     }
 }
