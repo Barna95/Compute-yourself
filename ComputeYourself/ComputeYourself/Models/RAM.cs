@@ -18,5 +18,8 @@ namespace ComputeYourself.Models
         public int Frequency { get; set; }
         public int Latency { get; set; }
         public bool HeatSink { get; set; }
+
+        //Relationships
+        public List<Ram_Media>? Ram_Medias { get; set; }
     }
 }
