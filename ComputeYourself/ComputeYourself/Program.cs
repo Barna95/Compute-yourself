@@ -1,5 +1,6 @@
 using ComputeYourself.Data;
 using ComputeYourself.Data.Services;
+using ComputeYourself.Models;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -26,6 +27,7 @@ namespace ComputeYourself
 
             // Service config
             builder.Services.AddScoped<IPcCaseService, PcCaseService>();
+            builder.Services.AddScoped<IGPUService, GPUService>();
 
             var app = builder.Build();
 
