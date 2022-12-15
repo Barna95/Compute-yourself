@@ -20,5 +20,8 @@ namespace ComputeYourself.Models
         public int Capacity { get; set; }
         public int MaxWrite { get; set; }
         public int MaxRead { get; set; }
+
+        //Relationships
+        public List<Drive_Media>? Drive_Medias { get; set; }
     }
 }
