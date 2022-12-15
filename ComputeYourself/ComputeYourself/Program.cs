@@ -1,4 +1,5 @@
 using ComputeYourself.Data;
+using ComputeYourself.Data.Services;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -23,6 +24,8 @@ namespace ComputeYourself
                 .WriteTo.File("D:\\ComputeLogs\\log.txt").MinimumLevel.Information()
                 .WriteTo.File("D:\\ComputeLogs\\structuredLog.json").MinimumLevel.Information());
 
+            // Service config
+            builder.Services.AddScoped<IPcCaseService, PcCaseService>();
 
             var app = builder.Build();
 
