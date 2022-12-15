@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Base;
 using ComputeYourself.Data.Enums;
 using ComputeYourself.Data.Enums.MotherBoard;
 
 namespace ComputeYourself.Models
 {
-    public class MotherBoard
+    public class MotherBoard : IEntityBase
     {
         [Key]
         public int Id { get; set; }

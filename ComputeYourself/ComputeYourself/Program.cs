@@ -26,7 +26,7 @@ namespace ComputeYourself
 
             // Service config
             builder.Services.AddScoped<IPcCaseService, PcCaseService>();
-
+            builder.Services.AddScoped<IMotherBoardService, MotherBoardService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
