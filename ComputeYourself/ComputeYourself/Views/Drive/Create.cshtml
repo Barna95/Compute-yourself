@@ -1,4 +1,5 @@
 ﻿@using ComputeYourself.Data.Enums
+@using ComputeYourself.Data.Enums.Drive
 @using ComputeYourself.Data.Enums.MotherBoard
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model Drive
@@ -48,7 +49,7 @@
                     </div>
                     <div class="form-group">
                         <label asp-for="ConnectionType" class="control-label"></label>
-                        <select asp-for="ConnectionType" class="form-control" asp-items="Html.GetEnumSelectList<SizeStandard>()"></select>
+                        <select asp-for="ConnectionType" class="form-control" asp-items="Html.GetEnumSelectList<ConnectionTypes>()"></select>
                         <span asp-validation-for="ConnectionType" class="text-danger"></span>
                     </div>
                     <div class="form-group">
