@@ -282,7 +282,71 @@ namespace ComputeYourself.Data
                     context.SaveChanges();
 
                 }
-
+                //CPU & Media
+                if (!context.CpuMedias.Any())
+                {
+                    context.CpuMedias.AddRange(new List<Cpu_Media>()
+                    {
+                        new Cpu_Media()
+                        {
+                            CpuId = 1,
+                            MediaId = 1
+                        }
+                    });
+                    context.SaveChanges();
+                }
+                //CpuCooler & Media
+                if (!context.CpuCoolerMedias.Any())
+                {
+                    context.CpuCoolerMedias.AddRange(new List<CpuCooler_Media>()
+                    {
+                        new CpuCooler_Media()
+                        {
+                            CpuCoolerId = 1,
+                            MediaId = 2
+                        }
+                    });
+                    context.SaveChanges();
+                }
+                //Drive & Media
+                if (!context.DriveMedias.Any())
+                {
+                    context.DriveMedias.AddRange(new List<Drive_Media>()
+                    {
+                        new Drive_Media()
+                        {
+                            DriveId = 1,
+                            MediaId = 3
+                        }
+                    });
+                    context.SaveChanges();
+                }
+                //GPU & Media
+                if (!context.GpuMedias.Any())
+                {
+                    context.GpuMedias.AddRange(new List<Gpu_Media>()
+                    {
+                        new Gpu_Media()
+                        {
+                            GpuId = 1,
+                            MediaId = 4
+                        }
+                    });
+                    context.SaveChanges();
+                }
+                //MotherBoard & Media
+                if (!context.MotherBoardMedias.Any())
+                {
+                    context.MotherBoardMedias.AddRange(new List<MotherBoard_Media>()
+                    {
+                        new MotherBoard_Media()
+                        {
+                            MotherBoardId = 1,
+                            MediaId = 5
+                        }
+                    });
+                    context.SaveChanges();
+                }
                 // PcCases & Media
                 if (!context.PcCaseMedias.Any())
                 {
@@ -291,13 +355,37 @@ namespace ComputeYourself.Data
                         new PcCase_Media()
                         {
                             PcCaseId = 1,
-                            MediaId = 5
+                            MediaId = 6
                         }
                     });
                     context.SaveChanges();
                 }
-
-
+                //PSU & Media
+                if (!context.PsuMedias.Any())
+                {
+                    context.PsuMedias.AddRange(new List<Psu_Media>()
+                    {
+                        new Psu_Media()
+                        {
+                            PsuId = 1,
+                            MediaId = 8
+                        }
+                    });
+                    context.SaveChanges();
+                }
+                //RAM & Media
+                if (!context.RamMedias.Any())
+                {
+                    context.RamMedias.AddRange(new List<Ram_Media>()
+                    {
+                        new Ram_Media()
+                        {
+                            RamId = 1,
+                            MediaId = 7
+                        }
+                    });
+                    context.SaveChanges();
+                }
             }
         }
     }
