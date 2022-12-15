@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Base;
 using ComputeYourself.Data.Enums;
 using ComputeYourself.Data.Enums.Drive;
 
 namespace ComputeYourself.Models
 {
-    public class Drive
+    public class Drive : IEntityBase
     {
         [Key] 
         public int Id { get; set; }
