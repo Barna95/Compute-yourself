@@ -11,43 +11,43 @@ namespace ComputeYourself.Models
         public int Id { get; set; }
         //public InstallationTypes InstallationType { get; set; }
         //public DriveSizes DriveSize { get; set; }
-        [Display(Name = "Drive name")]
+        [Display(Name = "Drive Name :")]
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Display(Name = "Drive Description")]
+        [Display(Name = "Drive Description :")]
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
 
-        [Display(Name = "Drive Price")]
+        [Display(Name = "Price :")]
         [Required(ErrorMessage = "Price is required")]
         public decimal Price { get; set; }
 
-        [Display(Name = "Drive Brand")]
+        [Display(Name = "Drive Brand :")]
         [Required(ErrorMessage = "Brand is required")]
         public ManuFacturerBrand Brand { get; set; }
 
-        [Display(Name = "Drive Warranty")]
+        [Display(Name = "Warranty :")]
         [Required(ErrorMessage = "Warranty is required")]
         public int Warranty { get; set; }
 
-        [Display(Name = "Drive Rating")]
+        [Display(Name = "Rating :")]
         [Required(ErrorMessage = "Rating is required")]
         public float Rating { get; set; }
 
-        [Display(Name = "Drive ConnectionType")]
+        [Display(Name = "Connection type :")]
         [Required(ErrorMessage = "ConnectionType is required")]
         public ConnectionTypes ConnectionType { get; set; }
 
-        [Display(Name = "Drive Capacity")]
+        [Display(Name = "Capacity :")]
         [Required(ErrorMessage = "Capacity is required")]
         public int Capacity { get; set; }
 
-        [Display(Name = "Drive MaxWrite")]
+        [Display(Name = "Max write speed :")]
         [Required(ErrorMessage = "MaxWrite is required")]
         public int MaxWrite { get; set; }
 
-        [Display(Name = "Drive MaxRead")]
+        [Display(Name = "Max reed speed :")]
         [Required(ErrorMessage = "MaxRead is required")]
         public int MaxRead { get; set; }
 
