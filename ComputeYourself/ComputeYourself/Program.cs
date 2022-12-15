@@ -30,6 +30,7 @@ namespace ComputeYourself
             builder.Services.AddScoped<IGPUService, GPUService>();
             builder.Services.AddScoped<IDriveService, DriveService>();
             builder.Services.AddScoped<IMotherBoardService, MotherBoardService>();
+            builder.Services.AddScoped<IRAMService, RAMService>();
 
 
             var app = builder.Build();
