@@ -61,7 +61,7 @@ namespace ComputeYourself.Models
         [Required(ErrorMessage = "MemorySockets is required")]
         public int MemorySockets { get; set; }
 
-        [Display(Name = "XMP :")]
+        [Display(Name = "XMP")]
         [Required(ErrorMessage = "XMP is required")]
         public bool XMP { get; set; }
 
@@ -75,11 +75,11 @@ namespace ComputeYourself.Models
         [Display(Name = "Bluetooth :")]
         public string? Bluetooth { get; set; }
 
-        [Display(Name = "Lighting :")]
+        [Display(Name = "Lighting")]
         [Required(ErrorMessage = "Lighting is required")]
         public bool Lighting { get; set; }
 
-        [Display(Name = "Windows11Support :")]
+        [Display(Name = "Windows11Support")]
         [Required(ErrorMessage = "Windows11Support is required")]
         public bool Windows11Support { get; set; }
 
