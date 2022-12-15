@@ -26,6 +26,7 @@ namespace ComputeYourself
 
             // Service config
             builder.Services.AddScoped<IPcCaseService, PcCaseService>();
+            builder.Services.AddScoped<IDriveService, DriveService>();
 
             var app = builder.Build();
 
