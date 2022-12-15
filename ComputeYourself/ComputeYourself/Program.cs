@@ -33,6 +33,7 @@ namespace ComputeYourself
             builder.Services.AddScoped<IRAMService, RAMService>();
             builder.Services.AddScoped<IPsuService, PsuService>();
             builder.Services.AddScoped<ICpuCoolerService, CpuCoolerService>();
+            builder.Services.AddScoped<ICPUService, CPUService>();
 
 
             var app = builder.Build();
