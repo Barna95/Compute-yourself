@@ -31,6 +31,7 @@ namespace ComputeYourself
             builder.Services.AddScoped<IDriveService, DriveService>();
             builder.Services.AddScoped<IMotherBoardService, MotherBoardService>();
             builder.Services.AddScoped<IPsuService, PsuService>();
+            builder.Services.AddScoped<ICpuCoolerService, CpuCoolerService>();
 
 
             var app = builder.Build();

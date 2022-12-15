@@ -1,11 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using ComputeYourself.Data.Base;
 using ComputeYourself.Data.Enums;
 using ComputeYourself.Data.Enums.CPU;
 using ComputeYourself.Data.Enums.CpuCooler;
 
 namespace ComputeYourself.Models
 {
-    public class CpuCooler
+    public class CpuCooler : IEntityBase
     {
         public int Id { get; set; }
         public string Name { get; set; }
