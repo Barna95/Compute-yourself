@@ -1,4 +1,12 @@
 ﻿using ComputeYourself.Models;
+using ComputeYourself.Models.CPU;
+using ComputeYourself.Models.CpuCooler;
+using ComputeYourself.Models.Drive;
+using ComputeYourself.Models.GPU;
+using ComputeYourself.Models.MotherBoard;
+using ComputeYourself.Models.PcCase;
+using ComputeYourself.Models.PSU;
+using ComputeYourself.Models.RAM;
 using Microsoft.EntityFrameworkCore;
 
 namespace ComputeYourself.Data
@@ -8,7 +16,6 @@ namespace ComputeYourself.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<CPU>()
@@ -83,7 +90,6 @@ namespace ComputeYourself.Data
                 pm.RamId,
                 pm.MediaId
             });
-
 
             //CPU connection through table to media
             modelBuilder.Entity<Cpu_Media>()
@@ -174,7 +180,6 @@ namespace ComputeYourself.Data
                 .HasForeignKey(p => p.MediaId);
 
             base.OnModelCreating(modelBuilder);
-
         }
 
         public DbSet<CPU> Cpus { get; set; }
@@ -196,6 +201,5 @@ namespace ComputeYourself.Data
         public DbSet<PcCase_Media> PcCaseMedias { get; set; }
         public DbSet<Psu_Media> PsuMedias { get; set; }
         public DbSet<Ram_Media> RamMedias { get; set; }
-
     }
 }

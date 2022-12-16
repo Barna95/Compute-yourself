@@ -5,6 +5,14 @@ using ComputeYourself.Data.Enums.MotherBoard;
 using ComputeYourself.Data.Enums.PSU;
 using ComputeYourself.Data.Enums;
 using ComputeYourself.Models;
+using ComputeYourself.Models.CPU;
+using ComputeYourself.Models.CpuCooler;
+using ComputeYourself.Models.Drive;
+using ComputeYourself.Models.GPU;
+using ComputeYourself.Models.MotherBoard;
+using ComputeYourself.Models.PcCase;
+using ComputeYourself.Models.PSU;
+using ComputeYourself.Models.RAM;
 
 namespace ComputeYourself.Data
 {
@@ -15,11 +23,7 @@ namespace ComputeYourself.Data
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateAsyncScope())
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
-
                 context.Database.EnsureCreated();
-
-               
-
                 // Cpu
                 if (!context.Cpus.Any())
                 {
@@ -33,7 +37,7 @@ namespace ComputeYourself.Data
                             Brand = ManuFacturerBrand.Intel,
                             Warranty = 2,
                             Rating = 0,
-                            Socket = Enums.CPU.CpuType.LGA4189,
+                            Socket = CpuType.LGA4189,
                             ManufacturerCooler = false,
                             L3Cache = 18,
                             TotalCache = 18,
@@ -47,7 +51,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // Cpu Cooler
                 if (!context.CpuCoolers.Any())
                 {
@@ -67,12 +70,11 @@ namespace ComputeYourself.Data
                             Rating = 0,
                             CoolerType = CoolerTypes.Air,
                             Height = 161,
-                            CpuType = Enums.CPU.CpuType.LGA1150
+                            CpuType = CpuType.LGA1150
                         }
                     });
                     context.SaveChanges();
                 }
-
                 // Drive
                 if (!context.Drives.Any())
                 {
@@ -97,7 +99,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // GPU
                 if (!context.Gpus.Any())
                 {
@@ -124,7 +125,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // MotherBoard
                 if (!context.MotherBoards.Any())
                 {
@@ -170,7 +170,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // PcCase
                 if (!context.PcCases.Any())
                 {
@@ -191,7 +190,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // PSU
                 if (!context.Psus.Any())
                 {
@@ -216,7 +214,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // RAM
                 if (!context.Rams.Any())
                 {
@@ -240,7 +237,6 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-
                 // Media
                 if (!context.Medias.Any())
                 {
@@ -280,7 +276,6 @@ namespace ComputeYourself.Data
                         },
                     });
                     context.SaveChanges();
-
                 }
                 //CPU & Media
                 if (!context.CpuMedias.Any())
