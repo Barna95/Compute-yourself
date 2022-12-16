@@ -1,4 +1,5 @@
-﻿@model IEnumerable<GPU>
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<ComputeYourself.Models.GPU.GPU>
 
 @{
     ViewData["Title"] = "List of GPUs";
@@ -8,20 +9,20 @@
     <div class="col-md-8 offset-md-2">
         <table class="table">
             <thead>
-            <tr class="text-center">
-                <th>@Html.DisplayNameFor(model => model.Name)</th>
-                <th>@Html.DisplayNameFor(model => model.Description)</th>
-                <th>@Html.DisplayNameFor(model => model.Price)</th>
-                <th>@Html.DisplayNameFor(model => model.Brand)</th>
-                <th>@Html.DisplayNameFor(model => model.Warranty)</th>
-                <th>@Html.DisplayNameFor(model => model.Rating)</th>
-                <th>@Html.DisplayNameFor(model => model.VideoChipset)</th>
-                <th>@Html.DisplayNameFor(model => model.VramSize)</th>
-                <th>@Html.DisplayNameFor(model => model.VramType)</th>
-                <th>@Html.DisplayNameFor(model => model.RequiredPSU)</th>
-                <th>@Html.DisplayNameFor(model => model.Length)</th>
-                <th>Actions</th>
-            </tr>
+                <tr class="text-center">
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                    <th>@Html.DisplayNameFor(model => model.Price)</th>
+                    <th>@Html.DisplayNameFor(model => model.Brand)</th>
+                    <th>@Html.DisplayNameFor(model => model.Warranty)</th>
+                    <th>@Html.DisplayNameFor(model => model.Rating)</th>
+                    <th>@Html.DisplayNameFor(model => model.VideoChipset)</th>
+                    <th>@Html.DisplayNameFor(model => model.VramSize)</th>
+                    <th>@Html.DisplayNameFor(model => model.VramType)</th>
+                    <th>@Html.DisplayNameFor(model => model.RequiredPSU)</th>
+                    <th>@Html.DisplayNameFor(model => model.Length)</th>
+                    <th>Actions</th>
+                </tr>
             </thead>
             <tbody>
             @foreach (var item in Model)

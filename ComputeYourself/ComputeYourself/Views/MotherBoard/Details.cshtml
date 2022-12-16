@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model MotherBoard
+@model ComputeYourself.Models.MotherBoard.MotherBoard
 
 @{
     ViewData["Title"] = $"Details of {Model.Name}";
@@ -8,13 +8,11 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1 id="hal">Details for @Model.Name</h1>
+            <h1>Details of @Model.Name</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
-
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" readonly />

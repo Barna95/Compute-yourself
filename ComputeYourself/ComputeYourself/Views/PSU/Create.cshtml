@@ -1,16 +1,16 @@
 ﻿@using ComputeYourself.Data.Enums
 @using ComputeYourself.Data.Enums.PSU
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model PSU
+@model ComputeYourself.Models.PSU.PSU
 
 @{
-    ViewData["Title"] = "Add a new Psu";
+    ViewData["Title"] = "Add a new PSU";
 }
 
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1 id="hal">Add a new Psu</h1>
+            <h1>Add a new PSU</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
@@ -66,7 +66,6 @@
                         <input type="submit" value="Create" class="btn btn-outline-success" />
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

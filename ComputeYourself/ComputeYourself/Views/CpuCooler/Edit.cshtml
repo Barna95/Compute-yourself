@@ -1,8 +1,8 @@
 ﻿@using ComputeYourself.Data.Enums
-@using ComputeYourself.Data.Enums.CPU
 @using ComputeYourself.Data.Enums.CpuCooler
+@using ComputeYourself.Data.Enums.MotherBoard
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model CpuCooler
+@model ComputeYourself.Models.CpuCooler.CpuCooler
 
 @{
     ViewData["Title"] = $"Edit {Model.Name}";
@@ -67,7 +67,6 @@
                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

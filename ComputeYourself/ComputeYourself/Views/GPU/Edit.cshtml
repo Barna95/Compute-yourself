@@ -1,7 +1,7 @@
 ﻿@using ComputeYourself.Data.Enums
 @using ComputeYourself.Data.Enums.GPU
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model GPU
+@model ComputeYourself.Models.GPU.GPU
 
 @{
     ViewData["Title"] = $"Edit {Model.Name}";
@@ -76,7 +76,6 @@
                         <input type="submit" value="Update" class="btn btn-outline-success" />
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

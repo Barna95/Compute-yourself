@@ -1,7 +1,7 @@
 ﻿@using ComputeYourself.Data.Enums
 @using ComputeYourself.Data.Enums.Drive
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model Drive
+@model ComputeYourself.Models.Drive.Drive
 
 @{
     ViewData["Title"] = $"Edit {Model.Name}";
@@ -71,7 +71,6 @@
                         <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
                     </div>
                 </form>
-
             </div>
         </div>
     </div>

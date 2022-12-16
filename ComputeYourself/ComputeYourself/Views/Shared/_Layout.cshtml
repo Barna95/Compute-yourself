@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ComputeYourself.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
 </head>
 <body>
     <header>
@@ -45,14 +44,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="PcCase" asp-action="Index"><i class="fa-solid fa-computer"></i> Pc Case</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="RAM" asp-action="Index"><i class="fa-solid fa-memory"></i> Ram</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     @RenderBody()
-
-
     @*<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - ComputeYourself - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

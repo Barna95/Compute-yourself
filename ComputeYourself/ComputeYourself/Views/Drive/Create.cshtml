@@ -1,8 +1,7 @@
 ﻿@using ComputeYourself.Data.Enums
 @using ComputeYourself.Data.Enums.Drive
-@using ComputeYourself.Data.Enums.MotherBoard
 @using Microsoft.AspNetCore.Mvc.TagHelpers
-@model Drive
+@model ComputeYourself.Models.Drive.Drive
 
 @{
     ViewData["Title"] = "Add a new Drive";
@@ -11,7 +10,7 @@
 <div class="row text">
     <div class="col-md-8 offset-2">
         <p>
-            <h1 id="hal">Add a new Drive</h1>
+            <h1>Add a new Drive</h1>
         </p>
         <div class="row">
             <div class="col-md-8 offset-2">
@@ -72,7 +71,6 @@
                         <input type="submit" value="Create" class="btn btn-outline-success" />
                     </div>
                 </form>
-
             </div>
         </div>
     </div>
