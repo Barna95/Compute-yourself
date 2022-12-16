@@ -1,10 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ComputeYourself.Models.CPU;
+using ComputeYourself.Models.CpuCooler;
+using ComputeYourself.Models.Drive;
+using ComputeYourself.Models.GPU;
+using ComputeYourself.Models.MotherBoard;
+using ComputeYourself.Models.PcCase;
+using ComputeYourself.Models.PSU;
+using ComputeYourself.Models.RAM;
 
 namespace ComputeYourself.Models
 {
     public class Media
     {
-        [Key]
         public int Id { get; set; }
         public string MediaURL { get; set; }
 
