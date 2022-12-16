@@ -1,6 +1,12 @@
 using ComputeYourself.Data;
-using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+using ComputeYourself.Data.Services.CPU;
+using ComputeYourself.Data.Services.CpuCooler;
+using ComputeYourself.Data.Services.Drive;
+using ComputeYourself.Data.Services.GPU;
+using ComputeYourself.Data.Services.MotherBoard;
+using ComputeYourself.Data.Services.PcCase;
+using ComputeYourself.Data.Services.PSU;
+using ComputeYourself.Data.Services.RAM;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -35,7 +41,6 @@ namespace ComputeYourself
             builder.Services.AddScoped<ICpuCoolerService, CpuCoolerService>();
             builder.Services.AddScoped<ICPUService, CPUService>();
 
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -53,10 +58,9 @@ namespace ComputeYourself
 
             app.UseAuthorization();
             
-
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=pccase}/{action=Index}/{id?}");
             AppDbInitializer.Seed(app);
             app.Run();
         }
