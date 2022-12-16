@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.CpuCooler;
+using ComputeYourself.Models.CpuCooler;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -29,8 +29,7 @@ namespace ComputeYourself.Controllers
         //POST create cpucooler
         [HttpPost]
         public async Task<IActionResult> Create(
-            [Bind(@"Id,
-                                Name,
+            [Bind(@"Name,
                                 Description,
                                 Price,
                                 Brand,
@@ -38,14 +37,12 @@ namespace ComputeYourself.Controllers
                                 Rating,
                                 CoolerType,
                                 Height,
-                                CpuType")]
-            CpuCooler cpuCooler)
+                                CpuType")]CpuCooler cpuCooler)
         {
             if (!ModelState.IsValid)
             {
                 return View(cpuCooler);
             }
-
             await _service.AddAsync(cpuCooler);
             return RedirectToAction(nameof(Index));
         }
@@ -90,7 +87,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(cpuCooler);
             }
-
             await _service.UpdateAsync(id, cpuCooler);
             return RedirectToAction(nameof(Index));
         }
@@ -115,7 +111,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

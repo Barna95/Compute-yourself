@@ -1,6 +1,6 @@
 ﻿using ComputeYourself.Data;
-using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+using ComputeYourself.Data.Services.PcCase;
+using ComputeYourself.Models.PcCase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,7 +43,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(pcCase);
             }
-
             await _service.AddAsync(pcCase);
             return RedirectToAction(nameof(Index));
         }
@@ -72,8 +71,7 @@ namespace ComputeYourself.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
-            [Bind(@"
-                                Id,
+            [Bind(@"Id,
                                 Name,
                                 Description,
                                 Price,
@@ -88,7 +86,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(pcCase);
             }
-
             await _service.UpdateAsync(id, pcCase);
             return RedirectToAction(nameof(Index));
         }
@@ -112,7 +109,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

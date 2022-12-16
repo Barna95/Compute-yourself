@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.Drive;
+using ComputeYourself.Models.Drive;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -38,14 +38,12 @@ namespace ComputeYourself.Controllers
                                 ConnectionType,
                                 Capacity,
                                 MaxWrite,
-                                MaxRead")]
-            Drive drive)
+                                MaxRead")]Drive drive)
         {
             if (!ModelState.IsValid)
             {
                 return View(drive);
             }
-
             await _service.AddAsync(drive);
             return RedirectToAction(nameof(Index));
         }
@@ -75,8 +73,7 @@ namespace ComputeYourself.Controllers
         // POST Edit the drive by ID
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
-            [Bind(@"
-                                Id,
+            [Bind(@"Id,
                                 Name,
                                 Description,
                                 Price,
@@ -92,7 +89,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(drive);
             }
-
             await _service.UpdateAsync(id, drive);
             return RedirectToAction(nameof(Index));
         }
@@ -117,7 +113,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

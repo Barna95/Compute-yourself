@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.PSU;
+using ComputeYourself.Models.PSU;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -24,9 +24,7 @@ namespace ComputeYourself.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Create(
-            [Bind(@"
-                                Id,
-                                Capacity,
+            [Bind(@"Capacity,
                                 Modular,
                                 Name,
                                 Description,
@@ -40,7 +38,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(psu);
             }
-
             await _service.AddAsync(psu);
             return RedirectToAction(nameof(Index));
         }
@@ -69,8 +66,7 @@ namespace ComputeYourself.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
-            [Bind(@"
-                                Id,
+            [Bind(@"Id,
                                 Capacity,
                                 Modular,
                                 Name,
@@ -85,7 +81,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(psu);
             }
-
             await _service.UpdateAsync(id, psu);
             return RedirectToAction(nameof(Index));
         }
@@ -109,7 +104,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

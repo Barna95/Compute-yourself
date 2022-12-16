@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.RAM;
+using ComputeYourself.Models.RAM;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -36,14 +36,12 @@ namespace ComputeYourself.Controllers
                                 MemoryType,
                                 Frequency,
                                 Latency,
-                                HeatSink")]
-            RAM ram)
+                                HeatSink")] RAM ram)
         {
             if (!ModelState.IsValid)
             {
                 return View(ram);
             }
-
             await _service.AddAsync(ram);
             return RedirectToAction(nameof(Index));
         }
@@ -72,8 +70,7 @@ namespace ComputeYourself.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
-            [Bind(@"
-                                Id,
+            [Bind(@"Id,
                                 Name,
                                 Description,
                                 Price,
@@ -90,7 +87,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(ram);
             }
-
             await _service.UpdateAsync(id, ram);
             return RedirectToAction(nameof(Index));
         }
@@ -114,7 +110,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

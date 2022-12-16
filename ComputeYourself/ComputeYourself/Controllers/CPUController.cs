@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.CPU;
+using ComputeYourself.Models.CPU;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -42,14 +42,12 @@ namespace ComputeYourself.Controllers
                                 Igpu,
                                 TDP,
                                 CoreClock,
-                                TurboCoreClock")]
-            CPU cpu)
+                                TurboCoreClock")] CPU cpu)
         {
             if (!ModelState.IsValid)
             {
                 return View(cpu);
             }
-
             await _service.AddAsync(cpu);
             return RedirectToAction(nameof(Index));
         }
@@ -76,7 +74,6 @@ namespace ComputeYourself.Controllers
             return View(CPUDetails);
         }
 
-        
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
             [Bind(@"Id,
@@ -95,14 +92,12 @@ namespace ComputeYourself.Controllers
                                 Igpu,
                                 TDP,
                                 CoreClock,
-                                TurboCoreClock")]
-            CPU cpu)
+                                TurboCoreClock")]CPU cpu)
         {
             if (!ModelState.IsValid)
             {
                 return View(cpu);
             }
-
             await _service.UpdateAsync(id, cpu);
             return RedirectToAction(nameof(Index));
         }
@@ -118,7 +113,6 @@ namespace ComputeYourself.Controllers
             return View(CPUDetails);
         }
 
-        
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
@@ -127,7 +121,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

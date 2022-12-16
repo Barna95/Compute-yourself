@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.MotherBoard;
+using ComputeYourself.Models.MotherBoard;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -59,7 +59,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(motherBoard);
             }
-
             await _service.AddAsync(motherBoard);
             return RedirectToAction(nameof(Index));
         }
@@ -86,8 +85,7 @@ namespace ComputeYourself.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(int id,
-            [Bind(@"
-                                Id,
+            [Bind(@"Id,
                                 Name,
                                 Description,
                                 Price,
@@ -122,7 +120,6 @@ namespace ComputeYourself.Controllers
             {
                 return View(motherBoard);
             }
-
             await _service.UpdateAsync(id, motherBoard);
             return RedirectToAction(nameof(Index));
         }
@@ -145,7 +142,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }

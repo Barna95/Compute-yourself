@@ -1,5 +1,5 @@
-﻿using ComputeYourself.Data.Services;
-using ComputeYourself.Models;
+﻿using ComputeYourself.Data.Services.GPU;
+using ComputeYourself.Models.GPU;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers
@@ -36,14 +36,12 @@ namespace ComputeYourself.Controllers
                                 VramSize,
                                 VramType,
                                 RequiredPSU,
-                                Length")]
-            GPU gpu)
+                                Length")]GPU gpu)
         {
             if (!ModelState.IsValid)
             {
                 return View(gpu);
             }
-
             await _service.AddAsync(gpu);
             return RedirectToAction(nameof(Index));
         }
@@ -83,14 +81,12 @@ namespace ComputeYourself.Controllers
                                 VramSize,
                                 VramType,
                                 RequiredPSU,
-                                Length")]
-            GPU gpu)
+                                Length")]GPU gpu)
         {
             if (!ModelState.IsValid)
             {
                 return View(gpu);
             }
-
             await _service.UpdateAsync(id, gpu);
             return RedirectToAction(nameof(Index));
         }
@@ -114,7 +110,6 @@ namespace ComputeYourself.Controllers
             {
                 return View("NotFound");
             }
-
             await _service.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
