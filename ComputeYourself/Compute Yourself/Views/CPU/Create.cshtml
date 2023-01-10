@@ -1,0 +1,107 @@
+﻿@using ComputeYourself.Data.Enums
+@using ComputeYourself.Data.Enums.MotherBoard
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model ComputeYourself.Models.CPU.CPU
+
+@{
+    ViewData["Title"] = "Add a new CPU";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Add a new CPU</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control" />
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Price" class="control-label"></label>
+                        <input asp-for="Price" class="form-control" />
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Brand" class="control-label"></label>
+                        <select asp-for="Brand" class="form-control" asp-items="Html.GetEnumSelectList<ManuFacturerBrand>()"></select>
+                        <span asp-validation-for="Brand" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Warranty" class="control-label"></label>
+                        <input asp-for="Warranty" class="form-control" />
+                        <span asp-validation-for="Warranty" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Rating" class="control-label"></label>
+                        <input asp-for="Rating" class="form-control" />
+                        <span asp-validation-for="Rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Socket" class="control-label"></label>
+                        <select asp-for="Socket" class="form-control" asp-items="Html.GetEnumSelectList<CpuType>()"></select>
+                        <span asp-validation-for="Socket" class="text-danger"></span>
+                    </div>
+                    <div class="form-check">
+                        <label asp-for="ManufacturerCooler" class="form-check-label"></label>
+                        <input asp-for="ManufacturerCooler" class="form-check-input" type="checkbox" id="flexCheckDefault" />
+                        <span asp-validation-for="ManufacturerCooler" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="L3Cache" class="control-label"></label>
+                        <input asp-for="L3Cache" class="form-control" />
+                        <span asp-validation-for="L3Cache" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TotalCache" class="control-label"></label>
+                        <input asp-for="TotalCache" class="form-control" />
+                        <span asp-validation-for="TotalCache" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Cores" class="control-label"></label>
+                        <input asp-for="Cores" class="form-control" />
+                        <span asp-validation-for="Cores" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Threads" class="control-label"></label>
+                        <input asp-for="Threads" class="form-control" />
+                        <span asp-validation-for="Threads" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Igpu" class="control-label"></label>
+                        <input asp-for="Igpu" class="form-control" />
+                        <span asp-validation-for="Igpu" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TDP" class="control-label"></label>
+                        <input asp-for="TDP" class="form-control" />
+                        <span asp-validation-for="TDP" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CoreClock" class="control-label"></label>
+                        <input asp-for="CoreClock" class="form-control" />
+                        <span asp-validation-for="CoreClock" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TurboCoreClock" class="control-label"></label>
+                        <input asp-for="TurboCoreClock" class="form-control" />
+                        <span asp-validation-for="TurboCoreClock" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="display:flex;justify-content:space-between;margin-top:10px">
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                        <input type="submit" value="Create" class="btn btn-outline-success" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
