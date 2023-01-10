@@ -10,7 +10,7 @@ using ComputeYourself.Data.Services.RAM;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
-namespace Compute_Yourself
+namespace ComputeYourself
 {
     public class Program
     {

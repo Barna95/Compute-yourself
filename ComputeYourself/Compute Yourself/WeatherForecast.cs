@@ -1,4 +1,4 @@
-namespace Compute_Yourself
+namespace ComputeYourself
 {
     public class WeatherForecast
     {
