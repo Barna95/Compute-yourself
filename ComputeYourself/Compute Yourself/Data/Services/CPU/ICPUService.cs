@@ -2,7 +2,7 @@
 
 namespace ComputeYourself.Data.Services.CPU
 {
-    public interface ICPUService : IBaseService<Models.CPU.CPU>
+    public interface ICPUService : IBaseService<Models.CPU.Cpu>
     {
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ComputeYourself.Data.Services.PSU
 {
-    public interface IPsuService : IBaseService<Models.PSU.PSU>
+    public interface IPsuService : IBaseService<Models.PSU.Psu>
     {
     }
 }

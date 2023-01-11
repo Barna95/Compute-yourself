@@ -27,9 +27,9 @@ namespace ComputeYourself.Data
                 // Cpu
                 if (!context.Cpus.Any())
                 {
-                    context.Cpus.AddRange(new List<CPU>()
+                    context.Cpus.AddRange(new List<Cpu>()
                     {
-                        new CPU()
+                        new Cpu()
                         {
                             Name = "FUJITSU Intel Xeon Silver 4310 12C 2.10 GHz PY-CP62XH",
                             Description = "The real server eq!!!!!!!!!!!!",
@@ -60,7 +60,7 @@ namespace ComputeYourself.Data
                         {
                             Name = "Noctua NH-D15 14cm chromax.black NH-D15 CH.BK",
                             Description = "The NH-D15 chromax.black is an all-black version of Noctua’s award-winning" +
-                                          "flagship model NH-D15 premium-quality quiet CPU cooler. Thanks to the same" +
+                                          "flagship model NH-D15 premium-quality quiet Cpu cooler. Thanks to the same" +
                                           "proven dual-tower heatsink design and NF-A15 PWM fans, it stays true to" +
                                           "the NH-D15’s successful formula of rivalling the performance of all-in-one" +
                                           "water coolers while maintaining superb quietness of operation",
@@ -99,12 +99,12 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // GPU
+                // Gpu
                 if (!context.Gpus.Any())
                 {
-                    context.Gpus.AddRange(new List<GPU>()
+                    context.Gpus.AddRange(new List<Gpu>()
                     {
-                        new GPU()
+                        new Gpu()
                         {
                             Name = "Zotac GAMING GeForce RTX 3090 Trinity OC nVidia 24GB GDDR6X 384bit ZT-A30900J-10P",
                             Description = "Get Amplified with the ZOTAC GAMING GeForce RTX™ 30 Series based on the" +
@@ -190,14 +190,14 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // PSU
+                // Psu
                 if (!context.Psus.Any())
                 {
-                    context.Psus.AddRange(new List<PSU>()
+                    context.Psus.AddRange(new List<Psu>()
                     {
-                        new PSU()
+                        new Psu()
                         {
-                            Name = "Seasonic Prime TX-1600 1600W PSU (PRIME-TX-1600)",
+                            Name = "Seasonic Prime TX-1600 1600W Psu (PRIME-TX-1600)",
                             Description = "Pressing on with its One Seasonic Initiative, the PRIME TX, PRIME PX and" +
                                           "PRIME GX series became the successors to the Seasonic PRIME and PRIME" +
                                           "Ultra series. The PRIME Series has always demonstrated outstanding" +
@@ -214,12 +214,12 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // RAM
+                // Ram
                 if (!context.Rams.Any())
                 {
-                    context.Rams.AddRange(new List<RAM>()
+                    context.Rams.AddRange(new List<Ram>()
                     {
-                        new RAM()
+                        new Ram()
                         {
                             Name =
                                 "CORSAIR Vengeance LPX Black DDR4, 4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
@@ -277,7 +277,7 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                //CPU & Media
+                //Cpu & Media
                 if (!context.CpuMedias.Any())
                 {
                     context.CpuMedias.AddRange(new List<Cpu_Media>()
@@ -316,7 +316,7 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                //GPU & Media
+                //Gpu & Media
                 if (!context.GpuMedias.Any())
                 {
                     context.GpuMedias.AddRange(new List<Gpu_Media>()
@@ -355,7 +355,7 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                //PSU & Media
+                //Psu & Media
                 if (!context.PsuMedias.Any())
                 {
                     context.PsuMedias.AddRange(new List<Psu_Media>()
@@ -368,7 +368,7 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                //RAM & Media
+                //Ram & Media
                 if (!context.RamMedias.Any())
                 {
                     context.RamMedias.AddRange(new List<Ram_Media>()

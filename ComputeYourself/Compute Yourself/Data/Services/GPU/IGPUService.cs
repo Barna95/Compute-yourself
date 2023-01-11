@@ -2,7 +2,7 @@
 
 namespace ComputeYourself.Data.Services.GPU
 {
-    public interface IGPUService : IBaseService<Models.GPU.GPU>
+    public interface IGPUService : IBaseService<Models.GPU.Gpu>
     {
     }
 }
