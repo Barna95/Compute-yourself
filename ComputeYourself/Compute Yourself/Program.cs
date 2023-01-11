@@ -25,6 +25,7 @@ namespace ComputeYourself
             builder.Services.AddDbContext<AppDbContext>(options => options
                 .UseSqlServer(builder.Configuration
                     .GetConnectionString("DefaultConnectionString")));
+            builder.Services.AddDbContext<AppDbContext>(options => options.EnableSensitiveDataLogging());
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
                 // if you want everything, change Warning() to Information()
