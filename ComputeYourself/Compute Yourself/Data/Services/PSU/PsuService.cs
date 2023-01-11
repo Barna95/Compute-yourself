@@ -2,7 +2,7 @@
 
 namespace ComputeYourself.Data.Services.PSU
 {
-    public class PsuService : BaseService<Models.PSU.PSU>, IPsuService
+    public class PsuService : BaseService<Models.PSU.Psu>, IPsuService
     {
         private readonly AppDbContext _context;
 

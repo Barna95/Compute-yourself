@@ -53,7 +53,7 @@ namespace ComputeYourself.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostProductTest([FromBody] CPU cpu)
+        public async Task<IActionResult> PostProductTest([FromBody] Cpu cpu)
         {
             if (cpu is null)
             {
@@ -69,7 +69,7 @@ namespace ComputeYourself.Controllers
         }
 
         [HttpPut("{productId}")]
-        public async Task<IActionResult> PutProductTest(int productId, [FromBody] CPU cpu)
+        public async Task<IActionResult> PutProductTest(int productId, [FromBody] Cpu cpu)
         {
             cpu.Id = productId;
             if (productId != cpu.Id)

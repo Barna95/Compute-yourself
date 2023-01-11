@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<ComputeYourself.Models.CPU.CPU>
+@model IEnumerable<ComputeYourself.Models.CPU.Cpu>
 
 @{
     ViewData["Title"] = "List of CPUs";
@@ -92,4 +92,4 @@
         </table>
     </div>
 </div>
-@await Html.PartialAsync("_CreateItem", "CPU")
+@await Html.PartialAsync("_CreateItem", "Cpu")

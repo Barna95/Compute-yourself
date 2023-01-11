@@ -2,7 +2,7 @@
 
 namespace ComputeYourself.Data.Services.CPU
 {
-    public class CPUService : BaseService<Models.CPU.CPU>, ICPUService
+    public class CPUService : BaseService<Models.CPU.Cpu>, ICPUService
     {
         private readonly AppDbContext _context;
 
