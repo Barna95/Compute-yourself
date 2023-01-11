@@ -14,10 +14,11 @@ namespace ComputeYourself.Data.Base
             _context = context;
         }
 
-        public async Task AddAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
-            await _context.Set<T>().AddAsync(entity);
+            var currentEntity = await _context.Set<T>().AddAsync(entity);
             await _context.SaveChangesAsync();
+            return currentEntity.Entity;
         }
 
         public async Task DeleteAsync(int id)
