@@ -22,6 +22,18 @@ namespace ComputeYourself
 
             builder.Services.AddControllers();
 
+            var provider = builder.Services.BuildServiceProvider();
+            var configuration = provider.GetRequiredService<IConfiguration>();
+
+            builder.Services.AddCors(options =>
+            {
+                var frontendUrl = configuration.GetValue<string>("frontend_url");
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins(frontendUrl).AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+            
             builder.Services.AddDbContext<AppDbContext>(options => options
                 .UseSqlServer(builder.Configuration
                     .GetConnectionString("DefaultConnectionString")));
@@ -46,11 +58,16 @@ namespace ComputeYourself
 
             app.UseHttpsRedirection();
 
+            app.UseCors();
+
+            //app.UseAuthentication();
+
             app.UseAuthorization();
 
-
             app.MapControllers();
+
             AppDbInitializer.Seed(app);
+
             app.Run();
         }
     }
