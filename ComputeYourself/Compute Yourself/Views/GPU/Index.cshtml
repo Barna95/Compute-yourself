@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<ComputeYourself.Models.GPU.GPU>
+@model IEnumerable<ComputeYourself.Models.GPU.Gpu>
 
 @{
     ViewData["Title"] = "List of GPUs";
@@ -72,4 +72,4 @@
         </table>
     </div>
 </div>
-@await Html.PartialAsync("_CreateItem", "GPU")
+@await Html.PartialAsync("_CreateItem", "Gpu")
