@@ -18,31 +18,6 @@ namespace ComputeYourself.Data
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CPU>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<CpuCooler>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<Drive>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<GPU>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<MotherBoard>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<PcCase>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<PSU>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-            modelBuilder.Entity<RAM>()
-                .Property(p => p.Price)
-                .HasColumnType("decimal(18,2)");
-
             modelBuilder.Entity<Cpu_Media>().HasKey(pm => new
             {
                 pm.CpuId,
@@ -91,7 +66,7 @@ namespace ComputeYourself.Data
                 pm.MediaId
             });
 
-            //CPU connection through table to media
+            //Cpu connection through table to media
             modelBuilder.Entity<Cpu_Media>()
                 .HasOne(p => p.Cpu)
                 .WithMany(pm => pm.Cpu_Medias)
@@ -124,7 +99,7 @@ namespace ComputeYourself.Data
                 .WithMany(pm => pm.Drive_Medias)
                 .HasForeignKey(p => p.MediaId);
 
-            //GPU connection through table to media
+            //Gpu connection through table to media
             modelBuilder.Entity<Gpu_Media>()
                 .HasOne(p => p.Gpu)
                 .WithMany(pm => pm.Gpu_Medias)
@@ -157,7 +132,7 @@ namespace ComputeYourself.Data
                 .WithMany(pm => pm.PcCaseMedias)
                 .HasForeignKey(p => p.MediaId);
 
-            //PSU connection through table to media
+            //Psu connection through table to media
             modelBuilder.Entity<Psu_Media>()
                 .HasOne(p => p.Psu)
                 .WithMany(pm => pm.Psu_Medias)
@@ -168,7 +143,7 @@ namespace ComputeYourself.Data
                 .WithMany(pm => pm.Psu_Medias)
                 .HasForeignKey(p => p.MediaId);
 
-            //RAM connection through table to media
+            //Ram connection through table to media
             modelBuilder.Entity<Ram_Media>()
                 .HasOne(p => p.Ram)
                 .WithMany(pm => pm.Ram_Medias)
@@ -182,14 +157,14 @@ namespace ComputeYourself.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<CPU> Cpus { get; set; }
+        public DbSet<Cpu> Cpus { get; set; }
         public DbSet<CpuCooler> CpuCoolers { get; set; }
         public DbSet<Drive> Drives { get; set; }
-        public DbSet<GPU> Gpus { get; set; }
+        public DbSet<Gpu> Gpus { get; set; }
         public DbSet<MotherBoard> MotherBoards { get; set; }
         public DbSet<PcCase> PcCases { get; set; }
-        public DbSet<PSU> Psus { get; set; }
-        public DbSet<RAM> Rams { get; set; }
+        public DbSet<Psu> Psus { get; set; }
+        public DbSet<Ram> Rams { get; set; }
 
         // Relationships
         public DbSet<Media> Medias { get; set; }
