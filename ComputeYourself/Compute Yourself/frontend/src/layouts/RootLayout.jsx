@@ -17,6 +17,7 @@ export default function RootLayout() {
             <NavLink to="product/cpu">Cpus</NavLink>
             <NavLink to="product/psu">Psus</NavLink>
             <NavLink to="product/pccase">PcCases</NavLink>
+            <NavLink to="product/motherboard">MotherBoards</NavLink>
             <NavLink to="product/ram">Rams</NavLink>
             <NavLink to="product/gpu">Gpus</NavLink>
             <NavLink to="product/cpucooler">CpuCoolers</NavLink>
