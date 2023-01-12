@@ -12,6 +12,7 @@ import About from "./routes/About";
 import Cpu from "./routes/Cpu";
 import Psu from "./routes/Psu";
 import PcCase from "./routes/PcCase";
+import MotherBoard from "./routes/MotherBoard";
 import CpuCooler from "./routes/CpuCooler";
 import Gpu from "./routes/Gpu";
 import Home from "./routes/Home";
@@ -30,6 +31,7 @@ const router = createBrowserRouter(
       <Route path="product/cpu" element={<Cpu />} />
       <Route path="product/psu" element={<Psu />} />
       <Route path="product/pccase" element={<PcCase />} />
+      <Route path="product/motherboard" element={<MotherBoard />} />
       <Route path="product/ram" element={<Ram />} />
       <Route path="product/gpu" element={<Gpu />} />
       <Route path="product/cpucooler" element={<CpuCooler />} />
