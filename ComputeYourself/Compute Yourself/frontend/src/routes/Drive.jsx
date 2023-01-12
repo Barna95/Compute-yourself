@@ -3,10 +3,10 @@ import ProductProperties from "../componentsFolder/ProductProperties/productProp
 import React from 'react';
 import axios from "axios";
 
-export default function CpuCooler() {
+export default function Drive() {
     const [data, setData] = useState("");
     useEffect(() => {
-        axios.get("https://localhost:7195/product/cpucooler").then((response) => {
+        axios.get("https://localhost:7195/product/drive").then((response) => {
             response.data.map((e) => {
                 setData(e);
             });
@@ -15,7 +15,7 @@ export default function CpuCooler() {
     }, []);
     const elements = Object.keys(data);
     return (
-        <div className='cpucoolers'>
+        <div className='drives'>
             <ProductProperties dataProperties={data} elementKeys={elements} />
         </div>
     )
