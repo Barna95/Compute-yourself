@@ -15,7 +15,7 @@ export default function CpuCooler() {
     }, []);
     const elements = Object.keys(data);
     return (
-        <div className='cpus'>
+        <div className='cpucoolers'>
             <ProductProperties dataProperties={data} elementKeys={elements} />
         </div>
     )
