@@ -4,7 +4,7 @@ import Footer from "../routes/Footer";
 
 export default function RootLayout() {
   return (
-    <div class="root-layout">
+    <div className="root-layout">
       <header>
         <nav>
           <h1>Compute Yourself</h1>
