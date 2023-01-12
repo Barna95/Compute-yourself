@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 import About from "./routes/About";
 import Cpu from "./routes/Cpu";
+import Psu from "./routes/Psu";
 import Home from "./routes/Home";
 import RootLayout from "./layouts/RootLayout";
 import reactLogo from "./assets/react.svg";
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="product/cpu" element={<Cpu />} />
+      <Route path="product/psu" element={<Psu />} />
     </Route>
   )
 );
