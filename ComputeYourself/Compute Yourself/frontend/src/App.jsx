@@ -12,6 +12,8 @@ import About from "./routes/About";
 import Cpu from "./routes/Cpu";
 import Home from "./routes/Home";
 import Ram from "./routes/Ram";
+import CpuCooler from "./routes/CpuCooler"
+
 import RootLayout from "./layouts/RootLayout";
 import reactLogo from "./assets/react.svg";
 
@@ -24,6 +26,8 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="product/cpu" element={<Cpu />} />
       <Route path="product/ram" element={<Ram />} />
+      <Route path="product/cpucooler" element={<CpuCooler />} />
+
     </Route>
   )
 );
