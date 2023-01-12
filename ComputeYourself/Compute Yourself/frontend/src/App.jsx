@@ -1,3 +1,4 @@
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 import {
@@ -6,7 +7,6 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import About from "./routes/About";
 import Cpu from "./routes/Cpu";
@@ -20,7 +20,6 @@ import Ram from "./routes/Ram";
 import Drive from "./routes/Drive";
 import RootLayout from "./layouts/RootLayout";
 import reactLogo from "./assets/react.svg";
-
 // import { productURL } from "./endpoints";
 
 const router = createBrowserRouter(

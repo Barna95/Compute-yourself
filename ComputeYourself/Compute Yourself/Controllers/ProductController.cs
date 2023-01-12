@@ -7,7 +7,6 @@ using ComputeYourself.Data.Services.MotherBoard;
 using ComputeYourself.Data.Services.PcCase;
 using ComputeYourself.Data.Services.PSU;
 using ComputeYourself.Data.Services.RAM;
-using ComputeYourself.Models;
 using ComputeYourself.Models.CPU;
 using ComputeYourself.Models.CpuCooler;
 using ComputeYourself.Models.Drive;
@@ -16,7 +15,6 @@ using ComputeYourself.Models.MotherBoard;
 using ComputeYourself.Models.PcCase;
 using ComputeYourself.Models.PSU;
 using ComputeYourself.Models.RAM;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers

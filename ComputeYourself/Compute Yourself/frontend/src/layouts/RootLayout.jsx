@@ -2,6 +2,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 import Footer from "../routes/Footer";
 import Logo from '../assets/logo.svg';
+//import Logo from '../assets/logo.svg';
 
 export default function RootLayout() {
   return (
