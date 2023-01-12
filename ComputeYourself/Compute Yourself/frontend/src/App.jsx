@@ -11,7 +11,12 @@ import { useEffect, useState } from "react";
 import About from "./routes/About";
 import Cpu from "./routes/Cpu";
 import Psu from "./routes/Psu";
+import CpuCooler from "./routes/CpuCooler"
+import Gpu from "./routes/Gpu";
 import Home from "./routes/Home";
+import Ram from "./routes/Ram";
+import CpuCooler from "./routes/CpuCooler"
+import Drive from "./routes/Drive"
 import RootLayout from "./layouts/RootLayout";
 import reactLogo from "./assets/react.svg";
 
@@ -24,6 +29,10 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />} />
       <Route path="product/cpu" element={<Cpu />} />
       <Route path="product/psu" element={<Psu />} />
+      <Route path="product/ram" element={<Ram />} />
+      <Route path="product/gpu" element={<Gpu />} />
+      <Route path="product/cpucooler" element={<CpuCooler />} />
+      <Route path="product/drive" element={<Drive /> }/>
     </Route>
   )
 );
