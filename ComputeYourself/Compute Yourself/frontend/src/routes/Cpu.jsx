@@ -1,5 +1,4 @@
 ﻿import { useEffect, useState } from "react";
-
 import ProductProperties from "../componentsFolder/ProductProperties/productProperties"
 import React from 'react';
 import axios from "axios";
