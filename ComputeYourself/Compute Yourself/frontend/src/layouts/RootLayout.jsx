@@ -10,6 +10,7 @@ export default function RootLayout() {
           <h1>Compute Yourself</h1>
           <NavLink to="/">Home</NavLink>
           <NavLink to="about">About</NavLink>
+          <NavLink to="cpus">Cpus</NavLink>
         </nav>
       </header>
       <main>
