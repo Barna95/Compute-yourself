@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
-import Logo from '../assets/logo.svg';
 
 import Footer from "../routes/Footer";
+import Logo from '../assets/logo.svg';
 
 export default function RootLayout() {
   return (
@@ -14,7 +14,7 @@ export default function RootLayout() {
           <div>
             <NavLink to="/">Home</NavLink>
             <NavLink to="about">About</NavLink>
-            <NavLink to="cpus">Cpus</NavLink>
+            <NavLink to="product/cpu">Cpus</NavLink>
           </div>
         </nav>
       </header>
