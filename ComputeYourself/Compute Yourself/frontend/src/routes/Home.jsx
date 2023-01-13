@@ -1,9 +1,13 @@
+import Logo from '../assets/logo.svg';
 import React from 'react'
+
+const mystyle = {
+  width:'40%',
+  height:'40%'
+};
 
 export default function home() {
   return (
-    <div className='home'>
-        This is the <span className="select">home</span> page
-    </div>
+    <img style={mystyle} src={Logo} alt="Logo" />
   )
 }
