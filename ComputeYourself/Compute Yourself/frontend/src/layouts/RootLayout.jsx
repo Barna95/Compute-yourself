@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
 
 import Footer from "../routes/Footer";
-import Logo from '../assets/logo.svg';
+
 //import Logo from '../assets/logo.svg';
 
 export default function RootLayout() {
@@ -9,9 +9,6 @@ export default function RootLayout() {
     <div className="root-layout">
       <header>
         <nav>
-          <div className="nav-logo">
-            <img src={Logo} alt="Logo" />
-          </div>
           <div>
             <NavLink to="/">Home</NavLink>
             <NavLink to="about">About</NavLink>
