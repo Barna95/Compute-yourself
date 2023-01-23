@@ -9,16 +9,17 @@ import {
 } from "react-router-dom";
 
 import About from "./routes/About";
-import Cpu from "./routes/Cpu";
-import Psu from "./routes/Psu";
-import PcCase from "./routes/PcCase";
-import MotherBoard from "./routes/MotherBoard";
-import CpuCooler from "./routes/CpuCooler";
-import Gpu from "./routes/Gpu";
-import Home from "./routes/Home";
-import Ram from "./routes/Ram";
-import Drive from "./routes/Drive";
+import Cpu from "./routes/Cpus";
+import Psu from "./routes/Psus";
+import PcCase from "./routes/PcCases";
+import MotherBoard from "./routes/MotherBoards";
+import CpuCooler from "./routes/CpuCoolers";
+import Gpu from "./routes/Gpus";
+import Home from "./routes/Homes";
+import Ram from "./routes/Rams";
+import Drive from "./routes/Drives";
 import RootLayout from "./layouts/RootLayout";
+import Products from "./routes/Products"
 import reactLogo from "./assets/react.svg";
 // import { productURL } from "./endpoints";
 
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<RootLayout />}>
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="product" element={<Products/> }/>
       <Route path="product/cpu" element={<Cpu />} />
       <Route path="product/psu" element={<Psu />} />
       <Route path="product/pccase" element={<PcCase />} />
