@@ -1,5 +1,4 @@
-﻿import { Outlet, useNavigate } from "react-router-dom";
-import { useState } from "react";
+﻿import { useState } from "react";
 import Button from '@mui/material/Button';
 import Cpus from '../routes/Cpus';
 import Psus from "../routes/Psus";
@@ -12,9 +11,9 @@ import Drives from "../routes/Drives";
 
 
 
-export default function ProductsLayout(props)
+export default function ProductsLayout()
 {
-    const[productEntries, setProductEntries] = useState([<Cpu/>])
+    const[productEntries, setProductEntries] = useState([<Cpus/>])
 
     const cpu = () => {
         setProductEntries([<Cpus />])

@@ -9,15 +9,15 @@ import {
 } from "react-router-dom";
 
 import About from "./routes/About";
-import Cpu from "./routes/Cpus";
-import Psu from "./routes/Psus";
-import PcCase from "./routes/PcCases";
-import MotherBoard from "./routes/MotherBoards";
-import CpuCooler from "./routes/CpuCoolers";
-import Gpu from "./routes/Gpus";
-import Home from "./routes/Homes";
-import Ram from "./routes/Rams";
-import Drive from "./routes/Drives";
+import Cpus from "./routes/Cpus";
+import Psus from "./routes/Psus";
+import PcCases from "./routes/PcCases";
+import MotherBoards from "./routes/MotherBoards";
+import CpuCoolers from "./routes/CpuCoolers";
+import Gpus from "./routes/Gpus";
+import Home from "./routes/Home";
+import Rams from "./routes/Rams";
+import Drives from "./routes/Drives";
 import RootLayout from "./layouts/RootLayout";
 import Products from "./routes/Products"
 import reactLogo from "./assets/react.svg";
@@ -29,14 +29,14 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="about" element={<About />} />
       <Route path="product" element={<Products/> }/>
-      <Route path="product/cpu" element={<Cpu />} />
-      <Route path="product/psu" element={<Psu />} />
-      <Route path="product/pccase" element={<PcCase />} />
-      <Route path="product/motherboard" element={<MotherBoard />} />
-      <Route path="product/ram" element={<Ram />} />
-      <Route path="product/gpu" element={<Gpu />} />
-      <Route path="product/cpucooler" element={<CpuCooler />} />
-      <Route path="product/drive" element={<Drive /> }/>
+      <Route path="product/cpu" element={<Cpus />} />
+      <Route path="product/psu" element={<Psus />} />
+      <Route path="product/pccase" element={<PcCases />} />
+      <Route path="product/motherboard" element={<MotherBoards />} />
+      <Route path="product/ram" element={<Rams />} />
+      <Route path="product/gpu" element={<Gpus />} />
+      <Route path="product/cpucooler" element={<CpuCoolers />} />
+      <Route path="product/drive" element={<Drives /> }/>
     </Route>
   )
 );
