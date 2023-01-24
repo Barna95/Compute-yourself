@@ -121,6 +121,18 @@ namespace ComputeYourself.Controllers
             return Ok(cpuCoolers);
         }
 
+        [HttpGet("cpucooler/{id}")]
+        public async Task<ActionResult> GetCpuCoolerById(int id)
+        {
+            var cpuCoolers = await _cpuCoolerService.GetByIdAsync(id);
+            if (cpuCoolers == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cpuCoolers);
+        }
+
         [HttpPost("cpucooler")]
         public async Task<IActionResult> AddCpuCooler([FromBody] CpuCooler cpuCooler)
         {
