@@ -1,6 +1,6 @@
 ﻿import { useEffect, useState } from "react";
 
-import ProductProperties from "../componentsFolder/ProductProperties/productProperties"
+import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
 
@@ -15,7 +15,7 @@ export default function Psus() {
    
     return (
         <div className='psus'>
-            <ProductProperties dataProperties={data} />
+            <Card dataProperties={data} productType="psu" />
         </div>
     )
 }
