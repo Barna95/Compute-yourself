@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import ProductProperties from "../componentsFolder/ProductProperties/productProperties"
+import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
 
@@ -14,7 +14,7 @@ export default function MotherBoards() {
     
     return (
         <div className='cpucoolers'>
-            <ProductProperties dataProperties={data} />
+            <Card dataProperties={data} productType="motherboard" />
         </div>
     )
 }

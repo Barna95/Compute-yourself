@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import ProductProperties from "../componentsFolder/ProductProperties/productProperties"
+import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
 
@@ -13,7 +13,7 @@ export default function Drives() {
     }, []);
     return (
         <div className='drives'>
-            <ProductProperties dataProperties={data}/>
+            <Card dataProperties={data} productType="drive" />
         </div>
     )
 }

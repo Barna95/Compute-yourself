@@ -1,5 +1,5 @@
 ﻿import { useEffect, useState } from "react";
-import ProductProperties from "../componentsFolder/ProductProperties/productProperties"
+import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
 
@@ -15,7 +15,7 @@ export default function Cpus() {
     
     return (
         <div className='cpus'>
-            <ProductProperties dataProperties={data} />
+            <Card dataProperties={data} productType="cpu"/>
         </div>
     );
     }
