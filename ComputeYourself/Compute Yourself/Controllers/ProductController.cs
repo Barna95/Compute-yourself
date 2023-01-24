@@ -59,6 +59,19 @@ namespace ComputeYourself.Controllers
             return Ok(cpus);
         }
 
+        [HttpGet("cpu/{id}")]
+        public async Task<ActionResult> GetCpuById(int id)
+        {
+            var cpus = await _cpuService.GetByIdAsync(id);
+            if (cpus == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cpus);
+        }
+
+
         [HttpPost("cpu")]
         public async Task<IActionResult> AddCpu([FromBody] Cpu cpu)
         {

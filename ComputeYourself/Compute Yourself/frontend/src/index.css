@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+  --primary: #bc4123;
+  --secondary: #2b3452;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins";
+  background: var(--secondary);
+}
+* {
+ 
+  margin: 0;
+}
+p {
+  margin: 20px 0;
+}
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* navbar */
+header {
+    display: flex;
+}
+header nav {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  
+  margin: 40px;
+}
+header nav h1 {
+  margin-right: auto;
+  border-bottom: 10px solid var(--primary);
+  
+}
+header nav a{
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+  
+}
+header nav a.active {
+  background: var(--primary);
+}
+
+/* page content */
+main {
+  padding: 30px;
+
+  height: 80vh;
+  /* width: 100%; */
+
+  /* background-color: rgba(249, 206, 151, 0.764); */
+  font-weight: bold;
+  font-size : 2rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  
+}
+span.select{
+  color: var(--primary);
+}
+
+footer{
+  height: 7vh;
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  font-size : 1rem;
+}

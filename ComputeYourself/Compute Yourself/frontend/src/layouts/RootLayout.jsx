@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 import Footer from "../routes/Footer";
 
@@ -12,14 +12,7 @@ export default function RootLayout() {
           <div>
             <NavLink to="/">Home</NavLink>
             <NavLink to="about">About</NavLink>
-            <NavLink to="product/cpu">Cpus</NavLink>
-            <NavLink to="product/psu">Psus</NavLink>
-            <NavLink to="product/pccase">PcCases</NavLink>
-            <NavLink to="product/motherboard">MotherBoards</NavLink>
-            <NavLink to="product/ram">Rams</NavLink>
-            <NavLink to="product/gpu">Gpus</NavLink>
-            <NavLink to="product/cpucooler">CpuCoolers</NavLink>
-            <NavLink to="product/drive">Drives</NavLink>
+            <NavLink to="product">Products</NavLink>
           </div>
         </nav>
       </header>
