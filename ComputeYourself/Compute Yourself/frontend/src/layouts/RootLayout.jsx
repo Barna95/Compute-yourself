@@ -115,7 +115,12 @@ const styles = theme => ({
   sidebarSection: {
     marginTop: theme.spacing.unit * 3,
   },
-
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    textAlign: "center",
+    marginTop: theme.spacing.unit * 8,
+    padding: `${theme.spacing.unit * 2}px 0`,
+  },
 });
 function RootLayout(props) {
   const { classes } = props;
@@ -142,7 +147,11 @@ function RootLayout(props) {
       <main>
 
         <Outlet />
-        
+        <footer className={classes.footer}>
+          <Box>
+            Compute Yourself team 2023.
+          </Box>
+        </footer>  
 
       </main>
     </div>
