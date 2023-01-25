@@ -8,7 +8,7 @@ using ComputeYourself.Data.Services.PSU;
 using ComputeYourself.Data.Services.RAM;
 using ComputeYourself.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Linq;
 namespace ComputeYourself.Controllers
 {
     [Route("[controller]")]
@@ -38,6 +38,22 @@ namespace ComputeYourself.Controllers
             _ramService = ramService;
         }
 
+        [HttpGet("all")]
+        public async Task<ActionResult> GetAllProducts()
+        {
+            List<IEnumerable<Product>> products = new List<IEnumerable<Product>>()
+            {
+                await _cpuService.GetAllAsync(),
+                await _cpuCoolerService.GetAllAsync(), 
+                await _driveService.GetAllAsync(),
+                await _gpuService.GetAllAsync(),
+                await _motherBoardService.GetAllAsync(),
+                await _pcCaseService.GetAllAsync(),
+                await _psuService.GetAllAsync(),
+                await _ramService.GetAllAsync(),
+            };
+            return  Ok( products);
+        }
         // Cpu
         [HttpGet("cpu")]
         public async Task<ActionResult> GetCpus()
