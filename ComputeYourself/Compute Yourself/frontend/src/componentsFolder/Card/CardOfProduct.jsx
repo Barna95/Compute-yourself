@@ -18,7 +18,7 @@ const Card = (props) => {
     }, []);
 
     useEffect(() => {
-        Object.keys(props.dataProperties.map((e, idx) => setProductId(idx + 1)));
+        Object.keys(props.dataProperties.map((e) => setProductId(e.id)));
     }, [neededValues])
 
 
