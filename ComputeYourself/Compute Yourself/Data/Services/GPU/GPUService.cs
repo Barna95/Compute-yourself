@@ -1,8 +1,9 @@
-﻿using ComputeYourself.Data.Base;
+﻿using ComputeYourself.Data.Services.Base;
+using ComputeYourself.Models;
 
 namespace ComputeYourself.Data.Services.GPU
 {
-    public class GPUService : BaseService<Models.GPU.Gpu>, IGPUService
+    public class GPUService : BaseService<Gpu>, IGPUService
     {
         private readonly AppDbContext _context;
 
