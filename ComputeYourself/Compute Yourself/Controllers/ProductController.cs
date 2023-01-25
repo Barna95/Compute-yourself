@@ -1,5 +1,4 @@
-﻿using ComputeYourself.Data;
-using ComputeYourself.Data.Services.CPU;
+﻿using ComputeYourself.Data.Services.CPU;
 using ComputeYourself.Data.Services.CpuCooler;
 using ComputeYourself.Data.Services.Drive;
 using ComputeYourself.Data.Services.GPU;
@@ -7,14 +6,7 @@ using ComputeYourself.Data.Services.MotherBoard;
 using ComputeYourself.Data.Services.PcCase;
 using ComputeYourself.Data.Services.PSU;
 using ComputeYourself.Data.Services.RAM;
-using ComputeYourself.Models.CPU;
-using ComputeYourself.Models.CpuCooler;
-using ComputeYourself.Models.Drive;
-using ComputeYourself.Models.GPU;
-using ComputeYourself.Models.MotherBoard;
-using ComputeYourself.Models.PcCase;
-using ComputeYourself.Models.PSU;
-using ComputeYourself.Models.RAM;
+using ComputeYourself.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ComputeYourself.Controllers

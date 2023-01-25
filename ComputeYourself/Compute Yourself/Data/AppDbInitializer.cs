@@ -1,18 +1,5 @@
-﻿using ComputeYourself.Data.Enums.CpuCooler;
-using ComputeYourself.Data.Enums.Drive;
-using ComputeYourself.Data.Enums.GPU;
-using ComputeYourself.Data.Enums.MotherBoard;
-using ComputeYourself.Data.Enums.PSU;
-using ComputeYourself.Data.Enums;
+﻿using ComputeYourself.Data.Enums;
 using ComputeYourself.Models;
-using ComputeYourself.Models.CPU;
-using ComputeYourself.Models.CpuCooler;
-using ComputeYourself.Models.Drive;
-using ComputeYourself.Models.GPU;
-using ComputeYourself.Models.MotherBoard;
-using ComputeYourself.Models.PcCase;
-using ComputeYourself.Models.PSU;
-using ComputeYourself.Models.RAM;
 
 namespace ComputeYourself.Data
 {
@@ -24,20 +11,23 @@ namespace ComputeYourself.Data
             {
                 var context = serviceScope.ServiceProvider.GetService<AppDbContext>();
                 context.Database.EnsureCreated();
-                // Cpu
+
                 if (!context.Cpus.Any())
                 {
                     context.Cpus.AddRange(new List<Cpu>()
                     {
-                        new Cpu()
+                        new()
                         {
-                            Name = "FUJITSU Intel Xeon Silver 4310 12C 2.10 GHz PY-CP62XH",
+                            Name = "FUJITSU Intel Xeon Silver 4310 12C 2.10 GHz",
                             Description = "The real server eq!!!!!!!!!!!!",
-                            Price = 754190,
-                            Brand = ManuFacturerBrand.Intel,
+                            productOfficialWebsite = "https://www.intel.com/content/www/us/en/products/sku/215277/intel-xeon-silver-4310-processor-18m-cache-2-10-ghz/specifications.html",
+                            mainImage = "https://c1.neweggimages.com/ProductImageCompressAll1280/19-118-335-V01.jpg",
+                            modelNumber = "PY-CP62XH",
+                            Price = 1946.49M,
+                            Brand = "Intel",
                             Warranty = 2,
                             Rating = 0,
-                            Socket = CpuType.LGA4189,
+                            Socket = "FCLGA4189",
                             ManufacturerCooler = false,
                             L3Cache = 18,
                             TotalCache = 18,
@@ -51,47 +41,53 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // Cpu Cooler
+                
                 if (!context.CpuCoolers.Any())
                 {
                     context.CpuCoolers.AddRange(new List<CpuCooler>()
                     {
-                        new CpuCooler()
+                        new ()
                         {
-                            Name = "Noctua NH-D15 14cm chromax.black NH-D15 CH.BK",
+                            Name = "Noctua NH-D15",
                             Description = "The NH-D15 chromax.black is an all-black version of Noctua’s award-winning" +
                                           "flagship model NH-D15 premium-quality quiet Cpu cooler. Thanks to the same" +
                                           "proven dual-tower heatsink design and NF-A15 PWM fans, it stays true to" +
                                           "the NH-D15’s successful formula of rivalling the performance of all-in-one" +
                                           "water coolers while maintaining superb quietness of operation",
-                            Price = 54990,
-                            Brand = ManuFacturerBrand.Noctua,
+                            productOfficialWebsite = "https://noctua.at/en/nh-d15-chromax-black",
+                            mainImage = "https://noctua.at/pub/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/n/h/nh_d15_chromax_black_1_4.jpg",
+                            modelNumber = "NH-D15-CH.BK",
+                            Price = 141.92M,
+                            Brand = "Noctua",
                             Warranty = 2,
                             Rating = 0,
-                            CoolerType = CoolerTypes.Air,
+                            CoolerType = "Air",
                             Height = 161,
-                            CpuType = CpuType.LGA1150
+                            CpuType = "LGA1150"
                         }
                     });
                     context.SaveChanges();
                 }
-                // Drive
+                
                 if (!context.Drives.Any())
                 {
                     context.Drives.AddRange(new List<Drive>()
                     {
-                        new Drive()
+                        new()
                         {
-                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD meghajtó (MZILT7T6HALA-00007)",
+                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD",
                             Description = "PM1643a delivers high-value faster read speeds while improving TCO with" +
                                           " outstanding reliability, security and endurance. It provides a powerful" +
                                           " solution for mission-critical enterprise applications. It also provides" +
                                           " significantly more capacity up to 30.72 TB",
-                            Price = 759690,
-                            Brand = ManuFacturerBrand.Samsung,
+                            productOfficialWebsite = "https://semiconductor.samsung.com/ssd/enterprise-ssd/pm1643-pm1643a/mzilt7t6hala-00007/",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0034/7288/3779/products/MZILT3T8HBLS.jpg?v=1630685770",
+                            modelNumber = "MZILT7T6HALA-00007",
+                            Price = 1960.68M,
+                            Brand = "Samsung",
                             Warranty = 2,
                             Rating = 0,
-                            ConnectionType = ConnectionTypes.SATA3,
+                            ConnectionType = "SATA3",
                             Capacity = 7680,
                             MaxWrite = 2000,
                             MaxRead = 2100
@@ -99,12 +95,12 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // Gpu
+                
                 if (!context.Gpus.Any())
                 {
                     context.Gpus.AddRange(new List<Gpu>()
                     {
-                        new Gpu()
+                        new()
                         {
                             Name = "Zotac GAMING GeForce RTX 3090 Trinity OC nVidia 24GB GDDR6X 384bit ZT-A30900J-10P",
                             Description = "Get Amplified with the ZOTAC GAMING GeForce RTX™ 30 Series based on the" +
@@ -112,25 +108,28 @@ namespace ComputeYourself.Data
                                           "new streaming multiprocessors, and superfast GDDR6X memory, the ZOTAC GAMING" +
                                           "GeForce RTX 3090 Trinity OC gives rise to the amplified gaming experience" +
                                           "with ultra graphics fidelity.",
-                            Price = 905490,
-                            Brand = ManuFacturerBrand.Nvidia,
+                            productOfficialWebsite = "https://www.zotac.com/us/product/graphics_card/zotac-gaming-geforce-rtx-3090-trinity-oc",
+                            mainImage = "https://www.zotac.com/download/files/styles/w1024/public/product_gallery/graphics_cards/zt-a30900j-10p-image01.jpg?itok=Y50uW-dp",
+                            modelNumber = "ZT-A30900J-10P",
+                            Price = 2336.98M,
+                            Brand = "Nvidia",
                             Warranty = 2,
                             Rating = 5,
-                            VideoChipset = VideoChipsets.GeForceRTX3090Ti,
+                            VideoChipset = "GeForceRTX3090Ti",
                             VramSize = 24,
-                            VramType = VramTypes.GDDR6,
+                            VramType = "GDDR6",
                             RequiredPSU = 750,
                             Length = 317
                         }
                     });
                     context.SaveChanges();
                 }
-                // MotherBoard
+                
                 if (!context.MotherBoards.Any())
                 {
                     context.MotherBoards.AddRange(new List<MotherBoard>()
                     {
-                        new MotherBoard()
+                        new()
                         {
                             Name = "ASROCK H310CM-DVS 90-MXB8K0-A0UAYZ",
                             Description = "Supports 9th and 8th Gen Intel® Core™ Processors (Socket 1151)" +
@@ -139,15 +138,18 @@ namespace ComputeYourself.Data
                                           "7.1 CH HD Audio (Realtek ALC887/897 Audio Codec) " +
                                           "4 SATA3 4 USB 3.1 Gen1 (2 Front, 2 Rear) " +
                                           "Supports Full Spike Protection, ASRock Live Update & APP Shop",
-                            Price = 23190,
-                            Brand = ManuFacturerBrand.Intel,
+                            productOfficialWebsite = "https://www.asrock.com/mb/Intel/H310CM-DVS/index.asp",
+                            mainImage = "https://www.asrock.com/mb/photo/H310CM-DVS(L1).png",
+                            modelNumber = "90-MXB8K0-A0UAYZ",
+                            Price = 59.85M,
+                            Brand = "Intel",
                             Warranty = 0,
                             Rating = 0,
-                            Socket = CpuType.LGA1200,
-                            Chipset = ChipsetType.IntelH310,
+                            Socket = "LGA1200",
+                            Chipset = "IntelH310",
                             Size = SizeStandard.MicroATX,
                             Igpu = null,
-                            RAM = MemoryCompatibility.DDR4,
+                            RAM = "DDR4",
                             Frequency = 2666,
                             MemorySockets = 2,
                             XMP = false,
@@ -170,17 +172,20 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // PcCase
+               
                 if (!context.PcCases.Any())
                 {
                     context.PcCases.AddRange(new List<PcCase>()
                     {
-                        new PcCase()
+                        new()
                         {
                             Name = "ZALMAN Z-Machine 500 ZM-Z500",
                             Description = "Expensive",
-                            Price = 600790,
-                            Brand = ManuFacturerBrand.Zalman,
+                            productOfficialWebsite = "https://zalmanusa.com/products/z-machine-500-full-tower",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0102/9754/0666/products/B09NZP7GY7.MAIN_600x.jpg?v=1643831133",
+                            modelNumber = "ZM-Z500",
+                            Price = 1550.58M,
+                            Brand = "Zalman",
                             Warranty = 2,
                             Rating = 0,
                             SizeCompatibility = SizeStandard.ATX,
@@ -190,12 +195,12 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // Psu
+                
                 if (!context.Psus.Any())
                 {
                     context.Psus.AddRange(new List<Psu>()
                     {
-                        new Psu()
+                        new()
                         {
                             Name = "Seasonic Prime TX-1600 1600W Psu (PRIME-TX-1600)",
                             Description = "Pressing on with its One Seasonic Initiative, the PRIME TX, PRIME PX and" +
@@ -203,8 +208,11 @@ namespace ComputeYourself.Data
                                           "Ultra series. The PRIME Series has always demonstrated outstanding" +
                                           "performance and have become the epitome of technological excellence" +
                                           "and quality through the years",
-                            Price = 252390,
-                            Brand = ManuFacturerBrand.Seagate,
+                            productOfficialWebsite = "https://seasonic.com/prime-tx",
+                            mainImage = "https://seasonic.com/pub/media/catalog/product/cache/3cbda8e892dc62fc02660815c2a4b231/p/r/prime-tx-1600-1300-back-panel-angled_1.jpg",
+                            modelNumber = "PRIME-TX-1600",
+                            Price = 651.39M,
+                            Brand = "Seagate",
                             Warranty = 5,
                             Rating = 0,
                             Capacity = 1600,
@@ -214,169 +222,28 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
-                // Ram
+                
                 if (!context.Rams.Any())
                 {
                     context.Rams.AddRange(new List<Ram>()
                     {
-                        new Ram()
+                        new()
                         {
                             Name =
                                 "CORSAIR Vengeance LPX Black DDR4, 4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
                             Description = "4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
-                            Price = 145990,
-                            Brand = ManuFacturerBrand.Corsair,
+                            productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Memory/VENGEANCE-LPX/p/CMK32GX4M2G4000C19",
+                            mainImage = "https://www.corsair.com/us/en/medias/sys_master/images/images/hbc/h39/9650694783006/CMK32GX4M2G4000C19/Gallery/VENG_LPX_BLK_01/-CMK32GX4M2G4000C19-Gallery-VENG-LPX-BLK-01.png_1200Wx1200H",
+                            modelNumber = "CMK32GX4M2F4000C19",
+                            Price = 376.79M,
+                            Brand = "Corsair",
                             Warranty = 10,
                             Rating = 0,
                             Size = 32,
-                            MemoryType = MemoryCompatibility.DDR4,
+                            MemoryType = "DDR4",
                             Frequency = 4000,
                             Latency = 12,
                             HeatSink = true
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                // Media
-                if (!context.Medias.Any())
-                {
-                    context.Medias.AddRange(new List<Media>()
-                    {
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/fujitsu-intel-xeon-silver-4310-12c-2-10-ghz-py-cp62xh-00647645"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/processzor-huto-noctua-nh-d15-14cm-chromax-black-nh-d15-ch-bk-00775422"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/ssd_meghajtok?isFiltered=1&categoryId=12176&type=&search=&filter[price][min]=694524"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.zotac.com/us/product/graphics_card/zotac-gaming-geforce-rtx-3090-trinity-oc"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.asrock.com/mb/Intel/H310CM-DVS/index.asp"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/asrock-h310cm-dvs-90-mxb8k0-a0uayz-00128778"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/haz-zalman-z-machine-500-zm-z500-00520366"
-                        },
-                        new Media()
-                        {
-                            MediaURL = "https://www.pcx.hu/corsair-vengeance-lpx-fekete-ddr4-4000mhz-32gb-2-x-16gb-memoria-cmk32gx4m2f4000c19-00195455"
-                        },
-                    });
-                    context.SaveChanges();
-                }
-                //Cpu & Media
-                if (!context.CpuMedias.Any())
-                {
-                    context.CpuMedias.AddRange(new List<Cpu_Media>()
-                    {
-                        new Cpu_Media()
-                        {
-                            CpuId = 1,
-                            MediaId = 1
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //CpuCooler & Media
-                if (!context.CpuCoolerMedias.Any())
-                {
-                    context.CpuCoolerMedias.AddRange(new List<CpuCooler_Media>()
-                    {
-                        new CpuCooler_Media()
-                        {
-                            CpuCoolerId = 1,
-                            MediaId = 2
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //Drive & Media
-                if (!context.DriveMedias.Any())
-                {
-                    context.DriveMedias.AddRange(new List<Drive_Media>()
-                    {
-                        new Drive_Media()
-                        {
-                            DriveId = 1,
-                            MediaId = 3
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //Gpu & Media
-                if (!context.GpuMedias.Any())
-                {
-                    context.GpuMedias.AddRange(new List<Gpu_Media>()
-                    {
-                        new Gpu_Media()
-                        {
-                            GpuId = 1,
-                            MediaId = 4
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //MotherBoard & Media
-                if (!context.MotherBoardMedias.Any())
-                {
-                    context.MotherBoardMedias.AddRange(new List<MotherBoard_Media>()
-                    {
-                        new MotherBoard_Media()
-                        {
-                            MotherBoardId = 1,
-                            MediaId = 5
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                // PcCases & Media
-                if (!context.PcCaseMedias.Any())
-                {
-                    context.PcCaseMedias.AddRange(new List<PcCase_Media>()
-                    {
-                        new PcCase_Media()
-                        {
-                            PcCaseId = 1,
-                            MediaId = 6
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //Psu & Media
-                if (!context.PsuMedias.Any())
-                {
-                    context.PsuMedias.AddRange(new List<Psu_Media>()
-                    {
-                        new Psu_Media()
-                        {
-                            PsuId = 1,
-                            MediaId = 8
-                        }
-                    });
-                    context.SaveChanges();
-                }
-                //Ram & Media
-                if (!context.RamMedias.Any())
-                {
-                    context.RamMedias.AddRange(new List<Ram_Media>()
-                    {
-                        new Ram_Media()
-                        {
-                            RamId = 1,
-                            MediaId = 7
                         }
                     });
                     context.SaveChanges();
