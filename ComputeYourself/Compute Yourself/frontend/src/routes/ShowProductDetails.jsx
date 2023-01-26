@@ -3,7 +3,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 
 export default function ShowProductDetails() {
@@ -27,16 +33,22 @@ export default function ShowProductDetails() {
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
     // ami most bent van az az összes adatból való magic, not so good.
     return (
-        <div>
-            <Button  variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
-            <table>
-                <thead>
-                    <tr>{Object.keys(data).map((propName, idx) => <td key={idx}> {propName}</td>)}</tr>
-                </thead>
-                <tbody>
-                    <tr>{Object.keys(data).map((propName, idx) => <td key={idx}> {data[propName]}</td>)}</tr>
-                </tbody>
-            </table>
-        </div>
+        <>
+        <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <TableHead>
+                        <TableRow>
+                            {Object.keys(data).map((propName, idx) => <TableCell align="right">{propName}</TableCell>)}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        <TableRow>
+                            {Object.values(data).map((propName, idx) => <TableCell align="right">{propName}</TableCell>)}
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </>
     );
 }
