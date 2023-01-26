@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 
-export default function AddNewMotherBoard() {
+export default function EditMotherBoard() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
     const [itemId] = useState(localStorage.getItem("itemId"));
@@ -20,7 +20,7 @@ export default function AddNewMotherBoard() {
             if (data[e.target.name] == true) {
                 data[e.target.name] = false;
             } else {
-                formValues[e.target.name] = true;
+                data[e.target.name] = true;
             }
         } else {
             data[e.target.name] = e.target.value;
