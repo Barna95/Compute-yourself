@@ -539,7 +539,199 @@ namespace ComputeYourself.Data
                             Capacity = 7680,
                             MaxWrite = 2000,
                             MaxRead = 2100
-                        }
+                        },
+                        new()
+                        {
+                            Name = "Kingston Data Center SSD DC500M 1.92TB",
+                            Description = "Kingston’s Data Center 500 (DC500R / DC500M) Series of solid-state drives" + 
+                                          " are high performance 6Gbps SATA SSDs using the latest 3D TLC NAND, designed" + 
+                                          " for Read Centric and Mixed-Use server workloads. ",
+                            productOfficialWebsite = "https://www.kingston.com/en/ssd/dc500-data-center-solid-state-drive",
+                            mainImage = "https://media.kingston.com/kingston/hero/ktc-hero-ssd-dc500r-dc500m-lg.jpg",
+                            modelNumber = "DC500R / DC500M",
+                            Price = 350.08M,
+                            Brand = "Kingston",
+                            Warranty = 3,
+                            Rating = 5,
+                            ConnectionType = "SATA3",
+                            Capacity = 1920,
+                            MaxWrite = 520,
+                            MaxRead = 555
+                        },
+                        new()
+                        {
+                            Name = "Samsung 870 QVO SSD",
+                            Description = "More storage space, more options The 870 QVO is Samsung's latest" + 
+                                          " 2nd generation QLC SSD and provides the largest available storage" + 
+                                          " in its category, up to 8 TB. It offers an incredible step forward" + 
+                                          " for everyday PC users who want to equip their desktop PC or laptop" + 
+                                          " with the most storage available on the market without sacrificing performance",
+                            productOfficialWebsite = "https://www.samsung.com/en/memory-storage/sata-ssd/ssd-870-qvo-sata-3-2-5-inch-2tb-mz-77q2t0bw/",
+                            mainImage = "https://images.samsung.com/is/image/samsung/hu-870-qvo-sata-3-2-5-ssd-mz-77q2t0bw-frontblack-265553696?$360_288_PNG$",
+                            modelNumber = "S870QVO",
+                            Price = 200.68M,
+                            Brand = "Samsung",
+                            Warranty = 3,
+                            Rating = 4,
+                            ConnectionType = "SATA3",
+                            Capacity = 2000,
+                            MaxWrite = 530,
+                            MaxRead = 560
+                        },
+                        new()
+                        {
+                            Name = "Crucial MX500 1TB SATA3 2,5 SSD",
+                            Description = "Fly through everything you do Start your system in seconds, load files almost" + 
+                                          " instantly, and accelerate the most demanding applications with the Crucial" + 
+                                          " MX500. Our dynamic write acceleration technology uses an adaptable pool of " + 
+                                          "high-speed single-level cell flash memory to generate blistering speeds.",
+                            productOfficialWebsite = "https://www.crucial.com/ssd/mx500/ct1000mx500ssd1/ct11514117?gclid=Cj0KCQiA_bieBhDSARIsADU4zLcTPkP0QkIm3GTIUCRTvFKlIt5pTOqyLHko26UcedFkLu5hQbCS2AwaAuo3EALw_wcB&pr_rd_page=4&ef_id=Cj0KCQiA_bieBhDSARIsADU4zLcTPkP0QkIm3GTIUCRTvFKlIt5pTOqyLHko26UcedFkLu5hQbCS2AwaAuo3EALw_wcB:G:s&gclsrc=aw.ds#res-benefits",
+                            mainImage = "https://content.crucial.com/content/dam/crucial/ssd-products/mx500/images/product/crucial-mx500-2-5inch-product-front-image.psd.transform/medium-png/image.png",
+                            modelNumber = "CT1000MX500SSD1",
+                            Price = 85.00M,
+                            Brand = "Crucial",
+                            Warranty = 3,
+                            Rating = 4,
+                            ConnectionType = "SATA3",
+                            Capacity = 1000,
+                            MaxWrite = 510,
+                            MaxRead = 560
+                        },
+                        new()
+                        {
+                            Name = "Corsair Force MP600 series Gen4 NVMe PCIe M.2 SSD 2TB",
+                            Description = "The CORSAIR Force MP600 Gen4 PCIe x4 NVMe M.2 SSD provides extreme storage performance," + 
+                                          " using Gen4 PCIe technology to achieve blazing fast sequential read speeds of up" + 
+                                          " to 4,950MB/s.",
+                            productOfficialWebsite = "https://www.corsair.com/ww/en/Categories/Products/Storage/M-2-SSDs/Force-Series%E2%84%A2-Gen-4-PCIe-NVMe-M-2-SSD/p/CSSD-F2000GBMP600",
+                            mainImage = "https://www.corsair.com/medias/sys_master/images/images/hde/hc9/9251964452894/-CSSD-F2000GBMP600-Gallery-MP600-01.png",
+                            modelNumber = "CSSD-F2000GBMP600",
+                            Price = 160.68M,
+                            Brand = "Corsair",
+                            Warranty = 3,
+                            Rating = 5,
+                            ConnectionType = "M.2",
+                            Capacity = 2000,
+                            MaxWrite = 4250,
+                            MaxRead = 4950
+                        },
+                        new()
+                        {
+                            Name = "GIGABYTE SSD M.2 2280 NVMe 2TB AORUS",
+                            Description = "AORUS Gen4 7000s SSD meets the required performance and dimensions of PS5 M.2" + 
+                                          " SSD. According to the expansion requirements  Adopting by Aluminum Heat " + 
+                                          "Spreaders with Nanocarbon Coating, AORUS Gen4 7000s SSD improves thermal " + 
+                                          "dissipation and helps to prevent throttling.of PS5, SSD Sequential read " + 
+                                          "speed needs to be up to 5,500MB/s. However, AORUS Gen4 7000s SSD delivers " + 
+                                          "blazing speeds: up to 7,000 MB/s for sequential read, which is better than " + 
+                                          "regular Gen4 SSDs.",
+                            productOfficialWebsite = "https://www.gigabyte.com/eu/SSD/AORUS-Gen4-7000s-SSD-2TB#kf",
+                            mainImage = "https://1.pcx.hu/pcx_upload/termek-kepek/38/b/382090_1.jpg",
+                            modelNumber = "GP-AG70S2TB-P",
+                            Price = 110.68M,
+                            Brand = "GIGABYTE",
+                            Warranty = 3,
+                            Rating = 5,
+                            ConnectionType = "M.2",
+                            Capacity = 2000,
+                            MaxWrite = 6850,
+                            MaxRead = 7000
+                        },
+                        new()
+                        {
+                            Name = "Silicon Power UD70, 2048GB, PCIe Gen3x4 & NVMe, SSD ",
+                            Description = "With 3D QLC NAND storage technology, the UD70 PCIe Gen 3x4 incorporates a much" + 
+                                          " higher memory cell density, allowing for greater storage capacity on a smaller" + 
+                                          " footprint – up to 2TB. Plus, NVMe 1.3 support, read speeds up to 3,400MB/s, and" + 
+                                          " write speeds up to 3,000MB/s make this M.2 2280 SSD a force to be reckoned with." + 
+                                          " As an overall cost-efficient option, the UD70 is truly an all-around performer" + 
+                                          " that's perfect for DIY system builders, casual gamers and video editors, and simply" + 
+                                          " those who are looking to upgrade their PC",
+                            productOfficialWebsite = "https://www.silicon-power.com/web/us/product-UD70",
+                            mainImage = "https://www.silicon-power.com/images/product/apple/495/SP4TB.jpg",
+                            modelNumber = "SP02KGBP34UD7005",
+                            Price = 75.68M,
+                            Brand = "Silicon Power",
+                            Warranty = 3,
+                            Rating = 4,
+                            ConnectionType = "M.2",
+                            Capacity = 2048,
+                            MaxWrite = 3000,
+                            MaxRead = 3400
+                        },
+                        new()
+                        {
+                            Name = "Team Group 2TB SSD M.2 meghajtó Cardea A440",
+                            Description = "Enjoy the lightning speed of the PCIe Gen4 x4, Featuring two patented" + 
+                                          " heat sinks, Effective cooling—flexible installation, Supports the latest" + 
+                                          " NVMe 1.4 standard, ",
+                            productOfficialWebsite = "https://www.teamgroupinc.com/en/product/cardea-a440",
+                            mainImage = "https://www.teamgroupinc.com/en/upload/product_color_m/2526d25210b27439d4c1e0df65aea75a.jpg",
+                            modelNumber = "TM8FPZ002T0C327",
+                            Price = 80.00M,
+                            Brand = "Team Group",
+                            Warranty = 3,
+                            Rating = 5,
+                            ConnectionType = "M.2",
+                            Capacity = 2000,
+                            MaxWrite = 6900,
+                            MaxRead = 7000
+                        },
+                        new()
+                        {
+                            Name = "BIOSTAR 1TB M700 NVMe 1.3 ",
+                            Description = "M700 series 1TB SSD, PCI-Express Gen3x4 interface, Support NVMe v1.3",
+                            productOfficialWebsite = "https://www.biostar.com.tw/app/en/ssd/introduction.php?S_ID=32",
+                            mainImage = "https://www.biostar.com.tw/upload/Ssd/s20191128.png",
+                            modelNumber = "SS263PME3T",
+                            Price = 106.68M,
+                            Brand = "BIOSTAR",
+                            Warranty = 3,
+                            Rating = 4,
+                            ConnectionType = "M.2",
+                            Capacity = 1000,
+                            MaxWrite = 1650,
+                            MaxRead = 2000
+                        },
+                        new()
+                        {
+                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD",
+                            Description = "PM1643a delivers high-value faster read speeds while improving TCO with" +
+                                          " outstanding reliability, security and endurance. It provides a powerful" +
+                                          " solution for mission-critical enterprise applications. It also provides" +
+                                          " significantly more capacity up to 30.72 TB",
+                            productOfficialWebsite = "https://semiconductor.samsung.com/ssd/enterprise-ssd/pm1643-pm1643a/mzilt7t6hala-00007/",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0034/7288/3779/products/MZILT3T8HBLS.jpg?v=1630685770",
+                            modelNumber = "MZILT7T6HALA-00007",
+                            Price = 1960.68M,
+                            Brand = "Samsung",
+                            Warranty = 2,
+                            Rating = 0,
+                            ConnectionType = "SATA3",
+                            Capacity = 7680,
+                            MaxWrite = 2000,
+                            MaxRead = 2100
+                        },
+                        new()
+                        {
+                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD",
+                            Description = "PM1643a delivers high-value faster read speeds while improving TCO with" +
+                                          " outstanding reliability, security and endurance. It provides a powerful" +
+                                          " solution for mission-critical enterprise applications. It also provides" +
+                                          " significantly more capacity up to 30.72 TB",
+                            productOfficialWebsite = "https://semiconductor.samsung.com/ssd/enterprise-ssd/pm1643-pm1643a/mzilt7t6hala-00007/",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0034/7288/3779/products/MZILT3T8HBLS.jpg?v=1630685770",
+                            modelNumber = "MZILT7T6HALA-00007",
+                            Price = 1960.68M,
+                            Brand = "Samsung",
+                            Warranty = 2,
+                            Rating = 0,
+                            ConnectionType = "SATA3",
+                            Capacity = 7680,
+                            MaxWrite = 2000,
+                            MaxRead = 2100
+                        },
+
                     });
                     context.SaveChanges();
                 }
