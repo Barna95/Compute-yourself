@@ -32,7 +32,10 @@ export default function AddNewPcCase() {
             }
         })
     };
-    // TODO -> input fields be required as its needed.
+
+    //TODO -> add enum so this works <div> Size Compatibility enum, no touchy <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)} /></div>
+
+    // input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different
     //input fields like checkbox or choose from enums in dropdown
     // so ill just leave it here for now.
@@ -45,7 +48,7 @@ export default function AddNewPcCase() {
             <div> Brand <input placeholder="" aria-label="{keys[6]}" type="text" name={keys[6]} onChange={e => handleChange(e)} /></div>
             <div> Warranty <input placeholder="" aria-label="{keys[7]}" type="number" name={keys[7]} onChange={e => handleChange(e)} required /></div>
             <div> Rating <input placeholder="" aria-label="{keys[8]}" type="number" name={keys[8]} onChange={e => handleChange(e)} required /></div>
-            <div> Size Compatibility enum, no touchy <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)}/></div>
+            
             <div> Max CpuCooler Height <input placeholder="" aria-label="{keys[1]}" type="number" name={keys[1]} onChange={e => handleChange(e)} required /></div>
             <div> Max GpuLength <input placeholder="" aria-label="{keys[2]}" type="number" name={keys[2]} onChange={e => handleChange(e)} required /></div>
             <div> Main Image <input placeholder="" aria-label="{keys[9]}" type="text" name={keys[9]} onChange={e => handleChange(e)} required /></div>
