@@ -41,7 +41,11 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "Intel Core i9-11900K 3.50GHz S1200 BOX",
-                            Description = "About this item: The processor features Socket LGA-1200 socket for installation on the PCB, 16 MB of L3 cache rapidly retrieves the most used data available to improve system performance, 14 nm design offers great efficiency for computing, delivers nimble processing with balanced cost, performance, and power, To boost graphics and visual quality, the chipset has a built in Intel UHD Graphics 750 controller. Supports up to 3 monitors.",
+                            Description = "About this item: The processor features Socket LGA-1200 socket for installation on the PCB," + 
+                                          " 16 MB of L3 cache rapidly retrieves the most used data available to improve system performance," + 
+                                          " 14 nm design offers great efficiency for computing, delivers nimble processing with balanced cost," + 
+                                          " performance, and power, To boost graphics and visual quality, the chipset has a built in Intel UHD" + 
+                                          " Graphics 750 controller. Supports up to 3 monitors.",
                             productOfficialWebsite = "https://ark.intel.com/content/www/us/en/ark/products/212325/intel-core-i911900k-processor-16m-cache-up-to-5-30-ghz.html",
                             mainImage = "https://alphaszerviz.hu/product/intel-core-i9-11900-dobozos-lga1200-processzor.jpg",
                             modelNumber = "BX8070811900K",
@@ -63,7 +67,11 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "Intel Core i7 3,4GHz LGA1700 30MB (i7-13700K) box ",
-                            Description = "About this item: 16 cores (8 P-cores + 8 E-cores) and 24 threads. Integrated Intel UHD Graphics 770 included, Performance hybrid architecture integrates two core microarchitectures, prioritizing and distributing workloads to optimize performance, Up to 5.4 GHz unlocked. 30M Cache, Compatible with Intel 600 series and 700 series chipset-based motherboards, Turbo Boost Max Technology 3.0, and PCIe 5.0 & 4.0 support. Intel Optane Memory support. No thermal solution included",
+                            Description = "About this item: 16 cores (8 P-cores + 8 E-cores) and 24 threads. Integrated Intel" + 
+                                          " UHD Graphics 770 included, Performance hybrid architecture integrates two core microarchitectures," + 
+                                          " prioritizing and distributing workloads to optimize performance, Up to 5.4 GHz unlocked. 30M Cache, " + 
+                                          "Compatible with Intel 600 series and 700 series chipset-based motherboards, Turbo Boost Max Technology" + 
+                                          " 3.0, and PCIe 5.0 & 4.0 support. Intel Optane Memory support. No thermal solution included",
                             productOfficialWebsite = "https://ark.intel.com/content/www/us/en/ark/products/230500/intel-core-i713700k-processor-30m-cache-up-to-5-40-ghz.html",
                             mainImage = "https://s13emagst.akamaized.net/products/49567/49566533/images/res_3d25521f42e62caf57050f507bc62330.jpg",
                             modelNumber = "BX8071513700K",
@@ -85,7 +93,11 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "INTEL Core i5-13600KF 3,5GHz 24MB box",
-                            Description = "About this item: 14 cores (6 P-cores + 8 E-cores) and 20 threads, Performance hybrid architecture integrates two core microarchitectures, prioritizing and distributing workloads to optimize performance, Up to 5.1 GHz unlocked. 24M Cache, Compatible with Intel 600 series and 700 series chipset-based motherboards, Turbo Boost Max Technology 3.0, and PCIe 5.0 & 4.0 support. Intel Optane Memory support. No thermal solution included. Discrete graphics required",
+                            Description = "About this item: 14 cores (6 P-cores + 8 E-cores) and 20 threads, Performance hybrid" + 
+                                          " architecture integrates two core microarchitectures, prioritizing and distributing workloads" + 
+                                          " to optimize performance, Up to 5.1 GHz unlocked. 24M Cache, Compatible with Intel 600 series" + 
+                                          " and 700 series chipset-based motherboards, Turbo Boost Max Technology 3.0, and PCIe 5.0 & 4.0" + 
+                                          " support. Intel Optane Memory support. No thermal solution included. Discrete graphics required",
                             productOfficialWebsite = "https://ark.intel.com/content/www/us/en/ark/products/212271/intel-core-i511400f-processor-12m-cache-up-to-4-40-ghz.html",
                             mainImage = "https://s13emagst.akamaized.net/products/49567/49566529/images/res_f223ba4c86ab65f1665eac672c219459.jpg",
                             modelNumber = "BX8071513600KF",
@@ -107,7 +119,12 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "Intel Core i3 3,30GHz LGA1700 12MB (i3-12100F) box",
-                            Description = "About this item: The processor features Socket LGA-1200 socket for installation on the PCB, 16 MB of L3 cache rapidly retrieves the most used data available to improve system performance, 14 nm design offers great efficiency for computing, delivers nimble processing with balanced cost, performance, and power, To boost graphics and visual quality, the chipset has a built in Intel UHD Graphics 750 controller. Supports up to 3 monitors.",
+                            Description = "About this item: The processor features Socket LGA-1200 socket for" + 
+                                          " installation on the PCB, 16 MB of L3 cache rapidly retrieves the most" + 
+                                          " used data available to improve system performance, 14 nm design offers" + 
+                                          " great efficiency for computing, delivers nimble processing with balanced" + 
+                                          " cost, performance, and power, To boost graphics and visual quality, the" + 
+                                          " chipset has a built in Intel UHD Graphics 750 controller. Supports up to 3 monitors.",
                             productOfficialWebsite = "https://ark.intel.com/content/www/us/en/ark/products/132223/intel-core-i312100f-processor-12m-cache-up-to-4-30-ghz.html",
                             mainImage = "https://s13emagst.akamaized.net/products/42720/42719120/images/res_496fc9608c5482edcfa13ccd56e0392d.jpg",
                             modelNumber = "BX8071512100F",
@@ -129,7 +146,8 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "Intel Core i5 2,60GHz LGA1200 12MB (i5-11400F) box ",
-                            Description = "About this item: Compatible with Intel 500 series & select Intel 400 series chipset based motherboards, Intel Optane Memory Support, PCIe Gen 4.0 Support, Thermal solution included",
+                            Description = "About this item: Compatible with Intel 500 series & select Intel 400 series" + 
+                                          " chipset based motherboards, Intel Optane Memory Support, PCIe Gen 4.0 Support, Thermal solution included",
                             productOfficialWebsite = "https://ark.intel.com/content/www/us/en/ark/products/212271/intel-core-i511400f-processor-12m-cache-up-to-4-40-ghz.html",
                             mainImage = "https://p1.akcdn.net/full/793089615.intel-i5-11400f-6-core-2-6ghz-lga1200-box.jpg",
                             modelNumber = "BX8070811400F",
@@ -217,7 +235,9 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "AMD AM4 CPU Ryzen 3 4100 3.8GHz 6MB Cach",
-                            Description = "AMD StoreMI Technology A fast and easy way to expand and accelerate the storage in a desktop PC ith an AMD Ryzen™ processor. AMD Ryzen™ VR-Ready Premium For the best possible VR experiences, AMD offers select Ryzen™ VR-Ready Premium processors. ",
+                            Description = "AMD StoreMI Technology A fast and easy way to expand and accelerate " + 
+                                          "the storage in a desktop PC ith an AMD Ryzen™ processor. AMD Ryzen™ VR-Ready" + 
+                                          " Premium For the best possible VR experiences, AMD offers select Ryzen™ VR-Ready Premium processors. ",
                             productOfficialWebsite = "https://www.amd.com/en/products/cpu/amd-ryzen-3-4100",
                             mainImage = "https://2.pcx.hu/pcx_upload/termek-kepek/89/b/890517_1.jpg",
                             modelNumber = "100-100000510BOX",
@@ -239,7 +259,10 @@ namespace ComputeYourself.Data
                         new()
                         {
                             Name = "AMD AM4 CPU Ryzen 5 5600X",
-                            Description = "AMD \"Zen 3\" Core Architecture The fastest cores in the world for PC gamers. AMD StoreMI Technology A fast and easy way to expand and accelerate the storage in a desktop PC with an AMD Ryzen™ processor. AMD Ryzen™ Master Utility The Simple and Powerful Overclocking Utility for AMD Ryzen™ processors.§",
+                            Description = "AMD \"Zen 3\" Core Architecture The fastest cores in the world for PC gamers." + 
+                                          " AMD StoreMI Technology A fast and easy way to expand and accelerate the storage " + 
+                                          "in a desktop PC with an AMD Ryzen™ processor. AMD Ryzen™ Master Utility The Simple " + 
+                                          "and Powerful Overclocking Utility for AMD Ryzen™ processors.",
                             productOfficialWebsite = "https://www.amd.com/en/products/cpu/amd-ryzen-5-5600xhtml",
                             mainImage = "https://www.amd.com/system/files/styles/600px/private/2022-11/1761310-amd-ryzen-5-7000-series-PIB-angle-1260x709.png?itok=c1aaXAmo",
                             modelNumber = "100-100000065BOX",
@@ -284,6 +307,211 @@ namespace ComputeYourself.Data
                             CoolerType = "Air",
                             Height = 161,
                             CpuType = "LGA1150"
+                        },                        
+                        new ()
+                        {
+                            Name = "Noctua NH-P1",
+                            Description = "The NH-P1 is Noctua’s first passive CPU cooler and has been custom-designed for fanless " + 
+                                          "operation from the ground up: in enclosures with good natural convection, its six heatpipes " + 
+                                          "and thick, widely spaced heatsink fins enable it to cool modern high-end CPUs with low to " + 
+                                          "moderate heat dissipation completely passively (see setup guidelines and list of recommended cases)." + 
+                                          " For further enhanced performance or semi-passive setups that only spin up their fans when necessary, " + 
+                                          "the NH-P1 can be outfitted with a low-speed, ultra-quiet 120mm fan such as the NF-A12x25 LS-PWM. Topped" + 
+                                          " off with the professional Torx-based SecuFirm2+ mounting system, Noctua’s award-winning NT-H2 thermal" + 
+                                          " compound and a 6-year manufacturer’s warranty, the NH-P1 is the ideal cornerstone for premium-grade " + 
+                                          "fanless or semi-passive builds",
+                            productOfficialWebsite = "https://noctua.at/en/nh-p1",
+                            mainImage = "https://noctua.at/pub/media/catalog/product/cache/0cdbea399f8ed06da39b3854134f6934/n/h/nh_p1_1_1.jpg",
+                            modelNumber = "NH-P1-CH.BK",
+                            Price = 110.00M,
+                            Brand = "Noctua",
+                            Warranty = 3,
+                            Rating = 5,
+                            CoolerType = "Air",
+                            Height = 158,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " + 
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " + 
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "DeepCool AS500 PLUS WH",
+                            Description = "DeepCool AS500 PLUS WH single tower CPU cooler boasts a five " + 
+                                          "heat pipe, all white design with two 140mm PWM fans for great" + 
+                                          " performance in a slim profile",
+                            productOfficialWebsite = "https://www.deepcool.com/products/Cooling/cpuaircoolers/AS500-PLUS-WH-High-Performance-CPU-Cooler/2021/12847.shtml",
+                            mainImage = "https://cdn.deepcool.com/public/ProductFile/DEEPCOOL/Cooling/CPUAirCoolers/AS500PLUS_WH/Gallery/608X760/01.jpg?fm=webp&q=60",
+                            modelNumber = "AS500+WH",
+                            Price = 105.00M,
+                            Brand = "DeepCool",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Air",
+                            Height = 159,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "COOLERMASTER Wraith Ripper TR4",
+                            Description = "THE AIR COOLER FOR THE 32-CORE RYZEN THREADRIPPER 2990WX",
+                            productOfficialWebsite = "https://www.coolermaster.com/catalog/coolers/cpu-air-coolers/wraith-ripper/",
+                            mainImage = "https://cdn.coolermaster.com/media/assets/1003/wraith-ripper-gallery-1-image.png",
+                            modelNumber = "CM-WRTR4",
+                            Price = 130.00M,
+                            Brand = "COOLERMASTER",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Air",
+                            Height = 159,
+                            CpuType = "AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "ZALMAN CNPS16X BLACK",
+                            Description = "REAL RGB LED CPU COOLER WITH 4D PATENTED CORRUGATED FIN DESIGN",
+                            productOfficialWebsite = "https://www.zalman.com/EN/Product/ProductDetail.do?pageIndex=1&pageSize=10&productSeq=1110&searchCategory1=0&searchCategory2=-99&searchCategory3=-99&searchKey=&searchWord=CNPS16X",
+                            mainImage = "https://www.zalman.com/EN/Product/ProductDetail.do?pageIndex=1&pageSize=10&productSeq=1110&searchCategory1=0&searchCategory2=-99&searchCategory3=-99&searchKey=&searchWord=CNPS16X",
+                            modelNumber = "CNPS16X BK",
+                            Price = 105.00M,
+                            Brand = "ZALMAN",
+                            Warranty = 3,
+                            Rating = 5,
+                            CoolerType = "Air",
+                            Height = 165,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "Cooler Master - MasterAir MA620P",
+                            Description = "The dual tower heatsink has a combination of 2 sets of" + 
+                                          " heatsink towers with 2 sets of MasterFan MF120R RGB. The" + 
+                                          " uniquely designed heatsink allows bigger and more spread" + 
+                                          " out surface area, while the MF120R RGB fans give added air" + 
+                                          " pressure from the outside and inside the heatsink to generate" + 
+                                          " massive cooling performance",
+                            productOfficialWebsite = "https://www.coolermaster.com/catalog/coolers/cpu-air-coolers/masterair-ma620p/",
+                            mainImage = "https://cdn.coolermaster.com/media/assets/1025/1-ma620p_53-purpule-image.png",
+                            modelNumber = "MAP-D6PN-218PC-R1",
+                            Price = 60.92M,
+                            Brand = "COOLERMASTER",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Air",
+                            Height = 165,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "Thermaltake Frio Advanced ",
+                            Description = "Heat-pipe Direct Touch Technology, Supports 230W Cooling Performance- 5" + 
+                                          " x Ø6 mm heat-pipes direct touch CPU surface increasing heat conductivity." + 
+                                          "- High density Aluminum fins allow larger surface area to quick dissipate heat." + 
+                                          "- Premium thermal grease maximizes heat transfer from the CPU into the cooler base" + 
+                                          " for rapid dissipation.Dual 13cm Over-clocking Fan, PWM function with 800~2,100 RPM" + 
+                                          " Speed- A pair of high performance red bladed fans generate excellent cooling power." + 
+                                          "- Tool-less fan installation provides great convenience for users." + 
+                                          "- Vibration-absorbent gaskets decrease noise during operation." + 
+                                          "- Fan speed at the lowest RPM provides good performance and very low noise." + 
+                                          "Universal Socket Compatibility & Accessory Package- All-in-one back-plate design," + 
+                                          " offers support for all Intel and AMD platforms- Universal socket support",
+                            productOfficialWebsite = "http://nordic.thermaltake.com/products-model.aspx?id=C_00001822",
+                            mainImage = "http://nordic.thermaltake.com/db/imgs/pdt/angle/CLP0596_e282b9bb7a99497089596476ea019e0f.jpg",
+                            modelNumber = "CLP0596",
+                            Price = 55.00M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Air",
+                            Height = 159,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "Be quiet! Pure Rock 2 FX Black ARGB",
+                            Description = "Pure Rock 2 FX Black combines vibrant ARGB illumination with high cooling" + 
+                                          " efficiency and is excellent for quiet multimedia and gaming systems. With" + 
+                                          " a Light Wings 120mm PWM high-speed fan, 150W TDP cooling efficiency and four" + 
+                                          " 6mm high-performance heatpipes, Pure Rock 2 FX Black offers an excellent" + 
+                                          " price-to-performance ratio.",
+                            productOfficialWebsite = "https://www.bequiet.com/en/cpucooler/3739",
+                            mainImage = "https://www.bequiet.com/admin/ImageServer.php?ID=ec6b4a43561@be-quiet.net&omitPreview=true&width=576",
+                            modelNumber = "BK033",
+                            Price = 141.92M,
+                            Brand = "Be quiet!",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Air",
+                            Height = 155,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "NZXT Kraken Z63 RGB 280mm",
+                            Description = "The NH-D15 chromax.black is an all-black version of Noctua’s award-winning" +
+                                          "flagship model NH-D15 premium-quality quiet Cpu cooler. Thanks to the same" +
+                                          "proven dual-tower heatsink design and NF-A15 PWM fans, it stays true to" +
+                                          "the NH-D15’s successful formula of rivalling the performance of all-in-one" +
+                                          "water coolers while maintaining superb quietness of operation",
+                            productOfficialWebsite = "https://nzxt.com/product/kraken-z63-rgb",
+                            mainImage = "https://nzxt.com/assets/cms/34299/1631207832-kraken-z63-rgb-white-keyshot.png?auto=format&fit=crop&h=1000&w=1000",
+                            modelNumber = "RL-KRZ63-RW",
+                            Price = 300.92M,
+                            Brand = "NZXT",
+                            Warranty = 3,
+                            Rating = 5,
+                            CoolerType = "Water",
+                            Height = 350,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "Fractal Design Celsius+ S36 Prisma",
+                            Description = "Celsius+ takes AIO water cooling to a new level with an ARGB-accented" + 
+                                          " pump face, a fully redesigned block and an upgraded on-radiator PWM " + 
+                                          "fan hub with ARGB support. Compatible with most common Intel/AMD sockets," + 
+                                          " including LGA1700 and AM5",
+                            productOfficialWebsite = "https://www.fractal-design.com/products/water-cooling/celsius/celsius-plus-s36-prisma/",
+                            mainImage = "https://www.fractal-design.com/app/uploads/2020/04/Celsius_S36_RGB_LGA_1700_Ready_2560px-540x540.jpg",
+                            modelNumber = "FD-W-2-S3602",
+                            Price = 255.00M,
+                            Brand = "Fractal Design",
+                            Warranty = 3,
+                            Rating = 4,
+                            CoolerType = "Water",
+                            Height = 400,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
+                        },
+                        new ()
+                        {
+                            Name = "Thermaltake Water 3.0 360 ARGB Sync",
+                            Description = "All-in-one 360mm liquid cooler with PWM fans that supports 5V RGB" + 
+                                          " capable motherboards",
+                            productOfficialWebsite = "https://www.thermaltake.com/water-3-0-360-argb-sync.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/6af153fd0a0c509bdfcdfb60a394dd9c/db/imgs/pdt/angle/CL-W234-PL12SW-A_0a0500231eaf4f1f8b4b30b685b2cb22.jpg",
+                            modelNumber = "CL-W234-PL12SW-A",
+                            Price = 141.92M,
+                            Brand = "Thermaltake",
+                            Warranty = 4,
+                            Rating = 5,
+                            CoolerType = "Water",
+                            Height = 360,
+                            CpuType = "Intel LGA2066, LGA2011-0 & LGA2011-3 (Square ILM), LGA1700 " +
+                                      "(included since Q4 2021, older coolers require NM-i17xx-MP83), " +
+                                      "LGA1200, LGA1156, LGA1155, LGA1151, LGA1150 & AMD AM4, AM5"
                         }
                     });
                     context.SaveChanges();
