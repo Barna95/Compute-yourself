@@ -24,6 +24,7 @@ import Drives from "./routes/Drives";
 import EditCpu from "./routes/EditProducts/EditCpu"
 import EditCpuCooler from "./routes/EditProducts/EditCpuCooler"
 import EditDrive from "./routes/EditProducts/EditDrive"
+import EditGpu from './routes/EditProducts/EditGpu';
 import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
 import EditPcCase from './routes/EditProducts/EditPcCase';
 import EditPsu from './routes/EditProducts/EditPsu';
@@ -39,6 +40,7 @@ import RootLayout from "./layouts/RootLayout";
 import ShowProductDetails from "./routes/ShowProductDetails";
 
 // import { productURL } from "./endpoints";
+
 
 
 
@@ -73,6 +75,7 @@ const router = createBrowserRouter(
       <Route path="product/pccase/edit" element={<EditPcCase/>} />
       <Route path="product/psu/edit" element={<EditPsu/>} />
       <Route path="product/ram/edit" element={<EditRam/>} />
+      <Route path="product/gpu/edit" element={<EditGpu/>} />
     </Route>
   )
 );
