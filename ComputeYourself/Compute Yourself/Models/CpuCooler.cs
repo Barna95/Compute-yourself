@@ -5,8 +5,6 @@ namespace ComputeYourself.Models
 {
     public class CpuCooler : Product, IEntityBase
     {
-        public int Id { get; set; }
-
         [Display(Name = "CoolerType")]
         [Required(ErrorMessage = "Size is required")]
         public string CoolerType { get; set; }
