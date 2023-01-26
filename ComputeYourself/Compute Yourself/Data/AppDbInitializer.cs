@@ -1784,8 +1784,7 @@ namespace ComputeYourself.Data
                     {
                         new()
                         {
-                            Name =
-                                "CORSAIR Vengeance LPX Black DDR4, 4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
+                            Name = "CORSAIR Vengeance LPX Black DDR4, 4000MHz 32GB (2 x 16GB) memory",
                             Description = "4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
                             productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Memory/VENGEANCE-LPX/p/CMK32GX4M2G4000C19",
                             mainImage = "https://www.corsair.com/us/en/medias/sys_master/images/images/hbc/h39/9650694783006/CMK32GX4M2G4000C19/Gallery/VENG_LPX_BLK_01/-CMK32GX4M2G4000C19-Gallery-VENG-LPX-BLK-01.png_1200Wx1200H",
@@ -1793,12 +1792,178 @@ namespace ComputeYourself.Data
                             Price = 376.79M,
                             Brand = "Corsair",
                             Warranty = 10,
-                            Rating = 0,
+                            Rating = 5,
                             Size = 32,
                             MemoryType = "DDR4",
                             Frequency = 4000,
                             Latency = 12,
                             HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "G.Skill Trident Z Neo CL14 (2x16GB)",
+                            Description = "Engineered and optimized for full compatibility on the latest AMD Ryzen platforms, " +
+                                          "Trident Z Neo brings unparalleled DRAM memory performance and vibrant RGB lighting " +
+                                          "to any gaming PC or workstation with latest AMD Ryzen CPUs and AMD DDR4 motherboards.",
+                            productOfficialWebsite = "https://www.gskill.com/product/165/326/1620977070/F4-3600C14D-32GTZNA",
+                            mainImage = "https://www.gskill.com/_upload/images/162097707010.png",
+                            modelNumber = "F4-3600C14D-32GTZN",
+                            Price = 316.79M,
+                            Brand = "G.Skill",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 32,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 14,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "Corsair Vengeance RGB PRO CL18 KIT2 ",
+                            Description = "CORSAIR VENGEANCE RGB PRO Series DDR4 overclocked memory lights up your PC with mesmerizing dynamic multi-zone RGB " +
+                                          "lighting, while delivering the best in DDR4 performance.CMK32GX4M2F4000C19",
+                            productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Memory/Vengeance-PRO-RGB-Black/p/CMW64GX4M2D3600C18",
+                            mainImage = "https://www.corsair.com/us/en/medias/sys_master/images/images/hb4/he1/9568426098718/CMW64GX4M2K4000C18/Gallery/Vengeance_RGB_Pro_01/-CMW64GX4M2K4000C18-Gallery-Vengeance-RGB-Pro-01.png_1200Wx1200H",
+                            modelNumber = "CMW64GX4M2D3600C18",
+                            Price = 300.79M,
+                            Brand = "Corsair",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 64,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 18,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "Patriot DDR4 3000MHz 64GB (2x32GB) Viper 4 Blackout Dual Channel CL16 1,35V",
+                            Description = "Patriot Viper 4 Blackout Series memory modules are designed with both true performance and" +
+                                          " sleek style in  mind. Built for the latest  matches perfectly with almost any PC build" +
+                                          " Edition Series provides top quality performance and platforms, the Viper 4 Blackout",
+                            productOfficialWebsite = "https://viper.patriotmemory.com/products/viper-4-blackout-ddr4-performance-memory-ram-viper-gaming-by-patriot-memory",
+                            mainImage = "https://1.pcx.hu/pcx_upload/termek-kepek/88/b/883711_1.jpg",
+                            modelNumber = "PVB464G300C6K",
+                            Price = 215.79M,
+                            Brand = "Corsair",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 64,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 16,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake Toughram XG RGB 2x16GB DDR4 3600MHz",
+                            Description = "4000MHz 32GB (2 x 16GB) memory CMK32GX4M2F4000C19",
+                            productOfficialWebsite = "https://www.thermaltake.com/toughram-xg-rgb-memory-ddr4-3600mhz-32gb-kit-16g-x2-white.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/6af153fd0a0c509bdfcdfb60a394dd9c/t/o/toughram_xg_rgb_memory_white_1_4.jpg",
+                            modelNumber = "RG06D416GX2-3600C18B",
+                            Price = 376.79M,
+                            Brand = "Thermaltake",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 32,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 18,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "Team Group T-Force XTREEM ARGB White ",
+                            Description = "A white and flawless morning star Full-screen light penetrating design keeps it colorful and translucent" +
+                                          " Premium overclocking 10-layer board Superior performance and capacity upgrade Selected high quality IC that" +
+                                          " is stable and reliable Support O.C. Profile for one click overclocking Support multiple lighting control software",
+                            productOfficialWebsite = "https://www.teamgroupinc.com/en/product/xtreem-argb-white-ddr4",
+                            mainImage = "https://www.teamgroupinc.com/en/upload/product_color_m/92eb10a8e81ab49f4bf3b5aab005bc73-20210126171008.jpg",
+                            modelNumber = "TF13D432G3600HC18JDC01",
+                            Price = 85.79M,
+                            Brand = "Team Group",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 32,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 18,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "CORSAIR Vengeance RGB RS DDR4. 3600MHz 32GB (4x8GB) ",
+                            Description = "CORSAIR VENGEANCE RGB RS DDR4 memory punches up your PC’s aesthetics with dynamic, individually addressable" +
+                                          " RGB lighting, while delivering outstanding performance optimized for Intel® and AMD motherboards",
+                            productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Memory/VENGEANCE-RGB-RS/p/CMG32GX4M4D3600C18",
+                            mainImage = "https://www.corsair.com/us/en/medias/sys_master/images/images/h32/hb2/9838239023134/CMG32GX4M4D3600C18/Gallery/VENGEANCE_RGB_RS_01/-CMG32GX4M4D3600C18-Gallery-VENGEANCE-RGB-RS-01.png_515Wx515H",
+                            modelNumber = "CMG32GX4M4D3600C18",
+                            Price = 80.79M,
+                            Brand = "Corsair",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 32,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 18,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "SILICON POWER XPOWER Zenith DDR4 3600MHz DIMM CL18 1.35V 32GB Kit2 ",
+                            Description = "Optimized For Hardcore Gamers And Modders Ranging from blazing speeds of 3200MHz to 4133MHz " +
+                                          "with low 1.35V – 1.4V power consumption, the Zenith allows for gameplay at the highest settings " +
+                                          "with automatic overclocking. Its fully optimized testing ensures complete compatibility on most " +
+                                          "leading high-end motherboards to support the most hardcore gamers and modders.",
+                            productOfficialWebsite = "https://www.silicon-power.com/web/us/product-Zenith_DDR4_Gaming_UDIMM",
+                            mainImage = "https://www.silicon-power.com/images/product/apple/518/Zenith_spec_ph.jpg",
+                            modelNumber = "SP032GXLZU360BDC",
+                            Price = 376.79M,
+                            Brand = "SILICON POWER",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 32,
+                            MemoryType = "DDR4",
+                            Frequency = 3600,
+                            Latency = 18,
+                            HeatSink = true
+                        },
+                        new()
+                        {
+                            Name = "Corsair Dominator Platinum RGB White 2X8GB 4000Mhz DDR4",
+                            Description = "CORSAIR DOMINATOR® PLATINUM RGB DDR4 Memory redefines premium DDR4 memory, with superior aluminum craftsmanship, " +
+                                          "tightly screened high-frequency memory chips and 12 ultra-bright, individually addressable CAPELLIX RGB LEDs",
+                            productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Memory/DOMINATOR-PLATINUM-RGB/p/CMT16GX4M2K4000C19W",
+                            mainImage = "https://www.corsair.com/us/en/medias/sys_master/images/images/h51/h23/9506492252190/CMT16GX4M2K4000C19W/Gallery/DOMINATOR_PLAT_RGB_WHITE_01/-CMT16GX4M2K4000C19W-Gallery-DOMINATOR-PLAT-RGB-WHITE-01.png_515Wx515H",
+                            modelNumber = "CMT16GX4M2K4000C19W",
+                            Price = 12.79M,
+                            Brand = "Corsair",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 4,
+                            MemoryType = "DDR4",
+                            Frequency = 2666,
+                            Latency = 19,
+                            HeatSink = false
+                        },
+                        new()
+                        {
+                            Name = "GOODRAM DDR4 4GB 2666MHz CL19 SR DIMM GR2666D464L19S/4G",
+                            Description = "DDR4 memory modules are a great solution for PCs. The DDR4 generation is the most popular " +
+                                          "format in the family of memory modules chosen by users today",
+                            productOfficialWebsite = "https://www.goodram.com/en/products/dram-ddr4-dimm-2/",
+                            mainImage = "https://www.goodram.com/wp-content/uploads/www-1920-v2-_0013__dram-pet-ddr4-dimm-1-1920x960.jpg",
+                            modelNumber = "CMK32GX4M2F4000C19",
+                            Price = 15.79M,
+                            Brand = "GOODRAM",
+                            Warranty = 10,
+                            Rating = 5,
+                            Size = 4,
+                            MemoryType = "DDR4",
+                            Frequency = 3200,
+                            Latency = 19,
+                            HeatSink = false
                         }
                     });
                     context.SaveChanges();
