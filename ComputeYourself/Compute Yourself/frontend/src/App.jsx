@@ -28,6 +28,7 @@ import AddNewMotherBoard from "./routes/AddNewProducts/AddNewMotherBoard";
 import AddNewPcCase from "./routes/AddNewProducts/AddNewPcCase";
 import AddNewPsu from "./routes/AddNewProducts/AddNewPsu";
 import AddNewRam from "./routes/AddNewProducts/AddNewRam";
+import EditCpu from "./routes/EditProducts/EditCpu"
 import reactLogo from "./assets/react.svg";
 import ShowProductDetails from "./routes/ShowProductDetails";
 // import { productURL } from "./endpoints";
@@ -55,6 +56,7 @@ const router = createBrowserRouter(
       <Route path="product/addnewpccase" element={<AddNewPcCase />} />
       <Route path="product/addnewpsu" element={<AddNewPsu />} />
       <Route path="product/addnewram" element={<AddNewRam />} />
+      <Route path="product/cpu/edit" element={<EditCpu />} />
     </Route>
   )
 );
