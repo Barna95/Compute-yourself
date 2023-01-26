@@ -1,4 +1,5 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./App.css";
 
 import {
@@ -9,17 +10,6 @@ import {
 } from "react-router-dom";
 
 import About from "./routes/About";
-import Cpus from "./routes/Cpus";
-import Psus from "./routes/Psus";
-import PcCases from "./routes/PcCases";
-import MotherBoards from "./routes/MotherBoards";
-import CpuCoolers from "./routes/CpuCoolers";
-import Gpus from "./routes/Gpus";
-import Home from "./routes/Home";
-import Rams from "./routes/Rams";
-import Drives from "./routes/Drives";
-import RootLayout from "./layouts/RootLayout";
-import Products from "./routes/Products";
 import AddNewCpu from "./routes/AddNewProducts/AddNewCpu";
 import AddNewCpuCooler from "./routes/AddNewProducts/AddNewCpuCooler";
 import AddNewDrive from "./routes/AddNewProducts/AddNewDrive";
@@ -28,7 +18,12 @@ import AddNewMotherBoard from "./routes/AddNewProducts/AddNewMotherBoard";
 import AddNewPcCase from "./routes/AddNewProducts/AddNewPcCase";
 import AddNewPsu from "./routes/AddNewProducts/AddNewPsu";
 import AddNewRam from "./routes/AddNewProducts/AddNewRam";
+import CpuCoolers from "./routes/CpuCoolers";
+import Cpus from "./routes/Cpus";
+import Drives from "./routes/Drives";
 import EditCpu from "./routes/EditProducts/EditCpu"
+import EditCpuCooler from "./routes/EditProducts/EditCpuCooler"
+import EditDrive from "./routes/EditProducts/EditDrive"
 import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
 import EditPcCase from './routes/EditProducts/EditPcCase';
 import Gpus from "./routes/Gpus";
@@ -39,10 +34,7 @@ import Products from "./routes/Products";
 import Psus from "./routes/Psus";
 import Rams from "./routes/Rams";
 import RootLayout from "./layouts/RootLayout";
-import EditCpuCooler from "./routes/EditProducts/EditCpuCooler"
-import EditDrive from "./routes/EditProducts/EditDrive"
 import ShowProductDetails from "./routes/ShowProductDetails";
-import reactLogo from "./assets/react.svg";
 
 // import { productURL } from "./endpoints";
 
@@ -74,6 +66,7 @@ const router = createBrowserRouter(
       <Route path="product/motherboard/edit" element={<EditMotherBoard />} />
       <Route path="product/cpucooler/edit" element={<EditCpuCooler />} />
       <Route path="product/drive/edit" element={<EditDrive />} />
+      <Route path="product/pccase/edit" element={<EditPcCase/>} />
     </Route>
   )
 );
