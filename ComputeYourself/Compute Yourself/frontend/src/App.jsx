@@ -1,25 +1,15 @@
 //import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./App.css";
 
 import {
     Route,
-  RouterProvider,
-  createBrowserRouter,
-  createRoutesFromElements,
+    RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements,
 } from "react-router-dom";
 
 import About from "./routes/About";
-import Cpus from "./routes/Cpus";
-import Psus from "./routes/Psus";
-import PcCases from "./routes/PcCases";
-import MotherBoards from "./routes/MotherBoards";
-import CpuCoolers from "./routes/CpuCoolers";
-import Gpus from "./routes/Gpus";
-import Home from "./routes/Home";
-import Rams from "./routes/Rams";
-import Drives from "./routes/Drives";
-import RootLayout from "./layouts/RootLayout";
-import Products from "./routes/Products";
 import AddNewCpu from "./routes/AddNewProducts/AddNewCpu";
 import AddNewCpuCooler from "./routes/AddNewProducts/AddNewCpuCooler";
 import AddNewDrive from "./routes/AddNewProducts/AddNewDrive";
@@ -28,9 +18,22 @@ import AddNewMotherBoard from "./routes/AddNewProducts/AddNewMotherBoard";
 import AddNewPcCase from "./routes/AddNewProducts/AddNewPcCase";
 import AddNewPsu from "./routes/AddNewProducts/AddNewPsu";
 import AddNewRam from "./routes/AddNewProducts/AddNewRam";
+import CpuCoolers from "./routes/CpuCoolers";
+import Cpus from "./routes/Cpus";
+import Drives from "./routes/Drives";
 import EditCpu from "./routes/EditProducts/EditCpu"
-import reactLogo from "./assets/react.svg";
+import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
+import Gpus from "./routes/Gpus";
+import Home from "./routes/Home";
+import MotherBoards from "./routes/MotherBoards";
+import PcCases from "./routes/PcCases";
+import Products from "./routes/Products";
+import Psus from "./routes/Psus";
+import Rams from "./routes/Rams";
+import RootLayout from "./layouts/RootLayout";
 import ShowProductDetails from "./routes/ShowProductDetails";
+import reactLogo from "./assets/react.svg";
+
 // import { productURL } from "./endpoints";
 
 const router = createBrowserRouter(
@@ -57,6 +60,7 @@ const router = createBrowserRouter(
       <Route path="product/addnewpsu" element={<AddNewPsu />} />
       <Route path="product/addnewram" element={<AddNewRam />} />
       <Route path="product/cpu/edit" element={<EditCpu />} />
+      <Route path="product/motherboard/edit" element={<EditMotherBoard />} />
     </Route>
   )
 );

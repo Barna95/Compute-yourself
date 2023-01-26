@@ -11,7 +11,7 @@ body {
   background: var(--secondary);
 }
 * {
-  color: #fff;
+  /* color: #fff; */
   margin: 0;
 }
 p {
