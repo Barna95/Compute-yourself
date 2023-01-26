@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 
 const Card = (props) => {
-    const [productId, setProductId] = useState([]);
     const navigate = useNavigate();
     const neededValues = [];
     const fillNeededValues =
@@ -13,7 +12,7 @@ const Card = (props) => {
                 <div>{value.rating}</div>,
                 <button
                     title="Go to Details"
-                    onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
+                    onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
                     )}
                 >Details</button>)
         });
@@ -22,15 +21,9 @@ const Card = (props) => {
         fillNeededValues;
     }, []);
 
-    useEffect(() => {
-        Object.keys(props.dataProperties.map((e) => setProductId(e.id)));
-    }, [neededValues])
-
-
     return (
         <div>
             <div>{neededValues}</div>
-            
         </div>
     )
 };

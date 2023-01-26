@@ -3,7 +3,6 @@ import "./App.css";
 
 import {
     Route,
-    Routes,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
@@ -20,8 +19,15 @@ import Home from "./routes/Home";
 import Rams from "./routes/Rams";
 import Drives from "./routes/Drives";
 import RootLayout from "./layouts/RootLayout";
-import Products from "./routes/Products"
-import AddNewCpu from "./routes/AddNewCpu"
+import Products from "./routes/Products";
+import AddNewCpu from "./routes/AddNewProducts/AddNewCpu";
+import AddNewCpuCooler from "./routes/AddNewProducts/AddNewCpuCooler";
+import AddNewDrive from "./routes/AddNewProducts/AddNewDrive";
+import AddNewGpu from "./routes/AddNewProducts/AddNewGpu";
+import AddNewMotherBoard from "./routes/AddNewProducts/AddNewMotherBoard";
+import AddNewPcCase from "./routes/AddNewProducts/AddNewPcCase";
+import AddNewPsu from "./routes/AddNewProducts/AddNewPsu";
+import AddNewRam from "./routes/AddNewProducts/AddNewRam";
 import reactLogo from "./assets/react.svg";
 import ShowProductDetails from "./routes/ShowProductDetails";
 // import { productURL } from "./endpoints";
@@ -42,6 +48,13 @@ const router = createBrowserRouter(
       <Route path="product/drive" element={<Drives />} />
       <Route path="product/details/" element={<ShowProductDetails />} />
       <Route path="product/addnewcpu" element={<AddNewCpu />} />
+      <Route path="product/addnewcpucooler" element={<AddNewCpuCooler />} />
+      <Route path="product/addnewdrive" element={<AddNewDrive />} />
+      <Route path="product/addnewgpu" element={<AddNewGpu />} />
+      <Route path="product/addnewmotherboard" element={<AddNewMotherBoard />} />
+      <Route path="product/addnewpccase" element={<AddNewPcCase />} />
+      <Route path="product/addnewpsu" element={<AddNewPsu />} />
+      <Route path="product/addnewram" element={<AddNewRam />} />
     </Route>
   )
 );
