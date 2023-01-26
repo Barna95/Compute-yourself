@@ -83,7 +83,7 @@ export default function ShowProductDetails() {
                     variant="outlined" 
                     size="small" 
                     title="Go to Edit"
-                    onClick={() => {localStorage.setItem("itemId", value.id); return navigate(`/product/${productType}/edit`, { replace: true, state: { itemId: value.id } })}}>
+                    onClick={() => {localStorage.setItem("itemId", data.id); return navigate(`/product/${productType}/edit`, { replace: true, state: { itemId: data.id } })}}>
                     Edit
                 </Button>
                 </Grid>
