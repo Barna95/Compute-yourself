@@ -15,13 +15,11 @@ export default function Rams() {
     }, []);
 
     return (
-        <div className='cpus'>
-            <button
+            <Button variant="outlined" size="small" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewram`, { replace: true, state: { formData: data, productType: "ram" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
             <Card dataProperties={data} productType="ram" />
-        </div>
     )
 }

@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
@@ -15,13 +15,11 @@ export default function PcCases() {
     }, []);
    
     return (
-        <div className='cpus'>
-            <button
+            <Button variant="outlined" size="small" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewpccase`, { replace: true, state: { formData: data, productType: "pccase" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
             <Card dataProperties={data} productType="pccase" />
-        </div>
     )
 }

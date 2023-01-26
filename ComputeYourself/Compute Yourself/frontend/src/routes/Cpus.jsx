@@ -1,7 +1,8 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
+import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router-dom";
 
 export default function Cpus() {
@@ -14,17 +15,13 @@ export default function Cpus() {
                 setData(response.data);
             });
     }, []);
-
-
-
     return (
-        <div className='cpus'>
-            <button
+
+            <Button variant="outlined" size="small" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewcpu`, { replace: true, state: { formData: data, productType: "cpu" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
             <Card dataProperties={data} productType="cpu" />
-        </div>
     );
 }

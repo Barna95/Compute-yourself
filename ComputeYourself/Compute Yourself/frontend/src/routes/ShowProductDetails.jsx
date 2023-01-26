@@ -1,9 +1,12 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-
-
+import Button from '@material-ui/core/Button';
+import Paper from '@mui/material/Paper';
+import { Grid, Rating, Typography } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function ShowProductDetails() {
     const [data, setData] = useState([]);
@@ -36,7 +39,7 @@ export default function ShowProductDetails() {
         } else if (x == 'id') {
             //do nothing
         } else {
-            renderValues.push(<td key={idx}>{data[x]}</td>);
+            renderValues.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{data[x]}:</Typography>);
         }    
     })
 
@@ -51,25 +54,40 @@ export default function ShowProductDetails() {
         } else if (x == 'id') {
             //do nothing
         } else {
-            renderKeys.push(<td key={idx}>{x}</td>);
+            renderKeys.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{x}:</Typography>);
         }
     })
-    
+
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
     // ami most bent van az az összes adatból való magic, not so good.
     return (
-        <div>
-            <button onClick={() => navigate("/product") }> go back </button>
-            <table>
-                <thead>
-                    <tr>{renderKeys}</tr>
-                </thead>
-                <tbody>
-                    <tr>{renderValues}</tr>
-                </tbody>
-            </table>
-        </div>
+
+        <>
+        <Paper>
+            <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
+            <Grid container md={12}>
+                <Grid item md={6}>
+                <Typography style={{fontSize: 20, fontWeight: 'bold' }}>{data.name}</Typography>
+
+                <Card sx={{ maxWidth: 550 }}>
+                <CardMedia
+                    sx={{ height: 330 }}
+                    image={picture}
+                    title="green iguana"
+                />
+                </Card>
+                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Math.round((data.price/388)*100)/100} €</Typography></Typography>
+                </Grid>
+                <Grid item md={3}>
+                {renderKeys}
+                </Grid>
+                <Grid item md={3}>
+                {renderValues}
+                </Grid>
+            </Grid>
+        </Paper>
+        </>
     );
 }

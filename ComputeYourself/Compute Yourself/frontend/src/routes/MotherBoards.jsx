@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
@@ -15,13 +15,11 @@ export default function MotherBoards() {
     }, []);
     
     return (
-        <div className='cpucoolers'>
-            <button
+            <Button variant="outlined" size="small" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewmotherboard`, { replace: true, state: { formData: data, productType: "motherboard" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
             <Card dataProperties={data} productType="motherboard" />
-        </div>
     )
 }

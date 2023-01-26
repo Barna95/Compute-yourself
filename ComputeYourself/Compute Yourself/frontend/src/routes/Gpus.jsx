@@ -15,13 +15,11 @@ export default function Gpus() {
     }, []);
 
     return (
-        <div className='cpus'>
-            <button
+            <Button variant="outlined" size="small" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewgpu`, { replace: true, state: { formData: data, productType: "gpu" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
             <Card dataProperties={data} productType="gpu" />
-        </div>
     )
 }

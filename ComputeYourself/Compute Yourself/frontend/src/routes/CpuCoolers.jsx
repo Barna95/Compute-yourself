@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
@@ -16,13 +16,13 @@ export default function CpuCoolers() {
     }, []);
     
     return (
-        <div className='cpucoolers'>
-            <button
-                title="Go to Details"
+
+            <Button variant="outlined" size="small" 
+                title="Go to Add"
                 onClick={() => navigate(`/product/addnewcpucooler`, { replace: true, state: { formData: data, productType: "cpucooler" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
+
             <Card dataProperties={data} productType="cpucooler" />
-        </div>
     )
 }
