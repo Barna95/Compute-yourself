@@ -3,14 +3,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import Button from '@material-ui/core/Button';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import { Grid, Rating, Typography } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
 
 export default function ShowProductDetails() {
     const [data, setData] = useState([]);
@@ -27,28 +23,37 @@ export default function ShowProductDetails() {
                 setData(response.data);
             });
     }, []);
-
+    const picture = "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2017/09/cpu-upgrade.jpg";
+    console.log(typeof(data.rating));
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
     // ami most bent van az az összes adatból való magic, not so good.
     return (
         <>
-        <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
-            <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }} aria-label="simple table">
-                    <TableHead>
-                        <TableRow>
-                            {Object.keys(data).map((propName, idx) => <TableCell style={{ color: 'white', backgroundColor: 'grey'}} align="right">{propName}</TableCell>)}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow >
-                            {Object.values(data).map((propName, idx) => <TableCell sx={{ wordBreak: 'normal'}}align="right">{propName}</TableCell>)}
-                        </TableRow>
-                    </TableBody>
-                </Table>
-            </TableContainer>
+        <Paper>
+            <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
+            <Grid container md={12}>
+                <Grid item md={6}>
+                <Typography style={{fontSize: 20, fontWeight: 'bold' }}>{data.name}</Typography>
+
+                <Card sx={{ maxWidth: 550 }}>
+                <CardMedia
+                    sx={{ height: 330 }}
+                    image={picture}
+                    title="green iguana"
+                />
+                </Card>
+                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Math.round((data.price/388)*100)/100} €</Typography></Typography>
+                </Grid>
+                <Grid item md={3}>
+                {Object.keys(data).map((propName, idx) => <Typography style={{fontWeight: 'bold' }}>{propName}:</Typography>)}
+                </Grid>
+                <Grid item md={3}>
+                {Object.values(data).map((propName, idx) => <Typography style={{fontWeight: 'normal' }}>{propName}</Typography>)}
+                </Grid>
+            </Grid>
+        </Paper>
         </>
     );
 }
