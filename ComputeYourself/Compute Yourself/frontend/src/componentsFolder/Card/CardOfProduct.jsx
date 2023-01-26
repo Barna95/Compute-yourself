@@ -15,7 +15,7 @@ const Card = (props) => {
                     title="Go to Details"
                     onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
                     )}
-                >Details</button>            )
+                >Details</button>)
         });
 
     useEffect(() => {
