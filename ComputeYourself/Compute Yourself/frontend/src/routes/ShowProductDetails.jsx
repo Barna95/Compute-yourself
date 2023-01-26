@@ -1,4 +1,4 @@
-import * as React from 'react';
+﻿import * as React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -39,7 +39,7 @@ export default function ShowProductDetails() {
         } else if (x == 'id') {
             //do nothing
         } else {
-            renderValues.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{data[x]}:</Typography>);
+            renderValues.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{data[x]}</Typography>);
         }    
     })
 
@@ -58,6 +58,7 @@ export default function ShowProductDetails() {
         }
     })
 
+    const productType = localStorage.getItem("productType");
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
@@ -74,11 +75,17 @@ export default function ShowProductDetails() {
                 <Card sx={{ maxWidth: 550 }}>
                 <CardMedia
                     sx={{ height: 330 }}
-                    image={picture}
-                    title="green iguana"
+                    image={data.mainImage}
                 />
                 </Card>
-                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Math.round((data.price/388)*100)/100} €</Typography></Typography>
+                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{((data.price)*100)/100} €</Typography></Typography>
+                <Button 
+                    variant="outlined" 
+                    size="small" 
+                    title="Go to Edit"
+                    onClick={() => {localStorage.setItem("itemId", value.id); return navigate(`/product/${productType}/edit`, { replace: true, state: { itemId: value.id } })}}>
+                    Edit
+                </Button>
                 </Grid>
                 <Grid item md={3}>
                 {renderKeys}

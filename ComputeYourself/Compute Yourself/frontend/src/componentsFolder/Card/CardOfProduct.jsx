@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Button from '@material-ui/core/Button';
@@ -34,11 +34,7 @@ const Card = (props) => {
     const navigate = useNavigate();
     const neededValues = [];
     const { classes } = props;
-    useEffect(() => {
-        Object.keys(props.dataProperties.map((e) => setProductId(e.id)));
-    }, [neededValues])
-
-
+    
     return (
     <>
         {props.dataProperties.map((value, index) =>
@@ -46,30 +42,34 @@ const Card = (props) => {
                 <Paper key={index} elevation={18}>
                     <CardContent>
                         <Typography noWrap="true">{value.name}</Typography>
-                        <Typography noWrap="true">{Math.round((value.price/388)*100)/100} €</Typography>
+                        <Typography noWrap="true">{Math.round((value.price)*100)/100} €</Typography>
                         <Typography noWrap="true">Rating</Typography>
                         
                         <Rating name="read-only" value={value.rating} readOnly />
                         <Button variant="outlined" size="small"
                             title="Go to Details"
-                            onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
-                            )}
+                            onClick={() => {
+                              localStorage.setItem("productType", props.productType)
+                              return navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
+                            )}}
                         >Details
                         </Button>
-                        <Button variant="outlined" size="small" 
+                        <Button 
+                          variant="outlined" 
+                          size="small" 
                           title="Go to Edit"
-                          onClick={() => {
-                          localStorage.setItem("itemId", value.id)
-                          return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } }
-                        )
-                        }}
+                          onClick={() => {localStorage.setItem("itemId", value.id); return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } })}}>
+                          Edit
+                        </Button>
                     </CardContent>
                 </Paper>
             </Grid>
-        )}
+        )
+      }
     </>    
     )
 };
+
 Card.propTypes = {
     classes: PropTypes.object.isRequired,
   };
