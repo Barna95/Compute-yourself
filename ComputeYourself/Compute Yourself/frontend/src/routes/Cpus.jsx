@@ -2,9 +2,11 @@
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function Cpus() {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get("https://localhost:7195/product/cpu").then(
@@ -12,10 +14,17 @@ export default function Cpus() {
                 setData(response.data);
             });
     }, []);
-    
+
+
+
     return (
         <div className='cpus'>
-            <Card dataProperties={data} productType="cpu"/>
+            <button
+                title="Go to Details"
+                onClick={() => navigate(`/product/addnewcpu`, { replace: true, state: { formData: data, productType: "cpu" } }
+                )}
+            >Add new</button>
+            <Card dataProperties={data} productType="cpu" />
         </div>
     );
-    }
+}

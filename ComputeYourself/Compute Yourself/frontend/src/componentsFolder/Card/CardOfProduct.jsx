@@ -10,7 +10,12 @@ const Card = (props) => {
         props.dataProperties.map((value, index) => {
             neededValues.push(<div key={index}>{value.name} </div>,
                 <div>{value.price}</div>,
-                <div>{value.rating}</div>)
+                <div>{value.rating}</div>,
+                <button
+                    title="Go to Details"
+                    onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
+                    )}
+                >Details</button>)
         });
 
     useEffect(() => {
@@ -25,11 +30,7 @@ const Card = (props) => {
     return (
         <div>
             <div>{neededValues}</div>
-            <button
-                title="Go to Details"
-                onClick={ () => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType }}
-                )}
-            >Details</button>
+            
         </div>
     )
 };
