@@ -1610,11 +1610,169 @@ namespace ComputeYourself.Data
                             modelNumber = "PRIME-TX-1600",
                             Price = 651.39M,
                             Brand = "Seagate",
-                            Warranty = 5,
-                            Rating = 0,
+                            Warranty = 3,
+                            Rating = 5,
                             Capacity = 1600,
                             Modular = true,
                             Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake Toughpower iRGB PLUS ATX 1200W 80+ Titanium BOX",
+                            Description = "80 PLUS Platinum certified fully modular analog PSU with 16.8million-color," +
+                                          "18-LED RGB fan.",
+                            productOfficialWebsite = "https://www.thermaltake.com/toughpower-pf1-argb-series-1200w.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/cc8b24283b13da6bc2ff91682c03b54b/1/2/1200.jpg",
+                            modelNumber = "PS-TPI-1250DPCTEU-T",
+                            Price = 430.00M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 1200,
+                            Modular = true,
+                            Classification = Classification.Titanium
+                        },
+                        new()
+                        {
+                            Name = "FSP 2000W 80+ Gold Cannon Pro",
+                            Description = "With the upcoming 5G, IoT (internet of things), and blockchain technology’s rapid development," +
+                                          " the demand for high wattage and stable power supply is an inevitable trend. CANNON PRO 2000W has" +
+                                          " been designed to provide stable output for your system, it's also an upgrade series to provide you" +
+                                          " safer and modern design with an IEC62368 safety certification. CANNON PRO 2000W features 18 sets of" +
+                                          " PCI-E 6+2 Pin slots for satisfying the power-hungry device, and a 135mm fan with a unique layout" +
+                                          " design for optimal cooling performance and keep the components in a longer lifespan. CANNON PRO 2000W" +
+                                          " is your best choice for your monster PC build",
+                            productOfficialWebsite = "https://www.fsplifestyle.com/en/product/cannonpro2000w.html",
+                            mainImage = "https://www.fsplifestyle.com/upload/product/PIC21200000000009071.jpg",
+                            modelNumber = "PPA20A0400",
+                            Price = 350.39M,
+                            Brand = "FSP",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 2000,
+                            Modular = true,
+                            Classification = Classification.Gold
+                        },
+                        new()
+                        {
+                            Name = "Cougar Polar 1050W",
+                            Description = "To curb global warming, a PSU with higher efficiency means the longevity and" +
+                                          " less energy goes to waste. The COUGAR Polar platinum efficiency series " +
+                                          "protects the Earth and makes the best for the next generation",
+                            productOfficialWebsite = "https://cougargaming.com/products/psus/polar/",
+                            mainImage = "https://p1.akcdn.net/mid/1067609049.cougar-pr-1050-1050w.jpg",
+                            modelNumber = "CGR PR-1050",
+                            Price = 311.39M,
+                            Brand = "Cougar",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 1050,
+                            Modular = true,
+                            Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "Cooler Master 750W - XG750 PLUS PLATINUM",
+                            Description = "Cooler Master keeps searching for uniqueness, creativity, and more. XG Plus Platinum is the first" +
+                                          " Cooler Master in-house designed power supply, providing next-level efficiency, rigid design, and" +
+                                          " sturdy performance to fulfill all your daily computing and gaming needs",
+                            productOfficialWebsite = "https://www.coolermaster.com/uk/en-gb/catalog/power-supplies/xg-series/xg750-plus-platinum/",
+                            mainImage = "https://cdn.coolermaster.com/media/3234/xg-plus-platinum-block9-img-900x900-1-imageleftorright.png",
+                            modelNumber = "MPG-7501-AFBAP-XEU",
+                            Price = 275.39M,
+                            Brand = "Cooler Master",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 750,
+                            Modular = true,
+                            Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "ZALMAN ZM850-ARX 80Plus Platinum",
+                            Description = "80PLUS PLATINUM Modular cable management Power supply",
+                            productOfficialWebsite = "https://www.zalman.com/US/Product/ProductDetail.do?productSeq=126",
+                            mainImage = "https://www.zalman.com/cmm/fms/getImage.do?atchFileId=FILE_000000000002106&fileSn=0",
+                            modelNumber = "ZM850ARX850WPlatinum",
+                            Price = 260.39M,
+                            Brand = "ZALMAN",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 850,
+                            Modular = true,
+                            Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "Seasonic Focus PX ATX 750W 80+ Platinum BOX FOCUS PX 750",
+                            Description = "The newly upgraded FOCUS PX and GX series are the successors to the FOCUS PLUS Series," +
+                                          " which became an instant top seller in the power supply market after its launch in 2017." +
+                                          " In 2019, Seasonic engineers have made improvements to the popular series such as removing" +
+                                          " the inline capacitors on the supplied cables. Besides the small change in the series naming," +
+                                          " the PSU housing and its packaging are also updated to be in line with the concept of the" +
+                                          " OneSeasonic Initiative",
+                            productOfficialWebsite = "https://seasonic.com/focus-px",
+                            mainImage = "https://seasonic.com/pub/media/wysiwyg/feature-pics/FOCUS-PX-feature.png",
+                            modelNumber = "FOCUS-PX-750",
+                            Price = 190.39M,
+                            Brand = "Seasonic",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 1600,
+                            Modular = true,
+                            Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "Corsair RMx White 750W 80+ Gold",
+                            Description = "CORSAIR RMx White Series fully modular power supplies are built with the highest quality components to deliver 80 PLUS Gold power to your PC, with virtually silent operation",
+                            productOfficialWebsite = "https://www.corsair.com/us/en/Categories/Products/Power-Supply-Units/Power-Supply-Units-Advanced/RMx-Series-White/p/CP-9020187-NA",
+                            mainImage = "https://3.pcx.hu/pcx_upload/termek-kepek/82/m/82219_1.jpg",
+                            modelNumber = "CP-9020187-EU",
+                            Price = 185.39M,
+                            Brand = "Corsair",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 750,
+                            Modular = true,
+                            Classification = Classification.Gold
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake Toughpower PF1 ATX 850W 80+ Platinum BOX",
+                            Description = "80 PLUS Platinum certified fully modular PSU with Hydraulic Bearing fan",
+                            productOfficialWebsite = "https://www.thermaltake.com/toughpower-pf1-850w-tt-premium-edition.html",
+                            mainImage = "https://3.pcx.hu/pcx_upload/termek-kepek/80/b/807107_1.jpg",
+                            modelNumber = "PS-TPD-0850FNFAPE-1",
+                            Price = 180.39M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 850,
+                            Modular = true,
+                            Classification = Classification.Platinum
+                        },
+                        new()
+                        {
+                            Name = "FSP 700W 80+ Hyper Pro OEM",
+                            Description = "The new HYPER K PRO PSUs comply fully ATX12 v2.52 standard and latest safety" +
+                                          " 62368 regulation as well, and features with all black and high-grade ribbon cables," +
+                                          " will give your PC a polished look. The HYPER K PRO series is characterized by a powerful" +
+                                          " single +12V rail design that continually delivers maximum performance for the most demanding" +
+                                          " components, while FSP’s custom DC-DC design provides safety and power efficiency. With an" +
+                                          " 230V 80 Plus™ rating, both models deliver over 85% high efficiency and low noise levels thanks" +
+                                          " to its 120mm hydraulic bearing (HYB) fan takes care of cooling duties when required, making it" +
+                                          " excellent for situations that are sensitive to size and noise",
+                            productOfficialWebsite = "https://www.fsplifestyle.com/en/product/HYPER_K_PRO700W.html",
+                            mainImage = "https://www.fsplifestyle.com/upload/product/PIC20300000000007753.jpg",
+                            modelNumber = "9PA7008801",
+                            Price = 70.39M,
+                            Brand = "FSP",
+                            Warranty = 3,
+                            Rating = 5,
+                            Capacity = 1600,
+                            Modular = false,
+                            Classification = Classification.Gold
                         }
                     });
                     context.SaveChanges();
