@@ -23,6 +23,7 @@ import Cpus from "./routes/Cpus";
 import Drives from "./routes/Drives";
 import EditCpu from "./routes/EditProducts/EditCpu"
 import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
+import EditPcCase from './routes/EditProducts/EditPcCase';
 import Gpus from "./routes/Gpus";
 import Home from "./routes/Home";
 import MotherBoards from "./routes/MotherBoards";
@@ -35,6 +36,7 @@ import ShowProductDetails from "./routes/ShowProductDetails";
 import reactLogo from "./assets/react.svg";
 
 // import { productURL } from "./endpoints";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -61,6 +63,7 @@ const router = createBrowserRouter(
       <Route path="product/addnewram" element={<AddNewRam />} />
       <Route path="product/cpu/edit" element={<EditCpu />} />
       <Route path="product/motherboard/edit" element={<EditMotherBoard />} />
+      <Route path="product/pccase/edit" element={<EditPcCase />} />
     </Route>
   )
 );
