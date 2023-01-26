@@ -12,8 +12,6 @@ export default function Drives() {
             });
     }, []);
     return (
-        <div className='drives'>
             <Card dataProperties={data} productType="drive" />
-        </div>
     )
 }

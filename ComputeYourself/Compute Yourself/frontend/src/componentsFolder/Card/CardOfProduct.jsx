@@ -40,31 +40,26 @@ const Card = (props) => {
 
 
     return (
-        <div>
-            <Grid xs={1} md={5}>
-                {props.dataProperties.map((value, index) =>
-                    <Grid  className={classes.productGrid}>
-                    <Paper elevation={18}>
-                        <div>
-                            <div key={index}></div>
-                            <CardContent>
-                                <Typography noWrap="true">{value.name}</Typography>
-                                <Typography noWrap="true">{Math.round(value.price/360)} $</Typography>
-                                <Typography noWrap="true">{value.rating}</Typography>
-                                <Button variant="outlined" size="small"
-                                    title="Go to Details"
-                                    onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
-                                    )}
-                                >Details
-                                </Button>
-                            </CardContent>
-                        </div>
-                    </Paper>
-                    </Grid>
-                )}
-                </Grid>
-                
-        </div>
+    <>
+        {props.dataProperties.map((value, index) =>
+            <Grid item md={6}>
+                <Paper key={index} elevation={18}>
+                    <CardContent>
+                        <Typography noWrap="true">{value.name}</Typography>
+                        <Typography noWrap="true">{Math.round(value.price/360)} $</Typography>
+                        <Typography noWrap="true">{value.rating}</Typography>
+                        <Button variant="outlined" size="small"
+                            title="Go to Details"
+                            onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: productId, productType: props.productType } }
+                            )}
+                        >Details
+                        </Button>
+                    </CardContent>
+                </Paper>
+            </Grid>
+        )}
+    </>    
+
     )
 };
 Card.propTypes = {

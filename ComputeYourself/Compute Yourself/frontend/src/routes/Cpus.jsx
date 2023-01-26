@@ -2,6 +2,7 @@
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
+import Grid from "@mui/material/Grid";
 
 export default function Cpus() {
     const [data, setData] = useState([]);
@@ -13,8 +14,6 @@ export default function Cpus() {
             });
     }, []);
     return (
-        <div className='cpus'>
             <Card dataProperties={data} productType="cpu"/>
-        </div>
-    );
+            );
     }

@@ -14,8 +14,6 @@ export default function Gpus() {
     }, []);
 
     return (
-        <div className='cpus'>
             <Card dataProperties={data} productType="gpu" />
-        </div>
     )
 }

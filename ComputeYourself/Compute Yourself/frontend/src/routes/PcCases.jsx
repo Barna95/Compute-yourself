@@ -14,8 +14,6 @@ export default function PcCases() {
     }, []);
    
     return (
-        <div className='cpus'>
             <Card dataProperties={data} productType="pccase" />
-        </div>
     )
 }

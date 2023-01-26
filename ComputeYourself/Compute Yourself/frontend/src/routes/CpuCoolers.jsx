@@ -14,8 +14,6 @@ export default function CpuCoolers() {
     }, []);
     
     return (
-        <div className='cpucoolers'>
             <Card dataProperties={data} productType="cpucooler" />
-        </div>
     )
 }

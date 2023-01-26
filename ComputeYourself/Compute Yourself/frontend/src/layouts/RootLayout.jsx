@@ -65,7 +65,10 @@ const styles = theme => ({
     padding: 60,
     fontSize: 45,
     textAlign: "left",
-    color: "black"
+    color: "black",
+    borderRadius: 3,
+
+    backgroundColor: "grey",
   },
   mainTitlePicture: {
     image:`url(${Mainpicture})`,
@@ -126,7 +129,6 @@ function RootLayout(props) {
   const { classes } = props;
   return (
     <div className={classes.layout}>
-      <div>
         <header>
           <div style={classes.root}>
             <Toolbar className={classes.toolbarMain}>
@@ -143,22 +145,21 @@ function RootLayout(props) {
             </Toolbar>
           </nav>
         </header>
-      </div>
       <main>
           <Paper className={classes.mainFeaturedPost}  elevation={24}>
             <Grid container>
               <Grid item md={4}>
-                <div className={classes.mainFeaturedPostContent}>
                   <Box className={classes.mainTitle}>
                     Hardware Store
                   </Box>
-                </div>
               </Grid>
               <Grid item md={8} style={{ backgroundImage:`url(${Mainpicture})`,backgroundRepeat:"no-repeat",backgroundPosition: 'right', backgroundSize:"cover", transform: [{ scale: 2 }]}}>
               </Grid>
             </Grid>
           </Paper>
+        <Grid>
         <Outlet />
+        </Grid>
         <footer className={classes.footer}>
           <Box>
             Compute Yourself team 2023.
@@ -181,7 +182,7 @@ function Header() {
           </Link>
         </Box>
       </Grid>
-      <Grid item xs={7}>
+      <Grid item xs={6}>
         <Box style={classes.cyLogoText}>
           Compute Yourself
         </Box>
@@ -193,9 +194,9 @@ function Header() {
           </IconButton>
         </Box>
       </Grid>
-      <Grid item xs={1}>
+      <Grid item xs={2}>
         <Box style={classes.searchButton}>
-          <Button variant="outlined" size="small">
+          <Button variant="outlined" noWrap="true" size="small">
             Sign up
           </Button>
         </Box>

@@ -20,11 +20,11 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = (theme) => ({
   mainGrid: {
     padding: 10,
-    marginTop: theme.spacing(4),
+    marginTop: 2,
   },
   productGrid: {
     padding: 3,
-    spacing: 10,
+    spacing: 2,
   },
   card: {
     display: "flex",
@@ -130,10 +130,10 @@ function ProductsLayout(props) {
   return (
     <>
       <Paper elevation={24}>
-        <Grid container className={classes.mainGrid} xs={12}>
-          <Grid xs={4} md={2} style={{ textDecoration: "none", spacing: 10 }}>
+          <Grid container md={12} style={{ textDecoration: "none", spacing: 2 , padding: 0}}>
+            <Grid item md={2} style={{ textDecoration: "none", padding: 12}}>
             {featuredPosts.map((post,index) => (
-              <Grid item key={index} spacing={3}>
+              <Grid item key={index} >
                 <Paper
                   component={Link}
                   onClick={post.function}
@@ -143,24 +143,19 @@ function ProductsLayout(props) {
                   className={classes.card}
                   spacing={3}
                 >
-                  <div className={classes.cardDetails}>
-                    <CardContent>
-                      <Typography noWrap="true">{post.title}</Typography>
-                    </CardContent>
-                  </div>
+                  <CardContent className={classes.cardDetails}>
+                    <Typography noWrap="true">{post.title}</Typography>
+                  </CardContent>
                 </Paper>
               </Grid>
             ))}
-          </Grid>
-          <Grid xs={8} md={10}>
-            <Grid xs={8} md={12} className={classes.productGrid}>
-
-
-                    <div> {productEntries}</div>
-
+            </Grid>
+            <Grid item md={10} style={{ textDecoration: "none", padding: 12}}>
+              <Grid container spacing={2}>
+                  {productEntries}
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
       </Paper>
     </>
   );

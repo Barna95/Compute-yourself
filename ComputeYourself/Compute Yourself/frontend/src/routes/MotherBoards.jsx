@@ -13,8 +13,6 @@ export default function MotherBoards() {
     }, []);
     
     return (
-        <div className='cpucoolers'>
             <Card dataProperties={data} productType="motherboard" />
-        </div>
     )
 }

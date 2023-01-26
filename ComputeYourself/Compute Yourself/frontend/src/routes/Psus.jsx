@@ -14,8 +14,6 @@ export default function Psus() {
     }, []);
    
     return (
-        <div className='psus'>
             <Card dataProperties={data} productType="psu" />
-        </div>
     )
 }

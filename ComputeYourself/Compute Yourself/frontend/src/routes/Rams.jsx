@@ -14,8 +14,6 @@ export default function Rams() {
     }, []);
 
     return (
-        <div className='cpus'>
             <Card dataProperties={data} productType="ram" />
-        </div>
     )
 }
