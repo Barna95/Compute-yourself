@@ -1,39 +1,76 @@
-﻿import { useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Paper from "@mui/material/Paper";
+import Button from '@material-ui/core/Button';
+import PropTypes from "prop-types";
+import { withStyles } from '@material-ui/core/styles';
+import Grid from "@material-ui/core/Grid";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import Rating from '@mui/material/Rating';
 
+const styles = (theme) => ({
+    mainGrid: {
+      padding: 10,
+      marginTop: theme.spacing(4),
+    },
+    productGrid: {
+      padding: 10,
+      spacing: 10,
+    },
+    card: {
+      display: "flex",
+    },
+    cardDetails: {
+      flex: 1,
+    },
+    cardMedia: {
+      width: 200,
+      height: 60,
+    },
+  });
 
 const Card = (props) => {
     const navigate = useNavigate();
     const neededValues = [];
-    const fillNeededValues =
-        props.dataProperties.map((value, index) => {
-            neededValues.push(<div key={index}>{value.name} </div>,
-                <div>{value.price}</div>,
-                <div>{value.rating}</div>,
-                <button
-                    title="Go to Details"
-                    onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
-                    )}
-                >Details</button>,
-                <button
-                    title="Go to Details"
-                    onClick={() => {
-                        localStorage.setItem("itemId", value.id)
-                        return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } }
-                        )
-                    }}
-                >Edit</button>)
-        });
-
-    useEffect(() => {
-        fillNeededValues;
-    }, []);
-
+    const { classes } = props;
+    
     return (
-        <div>
-            <div>{neededValues}</div>
-        </div>
+    <>
+        {props.dataProperties.map((value, index) =>
+            <Grid item md={6}>
+                <Paper key={index} elevation={18}>
+                    <CardContent>
+                        <Typography noWrap="true">{value.name}</Typography>
+                        <Typography noWrap="true">{Math.round((value.price)*100)/100} €</Typography>
+                        <Typography noWrap="true">Rating</Typography>
+                        
+                        <Rating name="read-only" value={value.rating} readOnly />
+                        <Button variant="outlined" size="small"
+                            title="Go to Details"
+                            onClick={() => {
+                              localStorage.setItem("productType", props.productType)
+                              return navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
+                            )}}
+                        >Details
+                        </Button>
+                        <Button 
+                          variant="outlined" 
+                          size="small" 
+                          title="Go to Edit"
+                          onClick={() => {localStorage.setItem("itemId", value.id); return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } })}}>
+                          Edit
+                        </Button>
+                    </CardContent>
+                </Paper>
+            </Grid>
+        )
+      }
+    </>    
     )
 };
 
-export default Card;
+Card.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+export default withStyles(styles)(Card);

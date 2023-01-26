@@ -1,8 +1,10 @@
-﻿import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../componentsFolder/Card/CardOfProduct"
 import React from 'react';
 import axios from "axios";
+import Grid from "@mui/material/Grid";
 import { useNavigate } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 export default function Cpus() {
     const [data, setData] = useState([]);
@@ -14,17 +16,16 @@ export default function Cpus() {
                 setData(response.data);
             });
     }, []);
-
-
-
     return (
-        <div className='cpus'>
-            <button
+            <>
+            <Grid item md={10}>
+            <Button variant="outlined" size="medium" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewcpu`, { replace: true, state: { formData: data, productType: "cpu" } }
                 )}
-            >Add new</button>
+            >Add new</Button>
+            </Grid>
             <Card dataProperties={data} productType="cpu" />
-        </div>
+            </>
     );
 }
