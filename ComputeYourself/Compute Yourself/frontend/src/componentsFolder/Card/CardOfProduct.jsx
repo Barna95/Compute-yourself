@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Paper from "@mui/material/Paper";
 import Button from '@material-ui/core/Button';
@@ -31,7 +31,6 @@ const styles = (theme) => ({
   });
 
 const Card = (props) => {
-    const [productId, setProductId] = useState([]);
     const navigate = useNavigate();
     const neededValues = [];
     const { classes } = props;
@@ -57,12 +56,18 @@ const Card = (props) => {
                             )}
                         >Details
                         </Button>
+                        <Button variant="outlined" size="small" 
+                          title="Go to Edit"
+                          onClick={() => {
+                          localStorage.setItem("itemId", value.id)
+                          return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } }
+                        )
+                        }}
                     </CardContent>
                 </Paper>
             </Grid>
         )}
     </>    
-
     )
 };
 Card.propTypes = {

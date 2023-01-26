@@ -1,4 +1,4 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -23,13 +23,47 @@ export default function ShowProductDetails() {
                 setData(response.data);
             });
     }, []);
-    const picture = "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2017/09/cpu-upgrade.jpg";
-    console.log(typeof(data.rating));
+
+    const renderValues = [];
+
+    Object.keys(data).map((x, idx) => {
+        if (x == 'mainImage') {
+            //do nothing
+        }
+        else if (x == 'productOfficialWebsite') {
+            //do nothing
+        } else if (data[x] === false) {
+            renderValues.push(<input type="checkbox" disabled/>)
+        } else if (data[x] === true) {
+            renderValues.push(<input type="checkbox" checked disabled/>)
+        } else if (x == 'id') {
+            //do nothing
+        } else {
+            renderValues.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{data[x]}:</Typography>);
+        }    
+    })
+
+    const renderKeys = [];
+
+    Object.keys(data).map((x, idx) => {
+        if (x == 'mainImage') {
+            //do nothing
+        }
+        else if (x == 'productOfficialWebsite') {
+            //do nothing
+        } else if (x == 'id') {
+            //do nothing
+        } else {
+            renderKeys.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{x}:</Typography>);
+        }
+    })
+
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
     // ami most bent van az az összes adatból való magic, not so good.
     return (
+
         <>
         <Paper>
             <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
@@ -47,10 +81,10 @@ export default function ShowProductDetails() {
                 <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Math.round((data.price/388)*100)/100} €</Typography></Typography>
                 </Grid>
                 <Grid item md={3}>
-                {Object.keys(data).map((propName, idx) => <Typography style={{fontWeight: 'bold' }}>{propName}:</Typography>)}
+                {renderKeys}
                 </Grid>
                 <Grid item md={3}>
-                {Object.values(data).map((propName, idx) => <Typography style={{fontWeight: 'normal' }}>{propName}</Typography>)}
+                {renderValues}
                 </Grid>
             </Grid>
         </Paper>

@@ -1,8 +1,6 @@
-﻿using ComputeYourself.Data.Enums;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+
 
 namespace ComputeYourself.Models
 {
@@ -27,8 +25,7 @@ namespace ComputeYourself.Models
 
         [Display(Name = "Brand")]
         [Required(ErrorMessage = "Brand is required")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public ManuFacturerBrand Brand { get; set; }
+        public string Brand { get; set; }
 
         [Display(Name = "Warranty")]
         [Required(ErrorMessage = "Warranty is required")]
@@ -37,5 +34,15 @@ namespace ComputeYourself.Models
         [Display(Name = "Rating")]
         [Required(ErrorMessage = "Rating is required")]
         public float Rating { get; set; }
+
+        [Required(ErrorMessage = "Main Image is required")]
+        public string mainImage { get; set; }
+
+        [Required(ErrorMessage = "Product official-website is required")]
+        public string productOfficialWebsite { get; set; }
+
+        [Required(ErrorMessage = "Serial number is required")]
+        public string modelNumber { get; set; }
+
     }
 }
