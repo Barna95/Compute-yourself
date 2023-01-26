@@ -985,7 +985,7 @@ namespace ComputeYourself.Data
                                           "Graphics Output Options: DVI-D, D-Sub " +
                                           "7.1 CH HD Audio (Realtek ALC887/897 Audio Codec) " +
                                           "4 SATA3 4 USB 3.1 Gen1 (2 Front, 2 Rear) " +
-                                          "Supports Full Spike Protection, ASRock Live Update & APP Shop",
+                                          "Supports Full Spike Protection, ASRock Live UpdateProduct & APP Shop",
                             productOfficialWebsite = "https://www.asrock.com/mb/Intel/H310CM-DVS/index.asp",
                             mainImage = "https://www.asrock.com/mb/photo/H310CM-DVS(L1).png",
                             modelNumber = "90-MXB8K0-A0UAYZ",
@@ -1179,7 +1179,7 @@ namespace ComputeYourself.Data
                                           "Graphics Output Options: DVI-D, D-Sub " +
                                           "7.1 CH HD Audio (Realtek ALC887/897 Audio Codec) " +
                                           "4 SATA3 4 USB 3.1 Gen1 (2 Front, 2 Rear) " +
-                                          "Supports Full Spike Protection, ASRock Live Update & APP Shop",
+                                          "Supports Full Spike Protection, ASRock Live UpdateProduct & APP Shop",
                             productOfficialWebsite = "https://www.asus.com/hu/motherboards-components/motherboards/tuf-gaming/tuf-gaming-b560m-plus/techspec/",
                             mainImage = "https://dlcdnwebimgs.asus.com/gain/117af48e-0454-452f-9ee8-d9d22bb8dd1f/w328",
                             modelNumber = "TUFGAMINGB560M-PLUS",
