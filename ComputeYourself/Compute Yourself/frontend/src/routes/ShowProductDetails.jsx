@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import Button from '@material-ui/core/Button';
 
 
 
@@ -27,7 +28,7 @@ export default function ShowProductDetails() {
     // ami most bent van az az összes adatból való magic, not so good.
     return (
         <div>
-            <button onClick={() => navigate("/product") }> go back </button>
+            <Button  variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
             <table>
                 <thead>
                     <tr>{Object.keys(data).map((propName, idx) => <td key={idx}> {propName}</td>)}</tr>

@@ -12,7 +12,6 @@ export default function Cpus() {
                 setData(response.data);
             });
     }, []);
-    
     return (
         <div className='cpus'>
             <Card dataProperties={data} productType="cpu"/>

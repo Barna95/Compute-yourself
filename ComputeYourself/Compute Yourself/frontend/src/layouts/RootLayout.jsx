@@ -53,9 +53,9 @@ const classes = {
 const styles = theme => ({
   layout: {
     width: 'auto',
-    marginLeft: theme.spacing.unit * 3,
-    marginRight: theme.spacing.unit * 3,
-    [theme.breakpoints.up(1500 + theme.spacing.unit * 3 * 2)]: {
+    marginLeft: theme.spacing(3),
+    marginRight: theme.spacing(3),
+    [theme.breakpoints.up(1500 + theme.spacing(6))]: {
       width: 1150,
       marginLeft: 'auto',
       marginRight: 'auto',
@@ -82,19 +82,19 @@ const styles = theme => ({
   },
   mainFeaturedPost: {
     
-    marginBottom: theme.spacing.unit * 3,
+    marginBottom: theme.spacing(3),
   },
   mainFeaturedPostContent: {
     borderRadius: 3,
 
     backgroundColor: "grey",
-    padding: `${theme.spacing.unit * 4}px`,
+    padding: `${theme.spacing(4)}px`,
     [theme.breakpoints.up('md')]: {
       paddingRight: 0,
     },
   },
   mainGrid: {
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
   },
   card: {
     display: 'flex',
@@ -106,20 +106,20 @@ const styles = theme => ({
     width: 160,
   },
   markdown: {
-    padding: `${theme.spacing.unit * 3}px 0`,
+    padding: `${theme.spacing(3)}px 0`,
   },
   sidebarAboutBox: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(2),
     backgroundColor: theme.palette.grey[200],
   },
   sidebarSection: {
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
     textAlign: "center",
-    marginTop: theme.spacing.unit * 8,
-    padding: `${theme.spacing.unit * 2}px 0`,
+    marginTop: theme.spacing(8),
+    padding: `${theme.spacing(2)}px 0`,
   },
 });
 function RootLayout(props) {
@@ -217,7 +217,7 @@ function NavBar() {
     <>
         <Grid item xs={1}>
           <Box style={classes.searchButton}>
-            <Button component={Link} to="/"variant="outlined" size="small">
+            <Button component={Link} to="/" variant="outlined" size="small">
               Home
             </Button>
           </Box>
@@ -243,7 +243,5 @@ function NavBar() {
 RootLayout.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-Header.propTypes = {
-  header: PropTypes.object.isRequired,
-};
+
 export default withStyles(styles)(RootLayout, Header);
