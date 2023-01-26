@@ -1421,6 +1421,173 @@ namespace ComputeYourself.Data
                             SizeCompatibility = SizeStandard.ATX,
                             MaxCpuCoolerHeight = 190,
                             MaxGpuLength = 602
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake DistroCase 350P  ATX",
+                            Description = "The DistroCase™ 350P is a multi-functional and truly unique open frame mid" +
+                                          " tower chassis. The body of the case is constructed with its own water loop," +
+                                          " a D5 pump, and 48 LEDs that are compatible with TT RGB PLUS, NeonMaker Light" +
+                                          " Editing, and Motherboard RGB Software",
+                            productOfficialWebsite = "https://www.thermaltake.com/distrocasetm-350p-mid-tower-chassis.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/cc8b24283b13da6bc2ff91682c03b54b/d/i/distro_350p_1.jpg",
+                            modelNumber = "CA-1Q8-00M1WN-00",
+                            Price = 580.58M,
+                            Brand = "Thermaltake ",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.ATX,
+                            MaxCpuCoolerHeight = 130,
+                            MaxGpuLength = 320
+                        },
+                        new()
+                        {
+                            Name = "Cooler Master COSMOS C700P Black Edition",
+                            Description = "Highly Flexible Layout, Sleek & solid aluminum handles, RGB lighting control & sync up, " +
+                                          "Dual-curved Tempered Glass Side Panel, ",
+                            productOfficialWebsite = "https://www.coolermaster.com/catalog/legacy-products/cases/cosmos-c700p/",
+                            mainImage = "https://files.coolermaster.com/product/cosmos-c700p/img/cosmos-c700p-sprite2-s.png",
+                            modelNumber = "MCC-C700P-KG5N-S00",
+                            Price = 410.58M,
+                            Brand = "Cooler Master",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 198,
+                            MaxGpuLength = 320
+                        },
+                        new()
+                        {
+                            Name = "RAIJINTEK NYX Pro Showcase E-ATX ",
+                            Description = "Expensive",
+                            productOfficialWebsite = "https://zalmanusa.com/products/z-machine-500-full-tower",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0102/9754/0666/products/B09NZP7GY7.MAIN_600x.jpg?v=1643831133",
+                            modelNumber = "0R20B00185",
+                            Price = 400.58M,
+                            Brand = "RAIJINTEK",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 75,
+                            MaxGpuLength = 496
+                        },
+                        new()
+                        {
+                            Name = "Jonsbo TR03-G Showcase ATX",
+                            Description = "Jonsbo TR03-G Showcase ATX Black Tempered Glass",
+                            productOfficialWebsite = "https://www.jonsbo.com/en/products/tr03ablack.html",
+                            mainImage = "https://www.jonsbo.com/Upfiles/Prod_X/202042268810.jpg",
+                            modelNumber = "TR03-G BLACK",
+                            Price = 305.58M,
+                            Brand = "Jonsbo",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.ATX,
+                            MaxCpuCoolerHeight = 175,
+                            MaxGpuLength = 175
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake AH T600 Snow EATX ",
+                            Description = "The Thermaltake AH T600 Snow is a helicopter styled open frame full tower case which comes" +
+                                          " with two 5mm tempered glass panels on left and right sides and can support motherboards up" +
+                                          " to E-ATX (up to 10.5'' wide).",
+                            productOfficialWebsite = "https://www.thermaltake.com/ah-t600-snow-full-tower-chassis.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/cc8b24283b13da6bc2ff91682c03b54b/a/h/ah_t600s_1.jpg",
+                            modelNumber = "CA-1Q4-00M6WN-00",
+                            Price = 260.58M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 195,
+                            MaxGpuLength = 440
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake Level 20 HT EATX",
+                            Description = "Level 20 HT is an E-ATX full tower chassis that comes with four 4mm " +
+                                          "thick tempered glass windows and two preinstalled 140mm standard fans up top",
+                            productOfficialWebsite = "https://www.thermaltake.com/level-20-ht-chassis.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/6af153fd0a0c509bdfcdfb60a394dd9c/l/e/level20ht_3.jpg",
+                            modelNumber = "CA-1P6-00F1WN-00",
+                            Price = 230.58M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 260,
+                            MaxGpuLength = 400
+                        },
+                        new()
+                        {
+                            Name = "Thermaltake Core P8 Tempered Glass  E-ATX ",
+                            Description = "The Core P8 TG is a transformable E-ATX Full Tower Chassis that can be either used as a" +
+                                          " closed or open styled case with Tt LCS Certification",
+                            productOfficialWebsite = "https://www.thermaltake.com/core-p8-tempered-glass-full-tower-chassis.html",
+                            mainImage = "https://www.thermaltake.com/media/catalog/product/cache/cc8b24283b13da6bc2ff91682c03b54b/c/o/core_p8_1.jpg",
+                            modelNumber = "CA-1Q2-00M1WN-00",
+                            Price = 210.58M,
+                            Brand = "Thermaltake",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 180,
+                            MaxGpuLength = 520
+                        },
+                        new()
+                        {
+                            Name = "Lian Li Odyssey X E-ATX ",
+                            Description = "Sandblasted anodized finish aluminum full tower chassis " +
+                                          "Three modes: Dynamic/ Dynamic-R (Rotate)/ Performance " +
+                                          "Open airflow design with dual-side folding tempered glass " +
+                                          "panels Supports up to EEB/E-ATX motherboard with 8 expansion " +
+                                          "slots Ample water-cooling mounting space: Support up to 480mm " +
+                                          "radiator, includes water pump mounting bracket Cable" +
+                                          " management at ease",
+                            productOfficialWebsite = "https://zalmanusa.com/products/z-machine-500-full-tower",
+                            mainImage = "https://cdn.shopify.com/s/files/1/0102/9754/0666/products/B09NZP7GY7.MAIN_600x.jpg?v=1643831133",
+                            modelNumber = "TR-01A",
+                            Price = 400.58M,
+                            Brand = "Lian Li",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 180,
+                            MaxGpuLength = 400
+                        },
+                        new()
+                        {
+                            Name = "Cooler Master MasterCase H500P Mesh White ARGB ",
+                            Description = "Appearing in arctic white, the H Series embraces the golden rule of PC building: " +
+                                          "to never stop upgrading. The MasterCase H500P Mesh White is no exception, now with" +
+                                          " two pre-installed 200mm ARGB fans. Addressable RGB fans were previously only" +
+                                          " available with the MasterCase H500M, the lineup’s premium flagship model",
+                            productOfficialWebsite = "https://www.coolermaster.com/catalog/cases/mid-tower/mastercase-h500p-mesh-white-argb/",
+                            mainImage = "https://cdn.coolermaster.com/media/assets/1052/h500p_mesh_white_argb_01_intro-imageleftorright.png",
+                            modelNumber = "MCM-H500P-WGNN-S01",
+                            Price = 200.58M,
+                            Brand = "Cooler Master",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 195,
+                            MaxGpuLength = 410
+                        },
+                        new()
+                        {
+                            Name = "Phanteks Eclipse P600S Black ",
+                            Description = "Expensive",
+                            productOfficialWebsite = "https://www.phanteks.com/Eclipse-P600s.html",
+                            mainImage = "https://www.phanteks.com/images/product/Eclipse-P600s/Black/PH-EC600PSTG-1z.jpg",
+                            modelNumber = "PH-EC600PSC_BK01",
+                            Price = 200.58M,
+                            Brand = "Phanteks",
+                            Warranty = 3,
+                            Rating = 5,
+                            SizeCompatibility = SizeStandard.EATX,
+                            MaxCpuCoolerHeight = 195,
+                            MaxGpuLength = 435
                         }
                     });
                     context.SaveChanges();
