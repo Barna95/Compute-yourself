@@ -21,6 +21,7 @@ import Rams from "./routes/Rams";
 import Drives from "./routes/Drives";
 import RootLayout from "./layouts/RootLayout";
 import Products from "./routes/Products"
+import AddNewCpu from "./routes/AddNewCpu"
 import reactLogo from "./assets/react.svg";
 import ShowProductDetails from "./routes/ShowProductDetails";
 // import { productURL } from "./endpoints";
@@ -39,7 +40,8 @@ const router = createBrowserRouter(
       <Route path="product/gpu" element={<Gpus />} />
       <Route path="product/cpucooler" element={<CpuCoolers />} />
       <Route path="product/drive" element={<Drives />} />
-      <Route path="product/details/" element={<ShowProductDetails/> }/>
+      <Route path="product/details/" element={<ShowProductDetails />} />
+      <Route path="product/addnewcpu" element={<AddNewCpu />} />
     </Route>
   )
 );
