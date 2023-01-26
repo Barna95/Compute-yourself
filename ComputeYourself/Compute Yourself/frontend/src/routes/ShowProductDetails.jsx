@@ -21,6 +21,40 @@ export default function ShowProductDetails() {
             });
     }, []);
 
+    const renderValues = [];
+
+    Object.keys(data).map((x, idx) => {
+        if (x == 'mainImage') {
+            //do nothing
+        }
+        else if (x == 'productOfficialWebsite') {
+            //do nothing
+        } else if (data[x] === false) {
+            renderValues.push(<input type="checkbox" disabled/>)
+        } else if (data[x] === true) {
+            renderValues.push(<input type="checkbox" checked disabled/>)
+        } else if (x == 'id') {
+            //do nothing
+        } else {
+            renderValues.push(<td key={idx}>{data[x]}</td>);
+        }    
+    })
+
+    const renderKeys = [];
+
+    Object.keys(data).map((x, idx) => {
+        if (x == 'mainImage') {
+            //do nothing
+        }
+        else if (x == 'productOfficialWebsite') {
+            //do nothing
+        } else if (x == 'id') {
+            //do nothing
+        } else {
+            renderKeys.push(<td key={idx}>{x}</td>);
+        }
+    })
+    
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
@@ -30,10 +64,10 @@ export default function ShowProductDetails() {
             <button onClick={() => navigate("/product") }> go back </button>
             <table>
                 <thead>
-                    <tr>{Object.keys(data).map((propName, idx) => <td key={idx}> {propName}</td>)}</tr>
+                    <tr>{renderKeys}</tr>
                 </thead>
                 <tbody>
-                    <tr>{Object.keys(data).map((propName, idx) => <td key={idx}> {data[propName]}</td>)}</tr>
+                    <tr>{renderValues}</tr>
                 </tbody>
             </table>
         </div>
