@@ -31,6 +31,7 @@ import AddNewRam from "./routes/AddNewProducts/AddNewRam";
 import EditCpu from "./routes/EditProducts/EditCpu"
 import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
 import EditCpuCooler from "./routes/EditProducts/EditCpuCooler"
+import EditDrive from "./routes/EditProducts/EditDrive"
 import ShowProductDetails from "./routes/ShowProductDetails";
 import reactLogo from "./assets/react.svg";
 
@@ -62,6 +63,7 @@ const router = createBrowserRouter(
       <Route path="product/cpu/edit" element={<EditCpu />} />
       <Route path="product/motherboard/edit" element={<EditMotherBoard />} />
       <Route path="product/cpucooler/edit" element={<EditCpuCooler />} />
+      <Route path="product/drive/edit" element={<EditDrive />} />
     </Route>
   )
 );
