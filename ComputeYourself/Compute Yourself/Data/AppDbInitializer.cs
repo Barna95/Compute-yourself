@@ -695,41 +695,41 @@ namespace ComputeYourself.Data
                         },
                         new()
                         {
-                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD",
-                            Description = "PM1643a delivers high-value faster read speeds while improving TCO with" +
-                                          " outstanding reliability, security and endurance. It provides a powerful" +
-                                          " solution for mission-critical enterprise applications. It also provides" +
-                                          " significantly more capacity up to 30.72 TB",
-                            productOfficialWebsite = "https://semiconductor.samsung.com/ssd/enterprise-ssd/pm1643-pm1643a/mzilt7t6hala-00007/",
-                            mainImage = "https://cdn.shopify.com/s/files/1/0034/7288/3779/products/MZILT3T8HBLS.jpg?v=1630685770",
-                            modelNumber = "MZILT7T6HALA-00007",
-                            Price = 1960.68M,
-                            Brand = "Samsung",
-                            Warranty = 2,
-                            Rating = 0,
-                            ConnectionType = "SATA3",
-                            Capacity = 7680,
-                            MaxWrite = 2000,
-                            MaxRead = 2100
+                            Name = "SILICON POWER XD80 PCIe Gen 3x4 NVMe M.2 2280 3400/3000MB/s 1T ",
+                            Description = "Featuring SLC Caching and DRAM Cache Buffer, the XD80 peels" + 
+                                          " rubber with blazing read/write speeds up to 3,400/3,000MB/s, " + 
+                                          "respectively. Its high-speed PCIe Gen3x4 interface leaves traditional" + 
+                                          " SATA III SSDs behind in the dust, giving hardcore gamers the competitive" + 
+                                          " edge they need to secure the win.",
+                            productOfficialWebsite = "https://www.biostar.com.tw/app/en/ssd/introduction.php?S_ID=32",
+                            mainImage = "https://www.silicon-power.com/images/product/apple/517/XD80_F_1024.jpg",
+                            modelNumber = "SP001TBP34XD8005",
+                            Price = 88.68M,
+                            Brand = "SILICON POWER",
+                            Warranty = 3,
+                            Rating = 5,
+                            ConnectionType = "M.2",
+                            Capacity = 1000,
+                            MaxWrite = 3000,
+                            MaxRead = 3400
                         },
                         new()
                         {
-                            Name = "SAMSUNG PM1643a 7.68TB Enterprise SSD",
-                            Description = "PM1643a delivers high-value faster read speeds while improving TCO with" +
-                                          " outstanding reliability, security and endurance. It provides a powerful" +
-                                          " solution for mission-critical enterprise applications. It also provides" +
-                                          " significantly more capacity up to 30.72 TB",
-                            productOfficialWebsite = "https://semiconductor.samsung.com/ssd/enterprise-ssd/pm1643-pm1643a/mzilt7t6hala-00007/",
-                            mainImage = "https://cdn.shopify.com/s/files/1/0034/7288/3779/products/MZILT3T8HBLS.jpg?v=1630685770",
-                            modelNumber = "MZILT7T6HALA-00007",
-                            Price = 1960.68M,
-                            Brand = "Samsung",
-                            Warranty = 2,
-                            Rating = 0,
-                            ConnectionType = "SATA3",
-                            Capacity = 7680,
-                            MaxWrite = 2000,
-                            MaxRead = 2100
+                            Name = "GIGABYTE SSD M.2 2280 NVMe 500GB AORUS ",
+                            Description = "Form Factor: M.2 2280 Interface: PCI-Express 4.0 x4, NVMe 1.3 " + 
+                                          "Total Capacity: 500GB* Sequential Read Speed : up to 5000 MB/s**" + 
+                                          " Sequential Write speed : up to 2500 MB/s**",
+                            productOfficialWebsite = "https://www.gigabyte.com/eu/SSD/AORUS-Gen4-SSD-500GB#kf",
+                            mainImage = "https://static.gigabyte.com/StaticFile/Image/Global/91e66370ec5ef51afa3354cf2c51b8e9/Product/25698/png",
+                            modelNumber = "GP-AG4500G",
+                            Price = 80.68M,
+                            Brand = "GIGABYTE",
+                            Warranty = 5,
+                            Rating = 5,
+                            ConnectionType = "M.2",
+                            Capacity = 500,
+                            MaxWrite = 2500,
+                            MaxRead = 5000
                         },
 
                     });
@@ -753,13 +753,221 @@ namespace ComputeYourself.Data
                             modelNumber = "ZT-A30900J-10P",
                             Price = 2336.98M,
                             Brand = "Nvidia",
-                            Warranty = 2,
+                            Warranty = 3,
                             Rating = 5,
                             VideoChipset = "GeForceRTX3090Ti",
                             VramSize = 24,
                             VramType = "GDDR6",
                             RequiredPSU = 750,
                             Length = 317
+                        },
+                        new()
+                        {
+                            Name = "GIGABYTE RTX 4090 Gaming OC 24G 24GB GDDR6X",
+                            Description = "NVIDIA Ada Lovelace Streaming Multiprocessors: Up to 2x performance and power efficiency," +
+                                          " 4th Generation Tensor Cores: Up to 4x performance with DLSS 3 vs. brute-force rendering, " +
+                                          "3rd Generation RT Cores: Up to 2X ray tracing performance, Powered by GeForce RTX® 4090," +
+                                          " Integrated with 24GB GDDR6X 384-bit memory interface, WINDFORCE cooling system, RGB Fusion," +
+                                          " Dual BIOS, Protection metal back plate, Anti-sag bracket",
+                            productOfficialWebsite = "https://www.gigabyte.com/Graphics-Card/GV-N4090GAMING-OC-24GD#kf",
+                            mainImage = "https://static.gigabyte.com/StaticFile/Image/Global/eb312818c4c56daca93f4c5cdd80ceca/Product/32030/png/450",
+                            modelNumber = "GV-N4090GAMING OC-24GD",
+                            Price = 2660.00M,
+                            Brand = "GIGABYTE",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 4090",
+                            VramSize = 24,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 1000,
+                            Length = 340
+                        },
+                        new()
+                        {
+                            Name = "MSI nVIDIA RTX 4080 SUPRIM X 16GB DDR6X RTX 4080 16GB",
+                            Description = "Ascend to a superior experience with SUPRIM. See, hear, and feel a profoundly elevated" +
+                                          " graphics card built with high-quality materials and assembled with enthusiast features",
+                            productOfficialWebsite = "https://www.msi.com/Graphics-Card/GeForce-RTX-4080-16GB-SUPRIM-X/Specification",
+                            mainImage = "https://storage-asset.msi.com/global/picture/product/product_1668072619aaa562df9dd1ada3ffebd483276bac5c.png",
+                            modelNumber = "MSISUPRIMX",
+                            Price = 1660.98M,
+                            Brand = "MSI",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 4080",
+                            VramSize = 16,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 850,
+                            Length = 340
+                        },
+                        new()
+                        {
+                            Name = "ASUS ROG Strix RTX 4070 Ti 12GB GDDR6X",
+                            Description = "Powered by NVIDIA DLSS3, ultra-efficient Ada Lovelace arch, and full ray tracing. 4th" +
+                                          " Generation Tensor Cores: Up to 4x performance with DLSS 3 vs. brute-force rendering3rd" +
+                                          " Generation RT Cores: Up to 2X ray tracing performance, Axial-tech fans scaled up for 31%" +
+                                          " more airflow, 3.15-slot design: massive fin array optimized for airflow from the three" +
+                                          " Axial-tech fans , Diecast shroud, frame, and backplate add rigidity and are vented to" +
+                                          " further maximize airflow and heat dissipation , Digital power control with high-current" +
+                                          " power stages and 15K capacitors to fuel maximum performance, Auto-Extreme precision" +
+                                          " automated manufacturing for higher reliability , GPU Tweak III software provides intuitive" +
+                                          " performance tweaking, thermal controls, and system monitoring",
+                            productOfficialWebsite = "https://www.msi.com/Graphics-Card/GeForce-RTX-4080-16GB-SUPRIM-X/Specification",
+                            mainImage = "https://asset.msi.com/resize/image/global/product/product_1668072619aaa562df9dd1ada3ffebd483276bac5c.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+                            modelNumber = "ROG-STRIX-RTX4070TI-12G GAMING",
+                            Price = 1400.98M,
+                            Brand = "ASUS",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 4070",
+                            VramSize = 16,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 750,
+                            Length = 340
+                        },
+                        new()
+                        {
+                            Name = "ASRock RX 7900 XTX Phantom Gaming OC 24GB GDDR6",
+                            Description = "PRODUCT BRIEF: Clock: GPU / Memory: Boost Clock*: Up to 2615MHz / 20Gbps," +
+                                          " Game Clock**: 2455MHz / 20Gbps,Key Specifications: AMD Radeon™ RX 7900 XTX GPU," +
+                                          " 24GB GDDR6 on 384-Bit Memory Bus, 96 AMD RDNA™ 3 Compute Units (With Rt+Ai Accelerators)," +
+                                          " 96MB AMD Infinity Cache™ Technology, PCI® Express 4.0 Support, 3 x 8-pin Power Connectors," +
+                                          " 3 x DisplayPort™ 2.1 / 1 x HDMI™ 2.1 Key Features: Polychrome SYNC, Phantom Gaming 3X Cooling System," +
+                                          " Striped Ring Fan, Reinforced Metal Frame, Stylish Metal Backplate, 0dB Silent Cooling, Super Alloy",
+                            productOfficialWebsite = "https://pg.asrock.com/Graphics-Card/AMD/Radeon%20RX%207900%20XTX%20Phantom%20Gaming%2024GB%20OC/index.asp",
+                            mainImage = "https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%207900%20XTX%20Phantom%20Gaming%2024GB%20OC(M1).png",
+                            modelNumber = "RX7900XTX PG 24GO",
+                            Price = 1450.98M,
+                            Brand = "ASRock",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "RX 7900 XTX",
+                            VramSize = 24,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 1000,
+                            Length = 330
+                        },
+                        new()
+                        {
+                            Name = "Gigabyte GeForce RTX 3080 Gaming OC Waterforce WB 10GB GDDR6X 320-bit",
+                            Description = "NVIDIA Ampere Streaming Multiprocessors, 2nd Generation RT Cores, 3rd Generation, Tensor Cores," +
+                                          " Powered by GeForce RTX™ 3080, Integrated with 10GB GDDR6X 320-bit, memory interface, WATERFORCE" +
+                                          " Water Block cooling system, RGB Fusion 2.0, Protection metal back plate, 4 Years Warranty" +
+                                          " (Online registration required), LHR (Lite Hash Rate) version",
+                            productOfficialWebsite = "https://www.gigabyte.com/eu/Graphics-Card/GV-N3080GAMINGOC-WB-10GD-rev-20#kf",
+                            mainImage = "https://www.gigabyte.com/FileUpload/Global/KeyFeature/1905/innergigabyteimages/kf-img.png",
+                            modelNumber = "GV-N3080GAMINGOC WB-10GD",
+                            Price = 1250.98M,
+                            Brand = "GIGABYTE",
+                            Warranty = 4,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 3080",
+                            VramSize = 10,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 750,
+                            Length = 310
+                        },
+                        new()
+                        {
+                            Name = "ASUS GeForce RTX 3070 Ti 8GB OC GDDR6X 256bit",
+                            Description = "ROG Strix GeForce RTX™ 3070 Ti OC Edition 8GB GDDR6X buffed-up design with chart-topping thermal" +
+                                          " performance.NVIDIA Ampere Streaming Multiprocessors: The building blocks for the world’s fastest," +
+                                          " most efficient GPUs, the all-new Ampere SM brings 2X the FP32 throughput and improved power efficiency." +
+                                          " 2nd Generation RT Cores: Experience 2X the throughput of 1st gen RT Cores, plus concurrent RT and" +
+                                          " shading for a whole new level of ray tracing performance. 3rd Generation Tensor Cores: Get up to 2X" +
+                                          " the throughput with structural sparsity and advanced AI algorithms such as DLSS. These cores deliver" +
+                                          " a massive boost in game performance and all-new AI capabilities. OC edition: Boost clock 1875 MHz" +
+                                          " (OC mode)/ 1845 MHz (Gaming mode) Axial-tech Fan Design has been tuned up with more fan blades and" +
+                                          " a reversed rotational direction for the center fan. 2.9-slot design expands cooling surface area" +
+                                          " compared to last gen for more thermal headroom than ever before. Super Alloy Power II includes premium" +
+                                          " alloy chokes, solid polymer capacitors, and an array of high-current power stages. GPU Tweak II provides" +
+                                          " intuitive performance tweaking, thermal controls, and system monitoring",
+                            productOfficialWebsite = "https://rog.asus.com/graphics-cards/graphics-cards/rog-strix/rog-strix-rtx3070ti-o8g-gaming-model/",
+                            mainImage = "https://dlcdnwebimgs.asus.com/gain/FC322AD0-2B5C-4CDD-857C-484F9D2C30A3/w717/h525",
+                            modelNumber = "ROG-STRIX-RTX3070TI-O8G-GAMING",
+                            Price = 980.00M,
+                            Brand = "ASUS",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 3070 Ti",
+                            VramSize = 8,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 750,
+                            Length = 320
+                        },
+                        new()
+                        {
+                            Name = "MSI Geforce RTX 3060 Ti Ventus 3X 8GB",
+                            Description = "VENTUS brings a performance-focused design that maintains the essentials to accomplish any task at" +
+                                          " hand. A capable triple fan arrangement laid into a rigid industrial design lets this sharp looking" +
+                                          " graphics card fit into any build.",
+                            productOfficialWebsite = "https://www.msi.com/Graphics-Card/GeForce-RTX-3060-Ti-VENTUS-3X-8G-OC-LHR",
+                            mainImage = "https://storage-asset.msi.com/global/picture/image/feature/vga/ventus/3060Ti-ventus-3x/kv-xs.jpg",
+                            modelNumber = "RTX3060TiVENTUS3XLHR",
+                            Price = 960.98M,
+                            Brand = "MSI",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX™ 3060 Ti",
+                            VramSize = 8,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 600,
+                            Length = 310
+                        },
+                        new()
+                        {
+                            Name = "Gainward GeForce RTX 3070 Ti Phoenix 8GB GDDR6X",
+                            Description = "Reinforced Fan Blade, ARGB Lighting, U-Type Heat Pipe, ZERO RPM FAN, NVIDIA DLSS, NVIDIA REFLEX" +
+                                          ", DIRECTX 12 ULTIMATE, GEFORCE EXPERIENCE™, GAME READY DRIVERS, NVIDIA SHADOWPLAY™, NVIDIA ANSEL," +
+                                          " NVIDIA STUDIO, VIRTUAL REALITY, NVIDIA G-SYNC®, DIRECTX 12/DXR, BROADCAST LIKE A PRO, 4K",
+                            productOfficialWebsite = "https://www.gainward.com/main/vgapro.php?id=1130",
+                            mainImage = "https://www.gainward.com/main/product/vga/pro/p01130/p01130_pic2_67860b5a67b82627.png",
+                            modelNumber = "471056224-2713",
+                            Price = 825.00M,
+                            Brand = "Gainward",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX 3070 Ti",
+                            VramSize = 8,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 600,
+                            Length = 300
+                        },
+                        new()
+                        {
+                            Name = "Zotac GAMING GeForce RTX 3070 Twin Edge LHR nVidia 8GB GDDR6 256bit PCIe ZT-A30700E-10PLHR",
+                            Description = "Get Amplified with the ZOTAC GAMING GeForce RTX™ 30 Series based on the NVIDIA Ampere architecture." +
+                                          " Built with enhanced RT Cores and Tensor Cores, new streaming multiprocessors, and high-speed GDDR6" +
+                                          " memory, the ZOTAC GAMING GeForce RTX 3070 Twin Edge OC LHR gives rise to amplified gaming with high fidelity.",
+                            productOfficialWebsite = "https://www.zotac.com/us/product/graphics_card/zotac-gaming-geforce-rtx-3070-twin-edge-oc-lhr",
+                            mainImage = "https://www.zotac.com/download/files/styles/w1024/public/product_gallery/graphics_cards/zt-a30700h-10plhr-image01.jpg?itok=WnyQyXX3",
+                            modelNumber = "ZT-A30900J-10P",
+                            Price = 750.98M,
+                            Brand = "Zotac",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce RTX 3070",
+                            VramSize = 8,
+                            VramType = "GDDR6X",
+                            RequiredPSU = 600,
+                            Length = 240
+                        },
+                        new()
+                        {
+                            Name = "MSI PCI-Ex16x nVIDIA GT 710 2GB DDR3 GT 710 2GD3H LP",
+                            Description = "HDMI x 1(Supports 4K@30Hz as specified in HDMI 1.4) Dual-link DVI-D x 1 D-Sub x 1",
+                            productOfficialWebsite = "https://www.msi.com/Graphics-Card/GT-710-2GD3H-LP/Specification",
+                            mainImage = "https://asset.msi.com/resize/image/global/product/product_5_20180416143557_5ad4444d05e19.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png",
+                            modelNumber = "ZT-A30900J-10P",
+                            Price = 65.00M,
+                            Brand = "MSI",
+                            Warranty = 3,
+                            Rating = 5,
+                            VideoChipset = "GeForce® GT 710",
+                            VramSize = 2,
+                            VramType = "GDDR3",
+                            RequiredPSU = 400,
+                            Length = 150
                         }
                     });
                     context.SaveChanges();
