@@ -14,7 +14,7 @@ export default function EditCpu() {
                 setData(response.data);
             });
     }, []);
-    console.log(data.id);
+
     let handleChange = (e) => {
         if (e.target.name === "manufacturerCooler") {
             if (data[e.target.name] == true) {
