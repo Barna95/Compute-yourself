@@ -40,7 +40,9 @@ export default function AddNewPsu() {
             }
         })
     };
-    // TODO -> input fields be required as its needed.
+
+    // TODO -> Add enum so this can work <div> Classification  enum, no touchy<input placeholder="" aria-label="{keys[2]}" type="text" name={keys[2]} onChange={e => handleChange(e)} /></div>
+
     // create the input nodes with map but it would be hard to change the different
     //input fields like checkbox or choose from enums in dropdown
     // so ill just leave it here for now.
@@ -56,7 +58,7 @@ export default function AddNewPsu() {
 
             <div> Capacity <input placeholder="" aria-label="{keys[0]}" type="number" name={keys[0]} onChange={e => handleChange(e)} required /></div>
             <div> Modular <input placeholder="" aria-label="{keys[1]}" type="checkbox" name={keys[1]} onChange={e => handleChange(e)} /></div>
-            <div> Classification  enum, no touchy<input placeholder="" aria-label="{keys[2]}" type="text" name={keys[2]} onChange={e => handleChange(e)} /></div>
+            
 
             <div> Main Image <input placeholder="" aria-label="{keys[9]}" type="text" name={keys[9]} onChange={e => handleChange(e)} required /></div>
             <div> Product Official Website <input placeholder="" aria-label="{keys[10]}" type="text" name={keys[10]} onChange={e => handleChange(e)} required /></div>
