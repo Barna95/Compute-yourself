@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+﻿import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 
@@ -14,7 +14,15 @@ const Card = (props) => {
                     title="Go to Details"
                     onClick={() => navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
                     )}
-                >Details</button>)
+                >Details</button>,
+                <button
+                    title="Go to Details"
+                    onClick={() => {
+                        localStorage.setItem("itemId", value.id)
+                        return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } }
+                        )
+                    }}
+                >Edit</button>)
         });
 
     useEffect(() => {
