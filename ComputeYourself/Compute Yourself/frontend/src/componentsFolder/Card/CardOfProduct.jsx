@@ -1,13 +1,16 @@
-﻿import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import Paper from "@mui/material/Paper";
+﻿import { useEffect, useState } from "react";
+
+import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
-import PropTypes from "prop-types";
-import { withStyles } from '@material-ui/core/styles';
-import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
+import CardMedia from '@mui/material/CardMedia';
+import Grid from "@material-ui/core/Grid";
+import Paper from "@mui/material/Paper";
+import PropTypes from "prop-types";
 import Rating from '@mui/material/Rating';
+import Typography from "@material-ui/core/Typography";
+import { useNavigate } from "react-router-dom";
+import { withStyles } from '@material-ui/core/styles';
 
 const styles = (theme) => ({
     mainGrid: {
@@ -40,7 +43,13 @@ const Card = (props) => {
         {props.dataProperties.map((value, index) =>
             <Grid item md={6}>
                 <Paper key={index} elevation={18}>
-                    <CardContent>
+                
+                    <CardMedia
+                        sx={{ height: 330 }}
+                        image={value.mainImage?value.mainImage:"https://via.placeholder.com/400x150.png"}
+                    />
+                <CardContent>
+                
                         <Typography noWrap="true">{value.name}</Typography>
                         <Typography noWrap="true">{Math.round((value.price)*100)/100} €</Typography>
                         <Typography noWrap="true">Rating</Typography>
