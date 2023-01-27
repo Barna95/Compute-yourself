@@ -1,10 +1,12 @@
 ﻿import { useEffect, useState } from "react";
+
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
+import Grid from "@mui/material/Grid";
 import React from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Button from '@material-ui/core/Button';
-import Grid from "@mui/material/Grid";
 
 export default function CpuCoolers() {
     const [data, setData] = useState([]);
@@ -19,15 +21,17 @@ export default function CpuCoolers() {
     
     return (
 <>
-            <Grid item md={10}>
-            <Button variant="outlined" size="small" 
-                title="Go to Add"
-                onClick={() => navigate(`/product/addnewcpucooler`, { replace: true, state: { formData: data, productType: "cpucooler" } }
-                )}
-                >Add new</Button>
+        <Grid item md={10}>
+        <Button 
+            variant="outlined" 
+            size="medium" 
+            color="success" 
+            onClick={() => navigate(`/product/addnewcpucooler`, { replace: true, state: { formData: data, productType: "cpucooler" } }
+            )}
+            ><AddIcon color="success" ></AddIcon>Cpu Cooler</Button>
 
-            </Grid>
-                <Card dataProperties={data} productType="cpucooler" />
-            </>
+        </Grid>
+            <Card dataProperties={data} productType="cpucooler" />
+        </>
     )
 }

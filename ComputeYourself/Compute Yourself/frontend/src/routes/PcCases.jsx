@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
+import Grid from "@mui/material/Grid";
 import React from 'react';
 import axios from "axios";
-import Button from '@material-ui/core/Button';
-import Grid from "@mui/material/Grid";
+import { useNavigate } from "react-router-dom";
 
 export default function PcCases() {
     const [data, setData] = useState([]);
@@ -19,11 +21,11 @@ export default function PcCases() {
     return (
         <>
             <Grid item md={10}>
-            <Button variant="outlined" size="small" 
+            <Button variant="outlined" size="medium" 
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewpccase`, { replace: true, state: { formData: data, productType: "pccase" } }
                 )}
-            >Add new</Button>
+            ><AddIcon color="success" ></AddIcon>Pc case</Button>
             </Grid>
             <Card dataProperties={data} productType="pccase" />
         </>

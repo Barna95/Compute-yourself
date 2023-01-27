@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
+import AddIcon from '@mui/icons-material/Add';
+import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
+import Grid from "@mui/material/Grid";
 import React from 'react';
 import axios from "axios";
-import Button from '@material-ui/core/Button';
-import Grid from "@mui/material/Grid";
+import { useNavigate } from "react-router-dom";
 
 export default function Rams() {
     const [data, setData] = useState([]);
@@ -23,7 +25,7 @@ export default function Rams() {
                 title="Go to Details"
                 onClick={() => navigate(`/product/addnewram`, { replace: true, state: { formData: data, productType: "ram" } }
                 )}
-            >Add new</Button>
+            ><AddIcon color="success" ></AddIcon>Ram</Button>
             </Grid>
             <Card dataProperties={data} productType="ram" />
         </>
