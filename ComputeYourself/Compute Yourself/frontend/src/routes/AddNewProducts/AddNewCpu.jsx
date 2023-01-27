@@ -1,6 +1,10 @@
-﻿import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+﻿import AddIcon from '@mui/icons-material/Add';
+import Box from '@mui/material/Box';
+import Button from '@material-ui/core/Button';
+import TextField from '@mui/material/TextField';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 export default function AddNewCpu() {
     const [formValues, setFormValues] = useState({
@@ -74,8 +78,8 @@ export default function AddNewCpu() {
             <div> Product Official Website <input placeholder="" aria-label="{keys[17]}" type="text" name={keys[17]} onChange={e => handleChange(e)} required /></div>
             <div> Model Number <input placeholder="" aria-label="{keys[18]}" type="text" name={keys[18]} onChange={e => handleChange(e)} required /></div>
             <div className="button-section">
-                <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <Button type="submit" variant="outlined" size="small">Save</Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
             </div>
         </form>
     )

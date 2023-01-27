@@ -1,6 +1,7 @@
-﻿import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+﻿import Button from '@material-ui/core/Button';
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
 
 export default function AddNewCpuCooler() {
     const [formValues, setFormValues] = useState({
@@ -53,8 +54,8 @@ export default function AddNewCpuCooler() {
             <div> Model Number <input placeholder="" aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} required /></div>
             
             <div className="button-section">
-                <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+            <Button type="submit" variant="outlined" size="small">Save</Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
             </div>
         </form>
     )
