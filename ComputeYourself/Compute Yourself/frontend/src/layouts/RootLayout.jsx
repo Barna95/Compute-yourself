@@ -1,19 +1,27 @@
-import { Outlet, Link, NavLink } from "react-router-dom";
 import { Box, ThemeProvider, createTheme } from '@mui/system';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Logo from '../assets/banner_gs.png';
-import Mainpicture from '../assets/maintitle.jpg';
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
-//import Logo from '../assets/logo.svg';
+import { Container } from "react-bootstrap";
+import Grid from "@mui/material/Grid";
 import IconButton from '@material-ui/core/IconButton';
+import Logo from '../assets/banner_gs.png';
+import Mainpicture from '../assets/maintitle.jpg';
+import Paper from "@mui/material/Paper";
+import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Container } from "react-bootstrap";
-import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
+import { withStyles } from '@material-ui/core/styles';
+
+//import Logo from '../assets/logo.svg';
+
+
+
+
+
+
+
 
 const classes = {
   root: {

@@ -1,12 +1,17 @@
 ﻿import * as React from 'react';
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
-import Button from '@material-ui/core/Button';
-import Paper from '@mui/material/Paper';
+
 import { Grid, Rating, Typography } from '@mui/material';
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import Button from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
+import DeleteButtonForDetails from './DeleteProducts/DeleteButtonDetails';
+import EditIcon from '@mui/icons-material/Edit';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import axios from "axios";
 
 export default function ShowProductDetails() {
     const [data, setData] = useState([]);
@@ -79,13 +84,17 @@ export default function ShowProductDetails() {
                 />
                 </Card>
                 <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{((data.price)*100)/100} €</Typography></Typography>
+                <Stack  align='center' spacing={1}>
                 <Button 
+                    color="primary"
                     variant="outlined" 
                     size="small" 
                     title="Go to Edit"
                     onClick={() => {localStorage.setItem("itemId", data.id); return navigate(`/product/${productType}/edit`, { replace: true, state: { itemId: data.id } })}}>
-                    Edit
+                   <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
                 </Button>
+                <DeleteButtonForDetails productType={productType} productId={data.id}/>
+                </Stack>
                 </Grid>
                 <Grid item md={3}>
                 {renderKeys}
