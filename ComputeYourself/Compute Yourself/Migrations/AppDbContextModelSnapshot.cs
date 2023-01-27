@@ -22,7 +22,7 @@ namespace ComputeYourself.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ComputeYourself.Models.CPU.Cpu", b =>
+            modelBuilder.Entity("ComputeYourself.Models.Cpu", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,8 +30,9 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("CoreClock")
                         .HasColumnType("real");
@@ -63,8 +64,9 @@ namespace ComputeYourself.Migrations
                     b.Property<float>("Rating")
                         .HasColumnType("real");
 
-                    b.Property<int>("Socket")
-                        .HasColumnType("int");
+                    b.Property<string>("Socket")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TDP")
                         .HasColumnType("int");
@@ -81,27 +83,24 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Cpus");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.CPU.Cpu_Media", b =>
-                {
-                    b.Property<int>("CpuId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CpuId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("CpuMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CpuCooler.CpuCooler", b =>
+            modelBuilder.Entity("ComputeYourself.Models.CpuCooler", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -109,14 +108,17 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CoolerType")
-                        .HasColumnType("int");
+                    b.Property<string>("CoolerType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CpuType")
-                        .HasColumnType("int");
+                    b.Property<string>("CpuType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -138,27 +140,24 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("CpuCoolers");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.CpuCooler.CpuCooler_Media", b =>
-                {
-                    b.Property<int>("CpuCoolerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("CpuCoolerId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("CpuCoolerMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Drive.Drive", b =>
+            modelBuilder.Entity("ComputeYourself.Models.Drive", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -166,14 +165,16 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ConnectionType")
-                        .HasColumnType("int");
+                    b.Property<string>("ConnectionType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -198,27 +199,24 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Drives");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.Drive.Drive_Media", b =>
-                {
-                    b.Property<int>("DriveId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("DriveId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("DriveMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.GPU.Gpu", b =>
+            modelBuilder.Entity("ComputeYourself.Models.Gpu", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -226,8 +224,9 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -249,56 +248,38 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("RequiredPSU")
                         .HasColumnType("int");
 
-                    b.Property<int>("VideoChipset")
-                        .HasColumnType("int");
+                    b.Property<string>("VideoChipset")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("VramSize")
                         .HasColumnType("int");
 
-                    b.Property<int>("VramType")
-                        .HasColumnType("int");
+                    b.Property<string>("VramType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
+
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Gpus");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.GPU.Gpu_Media", b =>
-                {
-                    b.Property<int>("GpuId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("GpuId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("GpuMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Media", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("MediaURL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.MotherBoard.MotherBoard", b =>
+            modelBuilder.Entity("ComputeYourself.Models.MotherBoard", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -309,14 +290,16 @@ namespace ComputeYourself.Migrations
                     b.Property<string>("Bluetooth")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CForSLISupport")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Chipset")
-                        .HasColumnType("int");
+                    b.Property<string>("Chipset")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -357,8 +340,9 @@ namespace ComputeYourself.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 6)");
 
-                    b.Property<int>("RAM")
-                        .HasColumnType("int");
+                    b.Property<string>("RAM")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("Rating")
                         .HasColumnType("real");
@@ -369,8 +353,9 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
-                    b.Property<int>("Socket")
-                        .HasColumnType("int");
+                    b.Property<string>("Socket")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("USB2")
                         .HasColumnType("int");
@@ -396,27 +381,24 @@ namespace ComputeYourself.Migrations
                     b.Property<bool>("XMP")
                         .HasColumnType("bit");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("MotherBoards");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.MotherBoard.MotherBoard_Media", b =>
-                {
-                    b.Property<int>("MotherBoardId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MotherBoardId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("MotherBoardMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PSU.Psu", b =>
+            modelBuilder.Entity("ComputeYourself.Models.PcCase", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -424,8 +406,64 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaxCpuCoolerHeight")
                         .HasColumnType("int");
+
+                    b.Property<int>("MaxGpuLength")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18, 6)");
+
+                    b.Property<float>("Rating")
+                        .HasColumnType("real");
+
+                    b.Property<int>("SizeCompatibility")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Warranty")
+                        .HasColumnType("int");
+
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PcCases");
+                });
+
+            modelBuilder.Entity("ComputeYourself.Models.Psu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Capacity")
                         .HasColumnType("int");
@@ -454,27 +492,24 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Psus");
                 });
 
-            modelBuilder.Entity("ComputeYourself.Models.PSU.Psu_Media", b =>
-                {
-                    b.Property<int>("PsuId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PsuId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("PsuMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PcCase.PcCase", b =>
+            modelBuilder.Entity("ComputeYourself.Models.Ram", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -482,65 +517,9 @@ namespace ComputeYourself.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
+                    b.Property<string>("Brand")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MaxCpuCoolerHeight")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaxGpuLength")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18, 6)");
-
-                    b.Property<float>("Rating")
-                        .HasColumnType("real");
-
-                    b.Property<int>("SizeCompatibility")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Warranty")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PcCases");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PcCase.PcCase_Media", b =>
-                {
-                    b.Property<int>("PcCaseId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PcCaseId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("PcCaseMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.RAM.Ram", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Brand")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -555,8 +534,9 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Latency")
                         .HasColumnType("int");
 
-                    b.Property<int>("MemoryType")
-                        .HasColumnType("int");
+                    b.Property<string>("MemoryType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -574,235 +554,21 @@ namespace ComputeYourself.Migrations
                     b.Property<int>("Warranty")
                         .HasColumnType("int");
 
+                    b.Property<string>("mainImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("modelNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("productOfficialWebsite")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Rams");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.RAM.Ram_Media", b =>
-                {
-                    b.Property<int>("RamId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MediaId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RamId", "MediaId");
-
-                    b.HasIndex("MediaId");
-
-                    b.ToTable("RamMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CPU.Cpu_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.CPU.Cpu", "Cpu")
-                        .WithMany("Cpu_Medias")
-                        .HasForeignKey("CpuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("Cpu_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cpu");
-
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CpuCooler.CpuCooler_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.CpuCooler.CpuCooler", "Cpucooler")
-                        .WithMany("CpuCooler_Medias")
-                        .HasForeignKey("CpuCoolerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("CpuCooler_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cpucooler");
-
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Drive.Drive_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.Drive.Drive", "Drive")
-                        .WithMany("Drive_Medias")
-                        .HasForeignKey("DriveId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("Drive_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Drive");
-
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.GPU.Gpu_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.GPU.Gpu", "Gpu")
-                        .WithMany("Gpu_Medias")
-                        .HasForeignKey("GpuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("Gpu_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gpu");
-
-                    b.Navigation("Media");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.MotherBoard.MotherBoard_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("MotherBoard_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.MotherBoard.MotherBoard", "MotherBoard")
-                        .WithMany("MotherBoard_Medias")
-                        .HasForeignKey("MotherBoardId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Media");
-
-                    b.Navigation("MotherBoard");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PSU.Psu_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("Psu_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.PSU.Psu", "Psu")
-                        .WithMany("Psu_Medias")
-                        .HasForeignKey("PsuId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Media");
-
-                    b.Navigation("Psu");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PcCase.PcCase_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("PcCaseMedias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.PcCase.PcCase", "PcCase")
-                        .WithMany("PcCaseMedias")
-                        .HasForeignKey("PcCaseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Media");
-
-                    b.Navigation("PcCase");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.RAM.Ram_Media", b =>
-                {
-                    b.HasOne("ComputeYourself.Models.Media", "Media")
-                        .WithMany("Ram_Medias")
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ComputeYourself.Models.RAM.Ram", "Ram")
-                        .WithMany("Ram_Medias")
-                        .HasForeignKey("RamId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Media");
-
-                    b.Navigation("Ram");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CPU.Cpu", b =>
-                {
-                    b.Navigation("Cpu_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.CpuCooler.CpuCooler", b =>
-                {
-                    b.Navigation("CpuCooler_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Drive.Drive", b =>
-                {
-                    b.Navigation("Drive_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.GPU.Gpu", b =>
-                {
-                    b.Navigation("Gpu_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.Media", b =>
-                {
-                    b.Navigation("CpuCooler_Medias");
-
-                    b.Navigation("Cpu_Medias");
-
-                    b.Navigation("Drive_Medias");
-
-                    b.Navigation("Gpu_Medias");
-
-                    b.Navigation("MotherBoard_Medias");
-
-                    b.Navigation("PcCaseMedias");
-
-                    b.Navigation("Psu_Medias");
-
-                    b.Navigation("Ram_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.MotherBoard.MotherBoard", b =>
-                {
-                    b.Navigation("MotherBoard_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PSU.Psu", b =>
-                {
-                    b.Navigation("Psu_Medias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.PcCase.PcCase", b =>
-                {
-                    b.Navigation("PcCaseMedias");
-                });
-
-            modelBuilder.Entity("ComputeYourself.Models.RAM.Ram", b =>
-                {
-                    b.Navigation("Ram_Medias");
                 });
 #pragma warning restore 612, 618
         }
