@@ -52,7 +52,7 @@ const Card = (props) => {
                           image={value.mainImage?value.mainImage:"https://via.placeholder.com/400x150.png"}/>
                         <CardContent>
                         <Typography noWrap="true" align='center' variant='subtitle1'>{value.name}</Typography>
-                        <Typography noWrap="true" align='center' variant='h6'>{Math.round((value.price)*100)/100} €</Typography>
+                        <Typography noWrap="true" align='center' variant='h6'>{Number(value.price).toFixed(2)} €</Typography>
                         {/* <Typography noWrap="true" variant='justify'>Rating </Typography> */}
                         
                         <Stack direction="column" spacing={1}>

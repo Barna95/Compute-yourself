@@ -1,5 +1,4 @@
 ﻿import * as React from 'react';
-
 import { Grid, Rating, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -83,7 +82,7 @@ export default function ShowProductDetails() {
                     image={data.mainImage}
                 />
                 </Card>
-                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{((data.price)*100)/100} €</Typography></Typography>
+                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Number(data.price).toFixed(2)} €</Typography></Typography>
                 <Stack  align='center' spacing={1}>
                 <Button 
                     color="primary"
