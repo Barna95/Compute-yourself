@@ -1,6 +1,4 @@
-﻿import { useEffect, useState } from "react";
-
-import Box from '@mui/material/Box';
+﻿import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from '@mui/material/CardMedia';
@@ -39,7 +37,6 @@ const styles = (theme) => ({
 
 const Card = (props) => {
     const navigate = useNavigate();
-    const neededValues = [];
     const { classes } = props;
     
     return (
@@ -63,10 +60,7 @@ const Card = (props) => {
                         <Stack direction="row-reverse"   align='center' spacing={1}>
                         <Button variant="outlined" size="small"
                             title="Go to Details"
-                            onClick={() => {
-                              localStorage.setItem("productType", props.productType)
-                              return navigate(`/product/details`, { replace: true, state: { itemId: value.id, productType: props.productType } }
-                            )}}
+                            onClick={() => {return navigate(`/product/${props.productType}/${value.id}/details`)}}
                         ><VisibilityIcon fontSize="small"></VisibilityIcon> Details
                         </Button>
                         <Button 
@@ -74,8 +68,7 @@ const Card = (props) => {
                           size="small" 
                           title="Go to Edit"
                           color="primary"
-                          onClick={() => {localStorage.setItem("itemId", value.id); 
-                          return navigate(`/product/${props.productType}/edit`, { replace: true, state: { itemId: value.id } })}}>
+                          onClick={() => {return navigate(`/product/${props.productType}/${value.id}/edit`)}}>
                           <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
                         </Button>
                         <DeleteButtonCard productType={props.productType} productId={value.id}/>
