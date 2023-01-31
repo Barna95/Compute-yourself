@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -47,7 +46,7 @@ export default function EditGpu() {
             <div> Model Number <input placeholder={data[keys[14]]} aria-label="{keys[14]}" type="text" name={keys[14]} onChange={e => handleChange(e)} /></div>
             <div className="button-section">
                 <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <button variant="outlined" size="small" onClick={() => navigate(`/product/gpu`)}> Back </button>
             </div>
         </form>
     )

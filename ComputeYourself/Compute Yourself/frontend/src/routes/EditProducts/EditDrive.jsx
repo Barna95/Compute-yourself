@@ -49,7 +49,7 @@ export default function EditDrive() {
 
             <div className="button-section">
                 <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <button variant="outlined" size="small" onClick={() => navigate(`/product/drive`)}> Back </button>
             </div>
         </form>
     )

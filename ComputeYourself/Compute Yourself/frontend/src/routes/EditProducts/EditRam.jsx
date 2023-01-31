@@ -55,7 +55,7 @@ export default function EditRam() {
             <div> Model Number <input placeholder={data[keys[14]]} aria-label="{keys[14]}" type="text" name={keys[14]} onChange={e => handleChange(e)} /></div>
             <div className="button-section">
                 <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <button variant="outlined" size="small" onClick={() => navigate(`/product/ram`)}> Back </button>
             </div>
         </form>
     )

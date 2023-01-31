@@ -1,18 +1,23 @@
 ﻿import { useEffect, useState } from "react";
-
 import Box from '@mui/material/Box';
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditCpu() {
     const [data, setData] = useState([]);
+    let { id } = useParams();
     const navigate = useNavigate();
-    const [itemId] = useState(localStorage.getItem("itemId"));
     const keys = Object.keys(data).map((propName, idx) => { return propName });
+
+
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/cpu/${itemId}`).then(
+        console.log(data);
+    }, [data]);
+
+    useEffect(() => {
+        axios.get(`https://localhost:7195/product/cpu/${id}`).then(
             (response) => {
                 setData(response.data);
             });
@@ -20,16 +25,15 @@ export default function EditCpu() {
 
     let handleChange = (e) => {
         if (e.target.name === "manufacturerCooler") {
-            if (data[e.target.name] == true) {
-                setData({ ...data, [e.target.name]: false });
-            } else {
+            //Checkbox target value always stays on, some magic happens, check whats behind it
+            if (data[e.target.name] == false) {
                 setData({ ...data, [e.target.name]: true });
+            } else if (data[e.target.name] == true) {
+                setData({ ...data, [e.target.name]: false });
             }
         } else {
-            //data[e.target.name] = e.target.value;
             setData({ ...data, [e.target.name]: e.target.value });
         }
-        console.log(data);
     }
 
     let handleSubmit = async () => {
@@ -92,7 +96,7 @@ export default function EditCpu() {
                 <div> Model Number <input placeholder={data[keys[19]]} aria-label="{keys[19]}" type="text" name={keys[19]} onChange={e => handleChange(e)} /></div>
                 <div className="button-section">
                     <button type="submit" variant="outlined" size="small">Save</button>
-                    <button type="button" variant="outlined" size="small"onClick={() => navigate("/product")}> Back </button>
+                    <button variant="outlined" size="small" onClick={() => navigate(`/product/cpu`)}> Back </button>
                 </div>
             </div>
         </form>

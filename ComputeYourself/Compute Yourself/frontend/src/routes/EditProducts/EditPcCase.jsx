@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -48,7 +47,7 @@ export default function EditPcCase() {
             <div> Model Number <input placeholder={data[keys[12]]} aria-label="{keys[12]}" type="text" name={keys[12]} onChange={e => handleChange(e)} /></div>
             <div className="button-section">
                 <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <button variant="outlined" size="small" onClick={() => navigate(`/product/pccase`)}> Back </button>
             </div>
         </form>
     )

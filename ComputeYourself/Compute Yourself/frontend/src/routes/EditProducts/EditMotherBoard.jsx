@@ -76,7 +76,7 @@ export default function EditMotherBoard() {
 
             <div className="button-section">
                 <button type="submit">Save</button>
-                <button type="button" onClick={() => navigate("/product")}> go back </button>
+                <button variant="outlined" size="small" onClick={() => navigate(`/product/motherboard`)}> Back </button>
             </div>
         </form>
     )
