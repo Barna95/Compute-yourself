@@ -41,10 +41,10 @@ const styles = (theme) => ({
 
 
 function ProductsLayout(props) {
-  const [productEntries, setProductEntries] = useState([<Cpus />]);
+  const [productEntries, setProductEntries] = useState(<Cpus />);
   const { classes } = props;
   const cpu = () => {
-    setProductEntries([<Cpus />]);
+      setProductEntries([<Cpus key={0 }/>]);
   };
   const psu = () => {
     setProductEntries([<Psus />]);
@@ -144,7 +144,7 @@ function ProductsLayout(props) {
                   spacing={3}
                 >
                   <CardContent className={classes.cardDetails}>
-                    <Typography noWrap="true">{post.title}</Typography>
+                        <Typography key={post.title} noWrap="true">{post.title}</Typography>
                   </CardContent>
                 </Paper>
               </Grid>

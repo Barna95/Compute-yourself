@@ -45,7 +45,7 @@ const Card = (props) => {
     return (
     <>
         {props.dataProperties.map((value, index) =>
-            <Grid item md={6}>
+            <Grid item md={6} key={index }>
                 <Paper key={index} elevation={18}>
                         <CardMedia
                           sx={{ height: 330 }}
