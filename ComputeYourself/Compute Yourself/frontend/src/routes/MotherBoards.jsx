@@ -16,7 +16,7 @@ export default function MotherBoards() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
     
     return (
         <>

@@ -16,7 +16,7 @@ export default function PcCases() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
    
     return (
         <>

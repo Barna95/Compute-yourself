@@ -21,7 +21,7 @@ export default function AddNewPcCase() {
     const navigate = useNavigate();
     const keys = Object.keys(formValues).map((propName, idx) => { return propName });
     let handleChange = (e) => {
-        formValues[e.target.name] = e.target.value;
+        setFormValues({ ...formValues, [e.target.name]: e.target.value });
         console.log(formValues);
     }
 

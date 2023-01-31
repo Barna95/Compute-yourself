@@ -18,12 +18,12 @@ export default function EditMotherBoard() {
     let handleChange = (e) => {
         if (e.target.name === "xmp" || e.target.name === "lighting" || e.target.name === "windows11Support" ) {
             if (data[e.target.name] == true) {
-                data[e.target.name] = false;
+                setData({ ...data, [e.target.name]: false });
             } else {
-                data[e.target.name] = true;
+                setData({ ...data, [e.target.name]: true });
             }
         } else {
-            data[e.target.name] = e.target.value;
+            setData({ ...data, [e.target.name]: e.target.value });
         }
         console.log(data);
     }

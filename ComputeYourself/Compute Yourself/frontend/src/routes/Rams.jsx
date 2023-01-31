@@ -16,7 +16,7 @@ export default function Rams() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
 
     return (
         <>

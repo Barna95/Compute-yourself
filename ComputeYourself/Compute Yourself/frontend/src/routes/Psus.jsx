@@ -16,7 +16,7 @@ export default function Psus() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
    
     return (
         <>

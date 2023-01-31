@@ -16,7 +16,7 @@ export default function Gpus() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
 
     return (
         <>

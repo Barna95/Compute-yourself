@@ -16,7 +16,7 @@ export default function Drives() {
             (response) => {
                 setData(response.data);
             });
-    }, []);
+    }, [data]);
     return (
         <>
             <Grid item md={10}>

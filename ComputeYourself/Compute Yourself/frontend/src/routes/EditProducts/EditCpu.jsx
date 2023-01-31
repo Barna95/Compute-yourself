@@ -21,12 +21,13 @@ export default function EditCpu() {
     let handleChange = (e) => {
         if (e.target.name === "manufacturerCooler") {
             if (data[e.target.name] == true) {
-                data[e.target.name] = false;
+                setData({ ...data, [e.target.name]: false });
             } else {
-                data[e.target.name] = true;
+                setData({ ...data, [e.target.name]: true });
             }
         } else {
-            data[e.target.name] = e.target.value;
+            //data[e.target.name] = e.target.value;
+            setData({ ...data, [e.target.name]: e.target.value });
         }
         console.log(data);
     }
@@ -86,9 +87,9 @@ export default function EditCpu() {
                 <div> Tdp <input placeholder={data[keys[7]]} aria-label="{keys[7]}" type="number" name={keys[7]} onChange={e => handleChange(e)} /></div>
                 <div> Core Clock <input placeholder={data[keys[8]]} aria-label="{keys[8]}" type="number" name={keys[8]} onChange={e => handleChange(e)} /></div>
                 <div> Turbo Core Clock <input placeholder={data[keys[9]]} aria-label="{keys[9]}" type="number" name={keys[9]} onChange={e => handleChange(e)} /></div>
-                <div> Main Image <input placeholder={data[keys[16]]} aria-label="{keys[16]}" type="text" name={keys[16]} onChange={e => handleChange(e)} /></div>
-                <div> Product Official Website <input placeholder={data[keys[17]]} aria-label="{keys[17]}" type="text" name={keys[17]} onChange={e => handleChange(e)} /></div>
-                <div> Model Number <input placeholder={data[keys[18]]} aria-label="{keys[18]}" type="text" name={keys[18]} onChange={e => handleChange(e)} /></div>
+                <div> Main Image <input placeholder={data[keys[17]]} aria-label="{keys[17]}" type="text" name={keys[17]} onChange={e => handleChange(e)} /></div>
+                <div> Product Official Website <input placeholder={data[keys[18]]} aria-label="{keys[18]}" type="text" name={keys[18]} onChange={e => handleChange(e)} /></div>
+                <div> Model Number <input placeholder={data[keys[19]]} aria-label="{keys[19]}" type="text" name={keys[19]} onChange={e => handleChange(e)} /></div>
                 <div className="button-section">
                     <button type="submit" variant="outlined" size="small">Save</button>
                     <button type="button" variant="outlined" size="small"onClick={() => navigate("/product")}> Back </button>

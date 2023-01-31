@@ -25,12 +25,12 @@ export default function AddNewRam() {
     let handleChange = (e) => {
         if (e.target.name === "heatSink") {
             if (formValues[e.target.name] == true) {
-                formValues[e.target.name] = false;
+                setFormValues({ ...formValues, [e.target.name]: false });
             } else {
-                formValues[e.target.name] = true;
+                setFormValues({ ...formValues, [e.target.name]: true });
             }
         } else {
-            formValues[e.target.name] = e.target.value;
+            setFormValues({ ...formValues, [e.target.name]: e.target.value });
         }
         console.log(formValues);
     }

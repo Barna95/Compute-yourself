@@ -18,7 +18,7 @@ export default function EditDrive() {
 
     console.log(data);
     let handleChange = (e) => {
-        data[e.target.name] = e.target.value;
+        setData({ ...data, [e.target.name]: e.target.value });
         console.log(data);
     }
 
