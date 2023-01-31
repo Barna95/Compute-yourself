@@ -57,7 +57,7 @@ export default function AddNewPcCase() {
             <div> Model Number <input placeholder="" aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} required /></div>
             <div className="button-section">
             <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/pccase")}> Back </Button>
             </div>
         </form>
     )

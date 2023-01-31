@@ -79,7 +79,7 @@ export default function AddNewCpu() {
             <div> Model Number <input placeholder="" aria-label="{keys[18]}" type="text" name={keys[18]} onChange={e => handleChange(e)} required /></div>
             <div className="button-section">
                 <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/cpu")}> Back </Button>
             </div>
         </form>
     )

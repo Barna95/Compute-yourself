@@ -65,7 +65,7 @@ export default function AddNewRam() {
             <div> Model Number <input placeholder="" aria-label="{keys[13]}" type="text" name={keys[13]} onChange={e => handleChange(e)} required /></div>
             <div className="button-section">
             <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/ram")}> Back </Button>
             </div>
         </form>
     )

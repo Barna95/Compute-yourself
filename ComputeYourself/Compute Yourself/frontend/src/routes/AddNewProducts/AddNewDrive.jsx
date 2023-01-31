@@ -57,7 +57,7 @@ export default function AddNewDrive() {
 
             <div className="button-section">
             <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
+                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/drive")}> Back </Button>
             </div>
         </form>
     )
