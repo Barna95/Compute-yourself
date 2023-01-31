@@ -240,7 +240,7 @@ function NavBar() {
         </Grid>
         <Grid item xs={1}>
           <Box style={classes.searchButton}>
-              <Button component={Link} to="/product" variant="outlined" size="small">
+              <Button component={Link} to="/product/cpu" variant="outlined" size="small">
                 Products
               </Button>
           </Box>
