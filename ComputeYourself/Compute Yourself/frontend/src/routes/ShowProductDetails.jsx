@@ -1,7 +1,7 @@
 ﻿import * as React from 'react';
 import { Grid, Rating, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
@@ -13,8 +13,8 @@ import Stack from '@mui/material/Stack';
 import axios from "axios";
 
 export default function ShowProductDetails() {
+    let { productType, id } = useParams();
     const [data, setData] = useState([]);
-    const location = useLocation();
     const navigate = useNavigate();
     // From all objects -> 
     //let productValues = []
@@ -22,7 +22,7 @@ export default function ShowProductDetails() {
     //let productKeys = [];
     //const selectKeys = Object.keys(props.dataProperties.map((e) => productKeys.push(Object.keys(e))));
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/${location.state.productType}/${location.state.itemId}`).then(
+        axios.get(`https://localhost:7195/product/${productType}/${id}`).then(
             (response) => {
                 setData(response.data);
             });
@@ -62,7 +62,7 @@ export default function ShowProductDetails() {
         }
     })
 
-    const productType = localStorage.getItem("productType");
+    //const productType = localStorage.getItem("productType");
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
     // show values -> {Object.keys(data).map((asd, idx) => <p key={idx}> {data[asd] }</p> ) } 
@@ -71,7 +71,7 @@ export default function ShowProductDetails() {
 
         <>
         <Paper>
-            <Button variant="outlined" size="small" onClick={() => navigate("/product") }> go back </Button>
+            <Button variant="outlined" size="small" onClick={() => navigate(`/product/${productType}`) }> Go back </Button>
             <Grid container md={12}>
                 <Grid item md={6}>
                 <Typography style={{fontSize: 20, fontWeight: 'bold' }}>{data.name}</Typography>
@@ -89,7 +89,7 @@ export default function ShowProductDetails() {
                     variant="outlined" 
                     size="small" 
                     title="Go to Edit"
-                    onClick={() => {localStorage.setItem("itemId", data.id); return navigate(`/product/${productType}/edit`, { replace: true, state: { itemId: data.id } })}}>
+                    onClick={() => {return navigate(`/product/${productType}/${data.id}/edit`)}}>
                    <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
                 </Button>
                 <DeleteButtonForDetails productType={productType} productId={data.id}/>
