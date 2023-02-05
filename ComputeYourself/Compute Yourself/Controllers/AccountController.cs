@@ -1,5 +1,4 @@
-﻿
-using ComputeYourself.Data.DTOs;
+﻿using ComputeYourself.Data.DTOs;
 using ComputeYourself.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -24,8 +23,9 @@ namespace ComputeYourself.Controllers
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
             {
-                return StatusCode(404);
-                //return Unauthorized();
+                //return StatusCode(404);
+                return Unauthorized();
+
             }
 
             return user;
@@ -48,7 +48,7 @@ namespace ComputeYourself.Controllers
             }
 
             await _userManager.AddToRoleAsync(user, "Member");
-            return StatusCode(201);
+            return StatusCode(StatusCodes.Status201Created);
         }
     }
 }
