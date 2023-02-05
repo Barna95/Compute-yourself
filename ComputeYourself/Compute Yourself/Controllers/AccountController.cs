@@ -1,4 +1,5 @@
 ﻿using ComputeYourself.Data.DTOs;
+using ComputeYourself.Data.Services;
 using ComputeYourself.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -11,14 +12,16 @@ namespace ComputeYourself.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
+        private readonly TokenService _tokenService;
 
-        public AccountController(UserManager<User> userManager)
+        public AccountController(UserManager<User> userManager, TokenService tokenService)
         {
             _userManager = userManager;
+            _tokenService = tokenService;
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<User>> Login(LoginDto loginDto)
+        public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
@@ -28,7 +31,11 @@ namespace ComputeYourself.Controllers
 
             }
 
-            return user;
+            return new UserDto
+            {
+                Email = user.Email,
+                Token = await _tokenService.GenerateToken(user)
+            };
         }
 
         [HttpPost("register")]
