@@ -7,6 +7,8 @@ using ComputeYourself.Data.Services.MotherBoard;
 using ComputeYourself.Data.Services.PcCase;
 using ComputeYourself.Data.Services.PSU;
 using ComputeYourself.Data.Services.RAM;
+using ComputeYourself.Models.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 
@@ -37,6 +39,9 @@ namespace ComputeYourself
             builder.Services.AddDbContext<AppDbContext>(options => options
                 .UseSqlServer(builder.Configuration
                     .GetConnectionString("DefaultConnectionString")));
+            builder.Services.AddIdentityCore<User>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
             builder.Services.AddDbContext<AppDbContext>(options => options.EnableSensitiveDataLogging());
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
@@ -59,8 +64,9 @@ namespace ComputeYourself
             app.UseHttpsRedirection();
 
             app.UseCors();
+            
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
