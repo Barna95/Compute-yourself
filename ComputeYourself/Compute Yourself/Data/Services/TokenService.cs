@@ -7,12 +7,12 @@ using System.Text;
 
 namespace ComputeYourself.Data.Services
 {
-    public class TokenService : ITokenService
+    public class TokenService
     {
         private readonly IConfiguration _config;
         private readonly UserManager<User> _userManager;
 
-        public TokenService(UserManager<User> userManager, IConfiguration config)
+        public TokenService(IConfiguration config, UserManager<User> userManager)
         {
             _config = config;
             _userManager = userManager;
