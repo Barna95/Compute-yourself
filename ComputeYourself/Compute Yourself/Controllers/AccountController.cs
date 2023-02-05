@@ -59,7 +59,7 @@ namespace ComputeYourself.Controllers
         }
 
         [Authorize]
-        [HttpGet("currentUser")]
+        [HttpGet("currentuser")]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
