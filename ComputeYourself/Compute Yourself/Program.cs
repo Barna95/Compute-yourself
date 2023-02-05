@@ -1,4 +1,5 @@
 using ComputeYourself.Data;
+using ComputeYourself.Data.Services;
 using ComputeYourself.Data.Services.CPU;
 using ComputeYourself.Data.Services.CpuCooler;
 using ComputeYourself.Data.Services.Drive;
@@ -60,6 +61,7 @@ namespace ComputeYourself
             builder.Services.AddScoped<IPsuService, PsuService>();
             builder.Services.AddScoped<ICpuCoolerService, CpuCoolerService>();
             builder.Services.AddScoped<ICPUService, CPUService>();
+            builder.Services.AddScoped<ITokenService,TokenService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
