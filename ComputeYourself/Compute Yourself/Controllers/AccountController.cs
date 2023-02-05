@@ -1,6 +1,7 @@
 ﻿using ComputeYourself.Data.DTOs;
 using ComputeYourself.Data.Services;
 using ComputeYourself.Models.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,7 +27,6 @@ namespace ComputeYourself.Controllers
             var user = await _userManager.FindByNameAsync(loginDto.UserName);
             if (user == null || !await _userManager.CheckPasswordAsync(user, loginDto.Password))
             {
-                //return StatusCode(404);
                 return Unauthorized();
 
             }
@@ -56,6 +56,19 @@ namespace ComputeYourself.Controllers
 
             await _userManager.AddToRoleAsync(user, "Member");
             return StatusCode(StatusCodes.Status201Created);
+        }
+
+        [Authorize]
+        [HttpGet("currentUser")]
+        public async Task<ActionResult<UserDto>> GetCurrentUser()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            return new UserDto
+            {
+                Email = user.Email,
+                Token = await _tokenService.GenerateToken(user)
+            };
         }
     }
 }
