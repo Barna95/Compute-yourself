@@ -15,10 +15,10 @@ namespace ComputeYourself.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IdentityRole>()
-                .HasData(
-                    new IdentityRole { Name = "Member", NormalizedName = "MEMBER"},
-                    new IdentityRole { Name = "Admin", NormalizedName = "ADMIN"});
+            //modelBuilder.Entity<IdentityRole>()
+            //    .HasData(
+            //        new IdentityRole { Name = "Member", NormalizedName = "MEMBER"},
+            //        new IdentityRole { Name = "Admin", NormalizedName = "ADMIN"});
         }
 
         public DbSet<Cpu> Cpus { get; set; }
