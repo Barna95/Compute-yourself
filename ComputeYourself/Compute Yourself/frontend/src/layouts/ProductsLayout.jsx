@@ -1,49 +1,22 @@
 ﻿import Button from "@mui/material/Button";
-import CardContent from "@material-ui/core/CardContent";
 import CpuCoolers from "../routes/CpuCoolers";
 import Cpus from "../routes/Cpus";
 import Drives from "../routes/Drives";
 import Gpus from "../routes/Gpus";
 import Grid from "@material-ui/core/Grid";
-import { Link, useParams, useNavigate} from "react-router-dom";
+import { useParams, useNavigate} from "react-router-dom";
 import MotherBoards from "../routes/MotherBoards";
 import Paper from "@mui/material/Paper";
 import PcCases from "../routes/PcCases";
-import PropTypes from "prop-types";
 import Psus from "../routes/Psus";
 import Rams from "../routes/Rams";
 import React from "react";
-import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
-
-const styles = (theme) => ({
-  mainGrid: {
-    padding: 10,
-    marginTop: 2,
-  },
-  productGrid: {
-    padding: 3,
-    spacing: 2,
-  },
-  card: {
-    display: "flex",
-  },
-  cardDetails: {
-    flex: 1,
-  },
-  cardMedia: {
-    width: 200,
-    height: 60,
-  },
-});
-
 
 
 function ProductsLayout() {
     const navigate = useNavigate();
     const { productType } = useParams();
     let productEntries = null;
-
 
     if (productType === "psu") {
         productEntries = <Psus/>
@@ -102,9 +75,7 @@ const productCategories = [
     {
         title: "RAM",
         page: "ram",
- 
     },
-   
   ];
 
  //no Link, Button makes the redirect with navigate <Button onClick={() => navigate(`/product/${post.page}`)}>{post.title }</Button>
@@ -120,7 +91,7 @@ const productCategories = [
             ))}
             </Grid>
             <Grid item md={10} style={{ textDecoration: "none", padding: 12}}>
-              <Grid container spacing={2}>
+              <Grid container md={12} spacing={2}>
                   {productEntries}
               </Grid>
             </Grid>
@@ -129,8 +100,6 @@ const productCategories = [
     </>
   );
 }
-ProductsLayout.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
-export default withStyles(styles)(ProductsLayout);
+
+export default (ProductsLayout);

@@ -17,11 +17,8 @@ import { withStyles } from '@material-ui/core/styles';
 
 const Card = (props) => {
     const navigate = useNavigate();
-    //const { classes } = props;
-    
     return (
     <>
-    
         {props.dataProperties.map((value, index) =>
             <Grid item md={6} key={index }>
                 <Paper key={index} elevation={18}>

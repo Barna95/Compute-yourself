@@ -11,7 +11,6 @@ import Paper from "@mui/material/Paper";
 import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
 //import Logo from '../assets/logo.svg';
@@ -48,7 +47,6 @@ const classes = {
   searchButton: {
     padding: 20,
     textAlign: "center",
-    color: "blue"
   },
   mainTitle: {
     padding: 20,
@@ -166,7 +164,7 @@ function RootLayout(props) {
             </Grid>
           </Paper>
         <Grid>
-        <Outlet />
+          <Outlet />
         </Grid>
         <footer className={classes.footer}>
           <Box>

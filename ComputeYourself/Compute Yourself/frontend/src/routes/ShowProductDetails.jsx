@@ -1,8 +1,7 @@
 ﻿import * as React from 'react';
-import { Grid, Rating, Typography } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
@@ -16,7 +15,6 @@ import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Link from '@mui/material/Link';
 
@@ -58,7 +56,6 @@ export default function ShowProductDetails() {
     const renderKeys = [];
 
     Object.keys(data).map((x, idx) => {
-        console.log(data.wifi);
         const camelKeysToText = x.replace(/([A-Z])/g, " $1").charAt(0).toUpperCase() + x.replace(/([A-Z])/g, " $1").slice(1);
         if (x == 'mainImage') {
             //do nothing
@@ -86,7 +83,6 @@ export default function ShowProductDetails() {
     const adminField = [];
     if ( userRole == "admin"){
         adminField.push(
-            <Grid container md={12}>
                 <Grid item md={12} padding={2}>
                     <Paper elevation={5} align="center">
                         <Stack direction="row" padding={1} spacing={2} width={300}>
@@ -103,7 +99,6 @@ export default function ShowProductDetails() {
                         </Stack>
                     </Paper>
                 </Grid>
-            </Grid>
         );
     }
     //const productType = localStorage.getItem("productType");
@@ -146,22 +141,24 @@ export default function ShowProductDetails() {
                         </Box>
                     </Paper>
                 </Grid>
-                <Grid item md={12} padding={2}>
-                    <Paper elevation={5}>
-                    <Typography padding={2} style={{fontSize: 20, fontWeight: 'normal' }}>Description:</Typography>
-                        <Box 
-                            style={{fontSize: 16 }}
-                            padding={3}>
-                                {data.description}
-                        </Box>
-                        <Box padding={3}>
-                            <Link 
-                                style={{fontSize: 18, fontWeight: 'bold' }}
-                                href={data.productOfficialWebsite}>
-                                    Link to the official product website...
-                            </Link>
-                        </Box>
-                    </Paper>
+                <Grid container md={12}>
+                    <Grid item md={12} padding={2}>
+                        <Paper elevation={5}>
+                        <Typography padding={2} style={{fontSize: 20, fontWeight: 'normal' }}>Description:</Typography>
+                            <Box 
+                                style={{fontSize: 16 }}
+                                padding={3}>
+                                    {data.description}
+                            </Box>
+                            <Box padding={3}>
+                                <Link 
+                                    style={{fontSize: 18, fontWeight: 'bold' }}
+                                    href={data.productOfficialWebsite}>
+                                        Link to the official product website...
+                                </Link>
+                            </Box>
+                        </Paper>
+                    </Grid>
                 </Grid>
             </Grid>
         </Paper>

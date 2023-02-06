@@ -18,15 +18,25 @@ export default function Cpus() {
                 setData(response.data);
             });
     }, [data]);
+    //Show admin field
+    const userRole = "admin";
+    const adminField = [];
+    if ( userRole == "admin"){
+        adminField.push(
+            <Grid item md={12}>
+                <Button variant="outlined" size="medium" 
+                    title="Go to Details"
+                    onClick={() => navigate(`/product/addnewcpu`, { replace: true, state: { formData: data, productType: "cpu" } }
+                    )}>
+                    <AddIcon color="success" ></AddIcon>
+                    CPU
+                </Button>
+            </Grid>
+        );
+    }
     return (
             <>
-            <Grid item md={10}>
-            <Button variant="outlined" size="medium" 
-                title="Go to Details"
-                onClick={() => navigate(`/product/addnewcpu`, { replace: true, state: { formData: data, productType: "cpu" } }
-                )}
-            ><AddIcon color="success" ></AddIcon>CPU</Button>
-            </Grid>
+            {adminField}
             <Card dataProperties={data} productType="cpu" />
             </>
     );
