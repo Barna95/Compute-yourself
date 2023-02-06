@@ -5,7 +5,7 @@ import Cpus from "../routes/Cpus";
 import Drives from "../routes/Drives";
 import Gpus from "../routes/Gpus";
 import Grid from "@material-ui/core/Grid";
-import { Link, useParams} from "react-router-dom";
+import { Link, useParams, useNavigate} from "react-router-dom";
 import MotherBoards from "../routes/MotherBoards";
 import Paper from "@mui/material/Paper";
 import PcCases from "../routes/PcCases";
@@ -40,6 +40,7 @@ const styles = (theme) => ({
 
 
 function ProductsLayout() {
+    const navigate = useNavigate();
     const { productType } = useParams();
     let productEntries = null;
 
@@ -118,10 +119,11 @@ const featuredPosts = [
             image:
         "https://media.icdn.hu/product/GalleryMod/2015-06/302515/resp/2003539_kingston-16gb-ddr4-2400mhz-kcp424nd8-16.webp",
             page: "ram",
+ 
     },
    
   ];
- 
+ //no Link, Button makes the redirect with navigate <Button onClick={() => navigate(`/product/${post.page}`)}>{post.title }</Button>
   return (
     <>
       <Paper elevation={24}>
@@ -134,7 +136,7 @@ const featuredPosts = [
                        {post.page }
                      </Button>
                     </Link>
-              </Grid>
+                </Grid>
             ))}
             </Grid>
             <Grid item md={10} style={{ textDecoration: "none", padding: 12}}>
