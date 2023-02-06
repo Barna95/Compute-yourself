@@ -131,11 +131,10 @@ const featuredPosts = [
             <Grid item md={2} style={{ textDecoration: "none", padding: 12}}>
             {featuredPosts.map((post,index) => (
                 <Grid item key={index} >
-                    <Link to={`/product/${post.page}`}>
-                    <Button>
+                    <Button sx={{ width: 150 }} style={{justifyContent: "flex-start"}} onClick={() => navigate(`/product/${post.page}`)}>{post.title }</Button>
+                    {/* <Link to={`/product/${post.page}`}>
                        {post.page }
-                     </Button>
-                    </Link>
+                    </Link> */}
                 </Grid>
             ))}
             </Grid>
