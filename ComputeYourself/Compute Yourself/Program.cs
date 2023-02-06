@@ -1,4 +1,5 @@
 using ComputeYourself.Data;
+using ComputeYourself.Data.Services;
 using ComputeYourself.Data.Services.CPU;
 using ComputeYourself.Data.Services.CpuCooler;
 using ComputeYourself.Data.Services.Drive;
@@ -7,8 +8,13 @@ using ComputeYourself.Data.Services.MotherBoard;
 using ComputeYourself.Data.Services.PcCase;
 using ComputeYourself.Data.Services.PSU;
 using ComputeYourself.Data.Services.RAM;
+using ComputeYourself.Models.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.Text;
 
 namespace ComputeYourself
 {
@@ -37,6 +43,13 @@ namespace ComputeYourself
             builder.Services.AddDbContext<AppDbContext>(options => options
                 .UseSqlServer(builder.Configuration
                     .GetConnectionString("DefaultConnectionString")));
+            builder.Services.AddIdentityCore<User>(opt =>
+                {
+                    opt.User.RequireUniqueEmail = true;
+                })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<AppDbContext>();
+            builder.Services.AddCors();
             builder.Services.AddDbContext<AppDbContext>(options => options.EnableSensitiveDataLogging());
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
@@ -44,6 +57,7 @@ namespace ComputeYourself
                 .WriteTo.File("D:\\ComputeLogs\\log.txt").MinimumLevel.Information()
                 .WriteTo.File("D:\\ComputeLogs\\structuredLog.json").MinimumLevel.Information());
             // Service config
+            
             builder.Services.AddScoped<IPcCaseService, PcCaseService>();
             builder.Services.AddScoped<IGPUService, GPUService>();
             builder.Services.AddScoped<IDriveService, DriveService>();
@@ -52,6 +66,23 @@ namespace ComputeYourself
             builder.Services.AddScoped<IPsuService, PsuService>();
             builder.Services.AddScoped<ICpuCoolerService, CpuCoolerService>();
             builder.Services.AddScoped<ICPUService, CPUService>();
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        // Our local host is the issuer
+                        ValidateIssuer = false,
+                        // Clients on our local host 
+                        ValidateAudience = false,
+                        ValidateLifetime = true,
+                        // Checking the secret key in the token, matches the signature
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWTSettings:TokenKey"]))
+                    };
+                });
+            builder.Services.AddAuthorization();
+            builder.Services.AddScoped<TokenService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -59,14 +90,17 @@ namespace ComputeYourself
             app.UseHttpsRedirection();
 
             app.UseCors();
+            
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
             app.MapControllers();
 
             AppDbInitializer.Seed(app);
+
+            AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
 
             app.Run();
         }

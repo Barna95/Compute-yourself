@@ -1,10 +1,12 @@
 ﻿using ComputeYourself.Data.Services.Base;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
 namespace ComputeYourself.Controllers
 {
     [ApiController]
+    [Authorize]
     [Route("product/[controller]")]
     public abstract class CrudControllerBase<T, Service> : ControllerBase where T : class, IEntityBase, new() where Service : IBaseService<T>
     {
@@ -14,7 +16,7 @@ namespace ComputeYourself.Controllers
         {
             _service = service;
         }
-
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAllProduct()
         {
@@ -22,7 +24,7 @@ namespace ComputeYourself.Controllers
 
             return Ok(entities);
         }
-
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProductById(int id)
         {
@@ -33,7 +35,7 @@ namespace ComputeYourself.Controllers
 
             return Ok(entity);
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> AddProduct(T entity)
         {
