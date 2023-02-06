@@ -26,6 +26,8 @@ import EditMotherBoard from "./routes/EditProducts/EditMotherBoard"
 import EditPcCase from './routes/EditProducts/EditPcCase';
 import EditPsu from './routes/EditProducts/EditPsu';
 import EditRam from './routes/EditProducts/EditRam';
+import Register from './Authentication/Register';
+import Login from './Authentication/Login';
 import Home from "./routes/Home";
 import RootLayout from "./layouts/RootLayout";
 import ProductsLayout from "./layouts/ProductsLayout"
@@ -60,6 +62,8 @@ const router = createBrowserRouter(
         <Route path="product/psu/:id/edit" element={<EditPsu />} />
         <Route path="product/ram/:id/edit" element={<EditRam />} />
         <Route path="product/gpu/:id/edit" element={<EditGpu />} />
+        <Route path="account/login" element={<Login />} />
+        <Route path="account/register" element={<Register />} />
     </Route>
   )
 );
