@@ -14,41 +14,22 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link, useNavigate } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = (theme) => ({
-    mainGrid: {
-      padding: 10,
-      marginTop: theme.spacing(4),
-    },
-    productGrid: {
-      padding: 10,
-      spacing: 10,
-    },
-    card: {
-      display: "flex",
-    },
-    cardDetails: {
-      flex: 1,
-    },
-    cardMedia: {
-      width: 200,
-      height: 60,
-    },
-  });
 
 const Card = (props) => {
     const navigate = useNavigate();
-    const { classes } = props;
+    //const { classes } = props;
     
     return (
     <>
+    
         {props.dataProperties.map((value, index) =>
             <Grid item md={6} key={index }>
                 <Paper key={index} elevation={18}>
                   <CardContent>
-                      <Box height={280} sx={{  display: 'flex', justifyContent: 'center' }}>
+                      <Box height={280} sx={{ display: 'flex', justifyContent: 'center' }}>
                         <CardMedia 
                           component="img"
-                          sx={{ height: 240, width: 'auto' }}
+                          sx={{ height: 250, width: 'auto'}}
                           image={value.mainImage?value.mainImage:"https://via.placeholder.com/400x150.png"}
                           onClick={() => {return navigate(`/product/${props.productType}/${value.id}/details`)}}
                           />
@@ -91,7 +72,4 @@ const Card = (props) => {
     )
 };
 
-Card.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
-export default withStyles(styles)(Card);
+export default (Card);

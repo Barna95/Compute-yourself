@@ -2,7 +2,8 @@
 import { Grid, Rating, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -11,6 +12,13 @@ import EditIcon from '@mui/icons-material/Edit';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import axios from "axios";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Link from '@mui/material/Link';
 
 export default function ShowProductDetails() {
     let { productType, id } = useParams();
@@ -50,6 +58,8 @@ export default function ShowProductDetails() {
     const renderKeys = [];
 
     Object.keys(data).map((x, idx) => {
+        console.log(data.wifi);
+        const camelKeysToText = x.replace(/([A-Z])/g, " $1").charAt(0).toUpperCase() + x.replace(/([A-Z])/g, " $1").slice(1);
         if (x == 'mainImage') {
             //do nothing
         }
@@ -57,8 +67,17 @@ export default function ShowProductDetails() {
             //do nothing
         } else if (x == 'id') {
             //do nothing
+        } else if (x == 'description') {
+            //do nothing
         } else {
-            renderKeys.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{x}:</Typography>);
+            renderKeys.push(
+            <TableBody>
+                <TableRow>
+                    <TableCell align="left" style={{fontWeight: 'bold' }}>{camelKeysToText}:</TableCell>
+                    <TableCell align="right">{(data[x]==false || data[x]== null) ? "No" : (data[x]==true) ? "Yes" : data[x]}</TableCell>
+                </TableRow>
+            </TableBody>
+            );
         }
     })
 
@@ -70,36 +89,54 @@ export default function ShowProductDetails() {
     return (
 
         <>
-        <Paper>
-            <Button variant="outlined" size="small" onClick={() => navigate(`/product/${productType}`) }> Go back </Button>
-            <Grid container md={12}>
-                <Grid item md={6}>
-                <Typography style={{fontSize: 20, fontWeight: 'bold' }}>{data.name}</Typography>
+        <Paper elevation={24} sx={{padding: 2}}>
 
-                <Card sx={{ maxWidth: 550 }}>
-                <CardMedia
-                    sx={{ height: 330 }}
-                    image={data.mainImage}
-                />
-                </Card>
-                <Typography style={{fontSize: 20, fontWeight: 'normal' }} align="center" noWrap="true">Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Number(data.price).toFixed(2)} €</Typography></Typography>
-                <Stack  align='center' spacing={1}>
-                <Button 
-                    color="primary"
-                    variant="outlined" 
-                    size="small" 
-                    title="Go to Edit"
-                    onClick={() => {return navigate(`/product/${productType}/${data.id}/edit`)}}>
-                   <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
-                </Button>
-                <DeleteButtonForDetails productType={productType} productId={data.id}/>
-                </Stack>
+            <Grid container md={12}>
+                <Grid item md={6} padding={2}>
+                    <Paper elevation={5} align="center" style={{ height: 530 }}>
+                        <Typography padding={1} style={{fontSize: 20, fontWeight: 'bold' }}>
+                            {data.name}
+                        </Typography>
+                        <Box height={280} sx={{  padding: 3, display: 'flex', justifyContent: 'center' }}>
+                                <CardMedia 
+                                component="img"
+                                sx={{ height: 240, width: 'auto' }}
+                                image={data.mainImage}
+                                />
+                        </Box>
+                        <Typography align="center" noWrap="true" padding={1} style={{fontSize: 20, fontWeight: 'normal' }} >Price <Typography style={{fontSize: 25, fontWeight: 'bold' }}>{Number(data.price).toFixed(2)} €</Typography></Typography>
+                        <Button variant="contained" color="primary"> 
+                            Add to cart
+                        </Button>
+                    </Paper>
                 </Grid>
-                <Grid item md={3}>
-                {renderKeys}
+                <Grid item md={6} padding={2}>
+                    <Paper elevation={5} style={{ height: 530 }} sx={{ overflow: 'auto'}}>
+                        <Box padding={2} >
+                            <TableContainer>
+                                <Table  size="small" aria-label="a dense table">
+                                    {renderKeys}
+                                </Table>
+                            </TableContainer>
+                        </Box>
+                    </Paper>
                 </Grid>
-                <Grid item md={3}>
-                {renderValues}
+                <Grid item md={12} padding={2}>
+                    <Paper elevation={5}>
+                    <Typography padding={2} style={{fontSize: 20, fontWeight: 'normal' }}>Description:</Typography>
+                        <Box 
+                            style={{fontSize: 16 }}
+                            padding={3}>
+                                {data.description}
+                        </Box>
+                        <Box padding={3}>
+                            <Link 
+                                style={{fontSize: 18, fontWeight: 'bold' }}
+                                href={data.productOfficialWebsite}>
+                                    Link to the official product website...
+                            </Link>
+                        </Box>
+                    </Paper>
                 </Grid>
             </Grid>
         </Paper>

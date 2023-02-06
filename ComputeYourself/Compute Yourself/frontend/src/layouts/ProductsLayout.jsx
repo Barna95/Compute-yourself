@@ -70,71 +70,52 @@ function ProductsLayout() {
         productEntries = <Drives/>
     }
  
-
-const featuredPosts = [
+const productCategories = [
     {
         title: "CPU",
-        image:
-        "https://www.pcgamesn.com/wp-content/sites/pcgamesn/2017/09/cpu-upgrade.jpg",
         page: "cpu",
     },
     {
         title: "PSU",
-            image:
-        "https://www.lifewire.com/thmb/G1ZNM9qzBsfLTbeL5KDPH3Xd-Wk=/786x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/power-supply-5aba984fba617700376b877f.PNG",
-            page: "psu",
+        page: "psu",
     },
     {
         title: "CPU COOLER",
-            image:
-        "https://media.icdn.hu/product/GalleryMod/2021-03/686483/resp/1607087_be_quiet_pure_rock_slim_2.webp",
-            page: "cpucooler",
+        page: "cpucooler",
     },
     {
         title: "DRIVE",
-            image:
-        "https://www.crucial.com/content/dam/crucial/articles/pc-users/why-is-my-laptop-so-slow-/hard-disk-drive.jpg.transform/large-jpg/img.jpg",
-            page: "drive",
+        page: "drive",
     },
     {
         title: "GPU",
-            image:
-        "https://assets.reedpopcdn.com/rtx_2080_ti.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/rtx_2080_ti.jpg",
-            page: "gpu",
+        page: "gpu",
     },
     {
         title: "MOTHERBOARD",
-            image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Computer-motherboard.jpg/640px-Computer-motherboard.jpg",
-            page: "motherboard",
+        page: "motherboard",
     },
     {
         title: "PC CASE",
-            image:
-        "https://www.pcspecialist.co.uk/images/landing/corsair/cases/case-feature2.png",
-            page: "pccase",
+        page: "pccase",
     },
     {
         title: "RAM",
-            image:
-        "https://media.icdn.hu/product/GalleryMod/2015-06/302515/resp/2003539_kingston-16gb-ddr4-2400mhz-kcp424nd8-16.webp",
-            page: "ram",
+        page: "ram",
  
     },
    
   ];
+
  //no Link, Button makes the redirect with navigate <Button onClick={() => navigate(`/product/${post.page}`)}>{post.title }</Button>
   return (
     <>
       <Paper elevation={24}>
           <Grid container md={12} style={{ textDecoration: "none", spacing: 2 , padding: 0}}>
             <Grid item md={2} style={{ textDecoration: "none", padding: 12}}>
-            {featuredPosts.map((post,index) => (
+            {productCategories.map((category,index) => (
                 <Grid item key={index} >
-                    <Button sx={{ width: 150 }} style={{justifyContent: "flex-start"}} onClick={() => navigate(`/product/${post.page}`)}>{post.title }</Button>
-                    {/* <Link to={`/product/${post.page}`}>
-                       {post.page }
-                    </Link> */}
+                    <Button sx={{ width: 150 }} style={{justifyContent: "flex-start"}} onClick={() => navigate(`/product/${category.page}`)}>{category.title }</Button>
                 </Grid>
             ))}
             </Grid>
