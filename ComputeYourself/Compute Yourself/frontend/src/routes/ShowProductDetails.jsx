@@ -81,6 +81,31 @@ export default function ShowProductDetails() {
         }
     })
 
+    //Show admin field
+    const userRole = "admin";
+    const adminField = [];
+    if ( userRole == "admin"){
+        adminField.push(
+            <Grid container md={12}>
+                <Grid item md={12} padding={2}>
+                    <Paper elevation={5} align="center">
+                        <Stack direction="row" padding={1} spacing={2} width={300}>
+                            <Button variant="outlined" size="small" onClick={() => navigate(`/product/${productType}`) }> Go back </Button>
+                            <Button 
+                                color="primary"
+                                variant="outlined" 
+                                size="small" 
+                                title="Go to Edit"
+                                onClick={() => {return navigate(`/product/${productType}/${data.id}/edit`)}}>
+                                <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
+                            </Button>
+                            <DeleteButtonForDetails productType={productType} productId={data.id}/>
+                        </Stack>
+                    </Paper>
+                </Grid>
+            </Grid>
+        );
+    }
     //const productType = localStorage.getItem("productType");
     //From 1 object ->
     // show keys -> {Object.keys(data).map((asd, idx) => <p key={idx}> {asd }</p> ) }
@@ -90,7 +115,7 @@ export default function ShowProductDetails() {
 
         <>
         <Paper elevation={24} sx={{padding: 2}}>
-
+            {adminField}
             <Grid container md={12}>
                 <Grid item md={6} padding={2}>
                     <Paper elevation={5} align="center" style={{ height: 530 }}>
