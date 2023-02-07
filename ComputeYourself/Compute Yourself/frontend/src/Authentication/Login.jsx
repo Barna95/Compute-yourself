@@ -30,13 +30,14 @@ export default function Register() {
             }
         }).then(response => {
             const token = response.data.token;
-            localStorage.setItem("token", token);
+            localStorage.setItem("isLoggedIn", "IamPotato");
             const decoded = jwt(token);
             const claims = Object.values(decoded)
             setAuth({
                 name: claims[1],
                 roles: claims[2],
-                token: token})          
+                token : token,
+            })          
         })
         data.userName = "";
         data.password = "";
