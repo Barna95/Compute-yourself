@@ -177,9 +177,9 @@ function RootLayout(props) {
 }
 
 function Header() {
-    const navigate = useNavigate();
-    const { auth } = useAuth();
-    
+    const navigate = useNavigate();   
+    let { auth } = useAuth();
+    let checkIfLoggedIn = localStorage.getItem("isLoggedIn");
   return (
     <>
       <Grid item xs={2}>
@@ -201,7 +201,7 @@ function Header() {
           </IconButton>
         </Box>
           </Grid>
-          {auth.name == null ? 
+          {checkIfLoggedIn == null ? 
               <>
               <Grid item xs={2}>
                 <Box style={classes.searchButton}>
@@ -229,7 +229,10 @@ function Header() {
                   </Grid>
                 <Grid item xs={1}>
                     <Box style={classes.searchButton}>
-                         <Button variant="outlined" size="small" >
+                          <Button variant="outlined" size="small" onClick={() => {
+                              localStorage.removeItem("isLoggedIn")
+                              return navigate("/")
+                          }}>
                             Logout
                         </Button>
                     </Box>
