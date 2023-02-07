@@ -1,5 +1,5 @@
 import { Box, ThemeProvider, createTheme } from '@mui/system';
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
 import { Container } from "react-bootstrap";
@@ -13,14 +13,9 @@ import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import jwt from 'jwt-decode';
 
 //import Logo from '../assets/logo.svg';
-
-
-
-
-
-
 
 
 const classes = {
@@ -134,6 +129,7 @@ const styles = theme => ({
   },
 });
 function RootLayout(props) {
+    
   const { classes } = props;
   return (
     <div className={classes.layout}>
@@ -180,7 +176,20 @@ function RootLayout(props) {
 }
 
 function Header() {
-
+    const navigate = useNavigate();
+    const jwttoken = localStorage.getItem('token');
+    let decoded = null;
+    let name = null
+    if (jwttoken != null) {
+        decoded = jwt(jwttoken);
+        name = Object.values(decoded)[1]
+        console.log(name);
+    }
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        return navigate("/");
+    }
+    
   return (
     <>
       <Grid item xs={2}>
@@ -201,27 +210,48 @@ function Header() {
             <SearchIcon />
           </IconButton>
         </Box>
-      </Grid>
-      <Grid item xs={2}>
-        <Box style={classes.searchButton}>
-          <Button variant="outlined" noWrap="true" size="small">
-            Sign up
-          </Button>
-        </Box>
-      </Grid>
-      <Grid item xs={1}>
-        <Box style={classes.searchButton}>
-          <Button variant="outlined" size="small">
-            Login
-          </Button>
-        </Box>
-      </Grid>
+          </Grid>
+          {name == null ? 
+              <>
+              <Grid item xs={2}>
+                <Box style={classes.searchButton}>
+                 <Button variant="outlined" size="small" onClick={() => navigate(`/account/register`)}>
+                    Sign up
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item xs={1}>
+                <Box style={classes.searchButton}>
+                <Button variant="outlined" size="small" onClick={() => navigate(`/account/login`)}>
+                    Login
+                  </Button>
+                </Box>
+              </Grid>
+              </>
+              :
+              <>
+                  <Grid item xs={2}>
+                      <Box style={classes.searchButton}>
+                          <Button variant="outlined" size="small">
+                              {name}
+                          </Button>
+                      </Box>
+                  </Grid>
+                <Grid item xs={1}>
+                    <Box style={classes.searchButton}>
+                         <Button variant="outlined" size="small" onClick={handleLogout}>
+                            Logout
+                        </Button>
+                    </Box>
+                </Grid>
+              </>}
     </>
 
   )
 }
 
 function NavBar() {
+
   return (
     <>
         <Grid item xs={1}>
