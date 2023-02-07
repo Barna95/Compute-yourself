@@ -4,7 +4,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import useAuth from "../../hooks/useAuth"
 
 export default function AddNewCpu() {
     const [formValues, setFormValues] = useState({
@@ -29,6 +30,7 @@ export default function AddNewCpu() {
         "modelNumber": " "
     });
     const navigate = useNavigate();
+    
     const keys = Object.keys(formValues).map((propName, idx) => { return propName });
     let handleChange = (e) => {
         if (e.target.name === "manufacturerCooler") {
@@ -40,24 +42,30 @@ export default function AddNewCpu() {
         } else {
             setFormValues({ ...formValues, [e.target.name]: e.target.value });
         }
-        console.log(formValues);
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token
         const json = JSON.stringify(formValues);
         await axios.post(`https://localhost:7195/product/cpu`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate("/product/cpu")
     };
+    useEffect(() => { console.log(formValues) }, [formValues])
     // TODO -> input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different
     //input fields like checkbox or choose from enums in dropdown
     // so ill just leave it here for now.
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div> Name <input placeholder="" aria-label="{keys[10]}" type="text" name={keys[10]} onChange={e => handleChange(e)} required /></div>
             <div> Description <input placeholder="" aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} required /></div>
             <div> Price <input placeholder="" aria-label="{keys[12]}" type="number" name={keys[12]} onChange={e => handleChange(e)} required /></div>
