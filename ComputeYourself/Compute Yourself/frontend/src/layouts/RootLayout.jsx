@@ -175,7 +175,7 @@ function Header() {
 
           <Grid item md={1}>
             <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => {
-                localStorage.removeItem("isLoggedIn")
+                localStorage.setItem("isLoggedIn", "false")
                 return navigate("/")
               }}>
               Logout
