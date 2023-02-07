@@ -30,7 +30,7 @@ export default function Register() {
             }
         }).then(response => {
             const token = response.data.token;
-            localStorage.setItem("isLoggedIn", "IamPotato");
+            localStorage.setItem("isLoggedIn", true);
             const decoded = jwt(token);
             const claims = Object.values(decoded)
             setAuth({
@@ -51,7 +51,7 @@ export default function Register() {
                 <div> Password <input placeholder="" aria-label="password" type="text" name="password" onChange={e => handleChange(e)} required /></div>
                 <div className="button-section">
                     <Button type="submit" variant="outlined" size="small">Save</Button>
-                    <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/cpu")}> Back </Button>
+                    <Button type="button" variant="outlined" size="small" onClick={() => navigate("/")}> Back </Button>
                 </div>
             </form>
         </>
