@@ -50,7 +50,7 @@ export default function Register() {
                 <div> Name <input placeholder="" aria-label="userName" type="text" name="userName" onChange={e => handleChange(e)} required /></div>
                 <div> Password <input placeholder="" aria-label="password" type="text" name="password" onChange={e => handleChange(e)} required /></div>
                 <div className="button-section">
-                    <Button type="submit" variant="outlined" size="small">Save</Button>
+                    <Button type="submit" variant="outlined" size="small">Login</Button>
                     <Button type="button" variant="outlined" size="small" onClick={() => navigate("/")}> Back </Button>
                 </div>
             </form>
