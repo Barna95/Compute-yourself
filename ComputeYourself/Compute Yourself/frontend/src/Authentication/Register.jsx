@@ -39,7 +39,7 @@ export default function Register() {
                 <div> E-mail <input placeholder="" aria-label="email" type="text" name="email" onChange={e => handleChange(e)} required /></div>
                     <div className="button-section">
                         <Button type="submit" variant="outlined" size="small">Save</Button>
-                        <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/cpu")}> Back </Button>
+                        <Button type="button" variant="outlined" size="small" onClick={() => navigate("/")}> Back </Button>
                     </div>
             </form>
         </>
