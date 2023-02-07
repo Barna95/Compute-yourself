@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from "../../hooks/useAuth"
 
 export default function AddNewPcCase() {
     const [formValues, setFormValues] = useState({
@@ -22,16 +23,21 @@ export default function AddNewPcCase() {
     const keys = Object.keys(formValues).map((propName, idx) => { return propName });
     let handleChange = (e) => {
         setFormValues({ ...formValues, [e.target.name]: e.target.value });
-        console.log(formValues);
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token
         const json = JSON.stringify(formValues);
         await axios.post(`https://localhost:7195/product/pccase`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate("/product/pccase")
     };
 
     //TODO -> add enum so this works <div> Size Compatibility enum, no touchy <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)} /></div>
@@ -42,7 +48,7 @@ export default function AddNewPcCase() {
     // so ill just leave it here for now.
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div> Name <input placeholder="" aria-label="{keys[3]}" type="text" name={keys[3]} onChange={e => handleChange(e)} required /></div>
             <div> Description <input placeholder="" aria-label="{keys[4]}" type="text" name={keys[4]} onChange={e => handleChange(e)} required /></div>
             <div> Price <input placeholder="" aria-label="{keys[5]}" type="number" name={keys[5]} onChange={e => handleChange(e)} required /></div>
