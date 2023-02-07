@@ -54,8 +54,8 @@ namespace ComputeYourself
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
                 // if you want everything, change Warning() to Information()
-                .WriteTo.File("D:\\ComputeLogs\\log.txt").MinimumLevel.Information()
-                .WriteTo.File("D:\\ComputeLogs\\structuredLog.json").MinimumLevel.Information());
+                .WriteTo.File("D:\\ComputeLogs\\log.txt").MinimumLevel.Warning()
+                .WriteTo.File("D:\\ComputeLogs\\structuredLog.json").MinimumLevel.Warning());
             // Service config
             
             builder.Services.AddScoped<IPcCaseService, PcCaseService>();

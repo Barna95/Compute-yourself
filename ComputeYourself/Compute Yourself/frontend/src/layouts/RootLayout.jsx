@@ -14,6 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import jwt from 'jwt-decode';
+import useAuth from "../hooks/useAuth"
 
 //import Logo from '../assets/logo.svg';
 
@@ -177,18 +178,7 @@ function RootLayout(props) {
 
 function Header() {
     const navigate = useNavigate();
-    const jwttoken = localStorage.getItem('token');
-    let decoded = null;
-    let name = null
-    if (jwttoken != null) {
-        decoded = jwt(jwttoken);
-        name = Object.values(decoded)[1]
-        console.log(name);
-    }
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        return navigate("/");
-    }
+    const { auth } = useAuth();
     
   return (
     <>
@@ -211,7 +201,7 @@ function Header() {
           </IconButton>
         </Box>
           </Grid>
-          {name == null ? 
+          {auth.name == null ? 
               <>
               <Grid item xs={2}>
                 <Box style={classes.searchButton}>
@@ -233,13 +223,13 @@ function Header() {
                   <Grid item xs={2}>
                       <Box style={classes.searchButton}>
                           <Button variant="outlined" size="small">
-                              {name}
+                              {auth.name }
                           </Button>
                       </Box>
                   </Grid>
                 <Grid item xs={1}>
                     <Box style={classes.searchButton}>
-                         <Button variant="outlined" size="small" onClick={handleLogout}>
+                         <Button variant="outlined" size="small" >
                             Logout
                         </Button>
                     </Box>
