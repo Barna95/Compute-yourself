@@ -36,7 +36,6 @@ import ShowProductDetails from "./routes/ShowProductDetails";
 
 // import { productURL } from "./endpoints";
 
-
 function App() {
     const router = createBrowserRouter(
         createRoutesFromElements(
