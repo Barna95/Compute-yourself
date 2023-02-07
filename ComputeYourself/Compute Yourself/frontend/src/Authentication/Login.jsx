@@ -2,6 +2,8 @@
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAuth from '../hooks/useAuth';
+import jwt from 'jwt-decode';
 
 
 export default function Register() {
@@ -11,6 +13,7 @@ export default function Register() {
         "userName": "",
         "password": "",
     });
+    const { setAuth } = useAuth();
 
     let handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
@@ -28,6 +31,12 @@ export default function Register() {
         }).then(response => {
             const token = response.data.token;
             localStorage.setItem("token", token);
+            const decoded = jwt(token);
+            const claims = Object.values(decoded)
+            setAuth({
+                name: claims[1],
+                roles: claims[2],
+                token: token})          
         })
         data.userName = "";
         data.password = "";
