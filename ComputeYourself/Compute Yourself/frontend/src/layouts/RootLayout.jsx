@@ -152,20 +152,10 @@ function RootLayout(props) {
           </nav>
         </header>
       <main>
-          <Paper className={classes.mainFeaturedPost}  elevation={24}>
-            <Grid container>
-              <Grid item md={4}>
-                  <Box className={classes.mainTitle}>
-                    Hardware Store
-                  </Box>
-              </Grid>
-              <Grid item md={8} style={{ backgroundImage:`url(${Mainpicture})`,backgroundRepeat:"no-repeat",backgroundPosition: 'right', backgroundSize:"cover", transform: [{ scale: 2 }]}}>
-              </Grid>
-            </Grid>
-          </Paper>
-        <Grid>
+
+       
           <Outlet />
-        </Grid>
+
         <footer className={classes.footer}>
           <Box>
             Compute Yourself team 2023.
