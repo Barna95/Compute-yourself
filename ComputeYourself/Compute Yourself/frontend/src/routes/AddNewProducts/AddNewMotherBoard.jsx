@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from "../../hooks/useAuth"
 
 export default function AddNewMotherBoard() {
     const [formValues, setFormValues] = useState({
@@ -50,16 +51,21 @@ export default function AddNewMotherBoard() {
         } else {
             setFormValues({ ...formValues, [e.target.name]: e.target.value });
         }
-        console.log(formValues);
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token
         const json = JSON.stringify(formValues);
         await axios.post(`https://localhost:7195/product/motherboard`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate("/product/motherboard")
     };
     // TODO -> input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different
@@ -67,7 +73,7 @@ export default function AddNewMotherBoard() {
     // so ill just leave it here for now.
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div> Name <input placeholder="" aria-label="{keys[23]}" type="text" name={keys[23]} onChange={e => handleChange(e)} required /></div>
             <div> Description <input placeholder="" aria-label="{keys[24]}" type="text" name={keys[24]} onChange={e => handleChange(e)} required /></div>
             <div> Price <input placeholder="" aria-label="{keys[25]}" type="number" name={keys[25]} onChange={e => handleChange(e)} required /></div>

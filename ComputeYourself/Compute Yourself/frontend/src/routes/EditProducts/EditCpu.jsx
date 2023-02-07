@@ -1,9 +1,8 @@
 ﻿import { useEffect, useState } from "react";
-import Box from '@mui/material/Box';
 import React from 'react';
-import TextField from '@mui/material/TextField';
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth"
 
 export default function EditCpu() {
     const [data, setData] = useState([]);
@@ -36,13 +35,19 @@ export default function EditCpu() {
         }
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token;
         const json = JSON.stringify(data);
         await axios.put(`https://localhost:7195/product/cpu/${data.id}`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate(`/product/cpu/${id}/details`)
     };
 
     return (
@@ -73,7 +78,7 @@ export default function EditCpu() {
         //     </div>
         
         // </Box>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div>
                 <div> Name <input placeholder={data[keys[11]]} aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} /></div>
                 <div> Description <input placeholder={data[keys[12]]} aria-label="{keys[12]}" type="text" name={keys[12]} onChange={e => handleChange(e)} /></div>

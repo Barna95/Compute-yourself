@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth"
 
 export default function EditPcCase() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
-    const [itemId] = useState(localStorage.getItem("itemId"));
+    let { id } = useParams();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/pccase/${itemId}`).then(
+        axios.get(`https://localhost:7195/product/pccase/${id}`).then(
             (response) => {
                 setData(response.data);
             });
@@ -17,20 +18,25 @@ export default function EditPcCase() {
     
     let handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
-        console.log(data);
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token;
         const json = JSON.stringify(data);
-        await axios.put(`https://localhost:7195/product/pccase/${itemId}`, json, {
+        await axios.put(`https://localhost:7195/product/pccase/${data.id}`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate(`/product/pccase/${id}/details`)
     };
-    console.log(keys);
+
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             {/*TODO => Add enums. Size can be edited*/}
             {/* <div> Size Compatibility enum, no touchy <input placeholder={data[keys[0]]} aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)}/></div> */}
             <div> Name <input placeholder={data[keys[4]]} aria-label="{keys[4]}" type="text" name={keys[4]} onChange={e => handleChange(e)} /></div>

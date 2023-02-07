@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
-
+import useAuth from "../../hooks/useAuth"
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function EditRam() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
-    const [itemId] = useState(localStorage.getItem("itemId"));
+    let { id } = useParams();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/ram/${itemId}`).then(
+        axios.get(`https://localhost:7195/product/ram/${id}`).then(
             (response) => {
                 setData(response.data);
             });
@@ -25,20 +25,25 @@ export default function EditRam() {
         } else {
             setData({ ...data, [e.target.name]: e.target.value });
         }
-        console.log(data);
     }
+
+    const { auth } = useAuth();
     
-    let handleSubmit = async () => {
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token;
         const json = JSON.stringify(data);
-        await axios.put(`https://localhost:7195/product/ram/${itemId}`, json, {
+        await axios.put(`https://localhost:7195/product/ram/${data.id}`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate(`/product/ram/${id}/details`)
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div> Name <input placeholder={data[keys[6]]} aria-label="{keys[6]}" type="text" name={keys[6]} onChange={e => handleChange(e)} /></div>
             <div> Description <input placeholder={data[keys[7]]} aria-label="{keys[7]}" type="text" name={keys[7]} onChange={e => handleChange(e)} /></div>
             <div> Price <input placeholder={data[keys[8]]} aria-label="{keys[8]}" type="number" name={keys[8]} onChange={e => handleChange(e)} /></div>
