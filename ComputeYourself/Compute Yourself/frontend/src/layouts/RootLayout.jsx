@@ -189,7 +189,7 @@ function Header() {
           </IconButton>
         </Box>
           </Grid>
-          {checkIfLoggedIn == null ? 
+          {checkIfLoggedIn == "false" ? 
               <>
               <Grid item xs={2}>
                 <Box style={classes.searchButton}>
@@ -218,7 +218,7 @@ function Header() {
                 <Grid item xs={1}>
                     <Box style={classes.searchButton}>
                           <Button variant="outlined" size="small" onClick={() => {
-                              localStorage.removeItem("isLoggedIn")
+                              localStorage.setItem("isLoggedIn", false)
                               return navigate("/")
                           }}>
                             Logout
