@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
@@ -19,7 +18,7 @@ export default function Cpus() {
             });
     }, [data]);
     //Show admin field
-    const userRole = "admin";
+    const userRole = "user";
     const adminField = [];
     if ( userRole == "admin"){
         adminField.push(

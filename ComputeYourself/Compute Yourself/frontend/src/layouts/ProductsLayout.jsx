@@ -11,6 +11,7 @@ import PcCases from "../routes/PcCases";
 import Psus from "../routes/Psus";
 import Rams from "../routes/Rams";
 import React from "react";
+import { Box } from "@mui/system";
 
 
 function ProductsLayout() {
@@ -84,6 +85,9 @@ const productCategories = [
       <Paper elevation={24}>
           <Grid container md={12} style={{ textDecoration: "none", spacing: 2 , padding: 0}}>
             <Grid item md={2} style={{ textDecoration: "none", padding: 12}}>
+                <Box sx={{ fontSize: 26, padding: 2 }}>
+                    PRODUCTS
+                </Box>
             {productCategories.map((category,index) => (
                 <Grid item key={index} >
                     <Button sx={{ width: 150 }} style={{justifyContent: "flex-start"}} onClick={() => navigate(`/product/${category.page}`)}>{category.title }</Button>
