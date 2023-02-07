@@ -63,8 +63,9 @@ export default function ShowProductDetails() {
     //Show admin field
     const { auth } = useAuth();
     const isAdmin = auth?.roles?.includes("Admin");
+    const loggedIn = localStorage.getItem("isLoggedIn");
     const adminField = [];
-    if (isAdmin){
+    if (isAdmin && loggedIn === "true"){
         adminField.push(
                 <Grid item md={12} padding={2}>
                     <Paper elevation={5} align="center">
