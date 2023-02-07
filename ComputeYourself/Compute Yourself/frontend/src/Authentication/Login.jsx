@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+﻿import { useState } from "react";
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -16,9 +16,6 @@ export default function Register() {
         setData({ ...data, [e.target.name]: e.target.value });
         
     }
-    useEffect(() => {
-        console.log(data);
-    }, [data])
 
     let handleSubmit = async (e) => {
         e.preventDefault();
