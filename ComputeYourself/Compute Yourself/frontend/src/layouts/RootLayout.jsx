@@ -11,7 +11,6 @@ import Paper from "@mui/material/Paper";
 import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import jwt from 'jwt-decode';
 import useAuth from "../hooks/useAuth"
@@ -44,7 +43,6 @@ const classes = {
   searchButton: {
     padding: 20,
     textAlign: "center",
-    color: "blue"
   },
   mainTitle: {
     padding: 20,
@@ -151,20 +149,10 @@ function RootLayout(props) {
           </nav>
         </header>
       <main>
-          <Paper className={classes.mainFeaturedPost}  elevation={24}>
-            <Grid container>
-              <Grid item md={4}>
-                  <Box className={classes.mainTitle}>
-                    Hardware Store
-                  </Box>
-              </Grid>
-              <Grid item md={8} style={{ backgroundImage:`url(${Mainpicture})`,backgroundRepeat:"no-repeat",backgroundPosition: 'right', backgroundSize:"cover", transform: [{ scale: 2 }]}}>
-              </Grid>
-            </Grid>
-          </Paper>
-        <Grid>
-        <Outlet />
-        </Grid>
+
+       
+          <Outlet />
+
         <footer className={classes.footer}>
           <Box>
             Compute Yourself team 2023.

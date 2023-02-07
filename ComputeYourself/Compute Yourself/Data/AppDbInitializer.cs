@@ -550,7 +550,7 @@ namespace ComputeYourself.Data
                                           " are high performance 6Gbps SATA SSDs using the latest 3D TLC NAND, designed" + 
                                           " for Read Centric and Mixed-Use server workloads. ",
                             productOfficialWebsite = "https://www.kingston.com/en/ssd/dc500-data-center-solid-state-drive",
-                            mainImage = "https://media.kingston.com/kingston/hero/ktc-hero-ssd-dc500r-dc500m-lg.jpg",
+                            mainImage = "https://media.kingston.com/kingston/product/ktc-product-ssd-dc500r-sedc500r1920g-1-zm-lg.jpg",
                             modelNumber = "DC500R / DC500M",
                             Price = 350.08M,
                             Brand = "Kingston",
