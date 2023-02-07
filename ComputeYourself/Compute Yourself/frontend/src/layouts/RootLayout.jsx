@@ -168,9 +168,9 @@ function Header() {
         :
         <>
           <Grid item md={1}>
-            <Button style={themeStyle.navbarButton} variant="outlined" size="small">
-                {auth.name }
-            </Button>
+            <Box style={themeStyle.navbarButton}>
+              <Link to="/about">{auth.name }</Link>  
+            </Box>
           </Grid>
 
           <Grid item md={1}>
