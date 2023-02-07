@@ -1,4 +1,4 @@
-﻿import { useEffect, useState } from "react";
+﻿import { useState } from "react";
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,6 @@ export default function Register() {
 
     let handleChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value });
-        console.log(data);
     }
 
     let handleSubmit = async (e) => {
@@ -25,7 +24,7 @@ export default function Register() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 withCredentials: true,
             }
-        }).then(response => console.log(response.data))
+        })
         data.name = "";
         data.password = "";
         data.email = "";
