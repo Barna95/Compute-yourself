@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from "../../hooks/useAuth"
 
 export default function AddNewRam() {
     const [formValues, setFormValues] = useState({
@@ -32,23 +33,28 @@ export default function AddNewRam() {
         } else {
             setFormValues({ ...formValues, [e.target.name]: e.target.value });
         }
-        console.log(formValues);
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault();
+        const token = auth.token
         const json = JSON.stringify(formValues);
         await axios.post(`https://localhost:7195/product/ram`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
         })
+        return navigate("/product/ram")
     };
     // create the input nodes with map but it would be hard to change the different
     //input fields like checkbox or choose from enums in dropdown
     // so ill just leave it here for now.
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={e => handleSubmit(e)}>
             <div> Name <input placeholder="" aria-label="{keys[5]}" type="text" name={keys[5]} onChange={e => handleChange(e)} required /></div>
             <div> Description <input placeholder="" aria-label="{keys[6]}" type="text" name={keys[6]} onChange={e => handleChange(e)} required /></div>
             <div> Price <input placeholder="" aria-label="{keys[7]}" type="number" name={keys[7]} onChange={e => handleChange(e)} required /></div>

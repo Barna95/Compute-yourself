@@ -17,6 +17,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Link from '@mui/material/Link';
+import useAuth from "../hooks/useAuth"
 
 export default function ShowProductDetails() {
     let { productType, id } = useParams();
@@ -33,25 +34,6 @@ export default function ShowProductDetails() {
                 setData(response.data);
             });
     }, []);
-
-    const renderValues = [];
-
-    Object.keys(data).map((x, idx) => {
-        if (x == 'mainImage') {
-            //do nothing
-        }
-        else if (x == 'productOfficialWebsite') {
-            //do nothing
-        } else if (data[x] === false) {
-            renderValues.push(<input type="checkbox" disabled/>)
-        } else if (data[x] === true) {
-            renderValues.push(<input type="checkbox" checked disabled/>)
-        } else if (x == 'id') {
-            //do nothing
-        } else {
-            renderValues.push(<Typography key={idx} style={{fontWeight: 'bold' }}>{data[x]}</Typography>);
-        }    
-    })
 
     const renderKeys = [];
 
@@ -79,9 +61,10 @@ export default function ShowProductDetails() {
     })
 
     //Show admin field
-    const userRole = "admin";
+    const { auth } = useAuth();
+    const isAdmin = auth?.roles?.includes("Admin");
     const adminField = [];
-    if ( userRole == "admin"){
+    if (isAdmin){
         adminField.push(
                 <Grid item md={12} padding={2}>
                     <Paper elevation={5} align="center">

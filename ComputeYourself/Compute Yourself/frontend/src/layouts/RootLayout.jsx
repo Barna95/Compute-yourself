@@ -152,7 +152,7 @@ function Header() {
             <SearchIcon />
           </IconButton>
       </Grid>
-      {checkIfLoggedIn == null ? 
+      {checkIfLoggedIn == "false" ? 
         <>
         <Grid item md={1}>
             <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/account/register`)}>
@@ -172,6 +172,7 @@ function Header() {
                 {auth.name }
             </Button>
           </Grid>
+
           <Grid item md={1}>
             <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => {
                 localStorage.removeItem("isLoggedIn")

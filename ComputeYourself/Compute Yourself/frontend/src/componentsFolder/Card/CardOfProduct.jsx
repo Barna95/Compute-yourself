@@ -11,10 +11,12 @@ import Stack from '@mui/material/Stack';
 import Typography from "@material-ui/core/Typography";
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../hooks/useAuth"
 
-const userRole = "admin";
-function adminField(props, value) {
-  if(userRole=="admin"){
+
+function adminField(props, value, navigate, loggedIn, isAdmin) {
+
+    if (isAdmin && loggedIn){
     return (
       <Stack direction="row-reverse"   align='center' spacing={1}>
         <Button variant="outlined" size="small"
@@ -36,7 +38,10 @@ function adminField(props, value) {
   }
 }
 const Card = (props) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const { auth } = useAuth();
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    const isAdmin = auth?.roles?.includes("Admin");
     return (
     <>
         {props.dataProperties.map((value, index) =>
@@ -61,7 +66,7 @@ const Card = (props) => {
                       <Typography align='left' variant='body1'>Rating</Typography>
                       <Rating precision={0.5} name="read-only" value={value.rating?value.rating:null} readOnly />
                     </Stack>
-                    {adminField(props, value)}
+                        {adminField(props, value, navigate, loggedIn, isAdmin)}
                 </CardContent>
               </Paper>
             </Grid>
