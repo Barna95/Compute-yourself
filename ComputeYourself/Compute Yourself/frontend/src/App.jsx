@@ -33,10 +33,14 @@ import RequireAuth from "./componentsFolder/RequireAuth"
 import RootLayout from "./layouts/RootLayout";
 import ProductsLayout from "./layouts/ProductsLayout"
 import ShowProductDetails from "./routes/ShowProductDetails";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 // import { productURL } from "./endpoints";
 
 function App() {
+
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout />}>
@@ -70,7 +74,11 @@ function App() {
         )
     );
 
-  return <RouterProvider router={router} />;
-}
+    return (
+       <>
+            <RouterProvider router={router} />
+            <ToastContainer />
+       </>
+)}
 
 export default App;
