@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from '../hooks/useAuth';
 import jwt from 'jwt-decode';
+import { toast } from 'react-toastify';
 
 
 export default function Register() {
@@ -16,8 +17,7 @@ export default function Register() {
     const { setAuth } = useAuth();
 
     let handleChange = (e) => {
-        setData({ ...data, [e.target.name]: e.target.value });
-        
+        setData({ ...data, [e.target.name]: e.target.value }); 
     }
 
     let handleSubmit = async (e) => {
@@ -37,11 +37,35 @@ export default function Register() {
                 name: claims[1],
                 roles: claims[2],
                 token : token,
-            })          
-        })
-        data.userName = "";
-        data.password = "";
-        return navigate("/")
+            })  
+            if (response.status === 200) {
+                toast.success('Successful login.', {
+                    position: toast.POSITION.BOTTOM_RIGHT
+                });
+                return navigate("/")
+            }
+        }).catch((error) => {
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.log(error.response.data);
+                console.log(error.response.status);
+                console.log(error.response.headers);
+
+            } else if (error.request) {
+                // The request was made but no response was received
+                // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+                // http.ClientRequest in node.js
+                console.log(error.request);
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.log('Error', error.message);
+            }
+            toast.error('Incorrect username or password', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+            console.log(error.config);
+        })        
     };
 
     return (
