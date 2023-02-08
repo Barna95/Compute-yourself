@@ -56,7 +56,7 @@ const Card = (props) => {
                           onClick={() => {return navigate(`/product/${props.productType}/${value.id}/details`)}}
                           />
                       </Box>
-                    <Typography align='center' variant='subtitle1'>
+                    <Typography noWrap="true" align='center' variant='subtitle1'>
                       <Link to={`/product/${props.productType}/${value.id}/details`}>{value.name }</Link>
                     </Typography>
                     {/* <Typography onClick={() => {return navigate(`/product/${props.productType}/${value.id}/details`)}} align='center' variant='subtitle1'>{value.name}</Typography> */}
