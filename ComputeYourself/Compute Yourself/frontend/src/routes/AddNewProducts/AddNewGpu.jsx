@@ -2,7 +2,8 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-import useAuth from "../../hooks/useAuth"
+import useAuth from "../../hooks/useAuth";
+import { toast } from 'react-toastify';
 
 export default function AddNewGpu() {
     const [formValues, setFormValues] = useState({
@@ -38,8 +39,19 @@ export default function AddNewGpu() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate("/product/gpu")
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Created.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate("/product/gpu")
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
     // TODO -> input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different

@@ -2,7 +2,8 @@
 import React from 'react';
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import useAuth from "../../hooks/useAuth"
+import useAuth from "../../hooks/useAuth";
+import { toast } from 'react-toastify';
 
 export default function EditCpu() {
     const [data, setData] = useState([]);
@@ -46,8 +47,19 @@ export default function EditCpu() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate(`/product/cpu/${id}/details`)
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Edited.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate(`/product/cpu/${id}/details`)
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
 
     return (

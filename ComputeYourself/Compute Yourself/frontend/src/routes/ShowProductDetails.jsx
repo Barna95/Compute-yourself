@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
-import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import DeleteButtonForDetails from './DeleteProducts/DeleteButtonDetails';
 import EditIcon from '@mui/icons-material/Edit';

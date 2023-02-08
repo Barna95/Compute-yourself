@@ -1,18 +1,14 @@
-import { Box, ThemeProvider, createTheme } from '@mui/system';
-import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
+import { Box } from '@mui/system';
+import { Link, Outlet, useNavigate } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
-import { Container } from "react-bootstrap";
 import Grid from "@mui/material/Grid";
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../assets/banner_gs.png';
 import Mainpicture from '../assets/maintitle.jpg';
-import Paper from "@mui/material/Paper";
-import PropTypes from 'prop-types';
 import SearchIcon from '@material-ui/icons/Search';
 import Toolbar from '@material-ui/core/Toolbar';
 import { withStyles } from '@material-ui/core/styles';
-import jwt from 'jwt-decode';
 import useAuth from "../hooks/useAuth"
 import themeStyle from "../themeStyle"
 

@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from 'react';
-import useAuth from "../../hooks/useAuth"
+import useAuth from "../../hooks/useAuth";
+import { toast } from 'react-toastify';
 
 export default function EditMotherBoard() {
     const [data, setData] = useState([]);
@@ -39,8 +40,19 @@ export default function EditMotherBoard() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate(`/product/motherboard/${id}/details`)
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Edited.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate(`/product/motherboard/${id}/details`)
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
 
 
