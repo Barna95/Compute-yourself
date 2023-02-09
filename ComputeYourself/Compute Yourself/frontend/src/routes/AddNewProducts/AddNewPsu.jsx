@@ -1,4 +1,4 @@
-﻿import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
@@ -7,6 +7,8 @@ import themeStyle from "../../themeStyle"
 import { Grid } from "@mui/material";	
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
+import useAuth from "../../hooks/useAuth";
+import { toast } from 'react-toastify';
 
 export default function AddNewPsu() {
     const [formValues, setFormValues] = useState({
@@ -49,8 +51,19 @@ export default function AddNewPsu() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate("/product/psu")
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Created.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate("/product/psu")
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
 
     // TODO -> Add enum so this can work <div> Classification  enum, no touchy<input placeholder="" aria-label="{keys[2]}" type="text" name={keys[2]} onChange={e => handleChange(e)} /></div>

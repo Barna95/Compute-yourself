@@ -1,14 +1,15 @@
-﻿import AddIcon from '@mui/icons-material/Add';
+import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import { Grid } from "@mui/material";	
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import { toast } from 'react-toastify';
 
 export default function AddNewCpu() {
     const [formValues, setFormValues] = useState({
@@ -58,10 +59,20 @@ export default function AddNewCpu() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate("/product/cpu")
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Created.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate("/product/cpu")
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
-    useEffect(() => { console.log(formValues) }, [formValues])
     // TODO -> input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different
     //input fields like checkbox or choose from enums in dropdown

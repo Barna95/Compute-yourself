@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";			
 import MenuItem from '@mui/material/MenuItem';
+import { toast } from 'react-toastify';
 
 export default function EditPsu() {
     const [data, setData] = useState([]);
@@ -43,8 +44,19 @@ export default function EditPsu() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate(`/product/psu/${id}/details`)
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Edited.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate(`/product/psu/${id}/details`)
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
 
     return (

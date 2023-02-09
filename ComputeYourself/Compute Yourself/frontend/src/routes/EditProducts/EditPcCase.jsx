@@ -6,6 +6,8 @@ import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";			
+import useAuth from "../../hooks/useAuth";
+import { toast } from 'react-toastify';
 
 export default function EditPcCase() {
     const [data, setData] = useState([]);
@@ -35,8 +37,19 @@ export default function EditPcCase() {
                 'Content-Type': 'application/json;charset=UTF-8',
                 'Authorization': `Bearer ${token}`
             }
-        })
-        return navigate(`/product/pccase/${id}/details`)
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Edited.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate(`/product/pccase/${id}/details`)
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
 
     return (
