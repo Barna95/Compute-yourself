@@ -58,6 +58,10 @@ const themeStyle = {
       color: "black", 
       borderRadius: 0, 
       backgroundColor: "grey",
+    },    
+    textInput: {
+      width: 400,
+      margin: 6,
     },
   };
 
