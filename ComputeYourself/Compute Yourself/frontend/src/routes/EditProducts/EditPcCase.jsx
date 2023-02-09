@@ -58,7 +58,7 @@ export default function EditPcCase() {
                 <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Model Number" placeholder={data[keys[12]]} defaultValue=" " value={data[keys[12]]} name={keys[12]} onChange={e => handleChange(e)}/>
                 <Grid item md={2}>
                     <Button style={themeStyle.navbarButton} variant="outlined" size="small" type="submit">Save</Button>
-                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/product/cpu`)}>Back</Button>
+                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/product/pccase`)}>Back</Button>
                     </Grid>
                 </Grid>
             </Grid>
