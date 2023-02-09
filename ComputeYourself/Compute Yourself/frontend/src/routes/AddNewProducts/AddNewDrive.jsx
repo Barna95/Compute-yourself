@@ -1,7 +1,11 @@
-﻿import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from "../../hooks/useAuth"
+import themeStyle from "../../themeStyle"
+import { Grid } from "@mui/material";	
+import TextField from '@mui/material/TextField';
 import useAuth from "../../hooks/useAuth";
 import { toast } from 'react-toastify';
 
@@ -59,24 +63,27 @@ export default function AddNewDrive() {
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
         <form onSubmit={e => handleSubmit(e)}>
-            <div> Name <input placeholder="" aria-label="{keys[4]}" type="text" name={keys[4]} onChange={e => handleChange(e)} required /></div>
-            <div> Description <input placeholder="" aria-label="{keys[5]}" type="text" name={keys[5]} onChange={e => handleChange(e)} required /></div>
-            <div> Price <input placeholder="" aria-label="{keys[6]}" type="number" name={keys[6]} onChange={e => handleChange(e)} required /></div>
-            <div> Brand <input placeholder="" aria-label="{keys[7]}" type="text" name={keys[7]} onChange={e => handleChange(e)} /></div>
-            <div> Warranty <input placeholder="" aria-label="{keys[8]}" type="number" name={keys[8]} onChange={e => handleChange(e)} required /></div>
-            <div> Rating <input placeholder="" aria-label="{keys[9]}" type="number" name={keys[9]} onChange={e => handleChange(e)} required /></div>
-            <div> Connection Type <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)} required /></div>
-            <div> Capacity <input placeholder="" aria-label="{keys[1]}" type="number" name={keys[1]} onChange={e => handleChange(e)} required /></div>
-            <div> MaxWrite <input placeholder="" aria-label="{keys[2]}" type="number" name={keys[2]} onChange={e => handleChange(e)} required /></div>
-            <div> MaxRead <input placeholder="" aria-label="{keys[3]}" type="number" name={keys[3]} onChange={e => handleChange(e)} required /></div>
-            <div> Main Image <input placeholder="" aria-label="{keys[10]}" type="text" name={keys[10]} onChange={e => handleChange(e)} required /></div>
-            <div> Product Official Website <input placeholder="" aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} required /></div>
-            <div> Model Number <input placeholder="" aria-label="{keys[12]}" type="text" name={keys[12]} onChange={e => handleChange(e)} required /></div>
-
-            <div className="button-section">
-            <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product/drive")}> Back </Button>
-            </div>
+            <Grid container md={12} alignContent="center">
+                <Grid item md={6} padding={2} autoComplete="off" noValidate>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Name" defaultValue=" " name={keys[4]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Description" defaultValue=" " name={keys[5]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Price" defaultValue="0" name={keys[6]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Brand" defaultValue=" " name={keys[7]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Warranty" defaultValue="0" name={keys[8]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Rating" defaultValue="0" name={keys[9]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Connection Type" defaultValue=" " name={keys[0]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Capacity" defaultValue="0" name={keys[1]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="MaxWrite" defaultValue="0" name={keys[2]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="MaxRead" defaultValue="0" name={keys[3]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Main Image" defaultValue=" " name={keys[10]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Product Official Website" defaultValue=" " name={keys[11]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Model Number" defaultValue=" " name={keys[12]} onChange={e => handleChange(e)}/>
+                <Grid item md={2}>
+                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" type="submit">Save</Button>
+                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/product/drive`)}>Back</Button>
+                    </Grid>
+                </Grid>
+            </Grid>
         </form>
     )
 }
