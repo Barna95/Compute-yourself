@@ -5,7 +5,14 @@ import { useNavigate } from "react-router-dom";
 import useAuth from '../hooks/useAuth';
 import jwt from 'jwt-decode';
 import { toast } from 'react-toastify';
-
+import TextField from '@mui/material/TextField';
+import Avatar from '@mui/material/Avatar';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
 
 export default function Register() {
     //account/login account/register
@@ -71,13 +78,64 @@ export default function Register() {
     return (
         <>
             <form onSubmit={e => handleSubmit(e)}>
-                <div> Name <input placeholder="" aria-label="userName" type="text" name="userName" onChange={e => handleChange(e)} required /></div>
-                <div> Password <input placeholder="" aria-label="password" type="text" name="password" onChange={e => handleChange(e)} required /></div>
-                <div className="button-section">
-                    <Button type="submit" variant="outlined" size="small">Login</Button>
-                    <Button type="button" variant="outlined" size="small" onClick={() => navigate("/")}> Back </Button>
-                </div>
+                <Container component="main" maxWidth="xs">
+                    <Box
+                        sx={{
+                            marginTop: 8,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        <Avatar sx={{ m: 1, bgcolor: 'grey' }}>
+                            <LockOutlinedIcon />
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Sign in
+                        </Typography>
+                        <Box sx={{ mt: 1 }}>
+                            <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            id="username"
+                            label="Username"
+                            autoComplete="email"
+                            autoFocus
+                            name="userName" onChange={e => handleChange(e)}
+                            />
+                            <TextField
+                            margin="normal"
+                            required
+                            fullWidth
+                            label="Password"
+                            type="password"
+                            id="password"
+                            autoComplete="current-password"
+                            name="password" onChange={e => handleChange(e)}
+                            />
+                            <Button
+                            type="submit"
+                            fullWidth
+                            variant="contained"
+                            sx={{ mt: 3, mb: 2 }}
+                            >
+                            Sign In
+                            </Button>
+                            <Grid container>
+                                <Grid item xs>
+                                </Grid>
+                                <Grid item>
+                                    <Link href="#" variant="body2" onClick={() => navigate(`/account/register`)}>
+                                    {"Don't have an account? Sign Up"}
+                                    </Link>
+                                </Grid>
+                            </Grid>
+                        </Box>
+                    </Box>
+                </Container>
             </form>
         </>
+        
     )
 }
