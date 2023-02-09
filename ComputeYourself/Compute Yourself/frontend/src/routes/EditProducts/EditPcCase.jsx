@@ -6,7 +6,6 @@ import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";			
-import useAuth from "../../hooks/useAuth";
 import { toast } from 'react-toastify';
 
 export default function EditPcCase() {

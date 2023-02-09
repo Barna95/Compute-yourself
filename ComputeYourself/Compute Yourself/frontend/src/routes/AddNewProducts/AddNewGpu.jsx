@@ -6,7 +6,6 @@ import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import { Grid } from "@mui/material";	
 import TextField from '@mui/material/TextField';
-import useAuth from "../../hooks/useAuth";
 import { toast } from 'react-toastify';
 
 export default function AddNewGpu() {

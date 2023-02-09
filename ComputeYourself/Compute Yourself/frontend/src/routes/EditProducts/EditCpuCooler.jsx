@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';

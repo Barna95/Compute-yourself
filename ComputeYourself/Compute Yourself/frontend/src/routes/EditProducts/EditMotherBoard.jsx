@@ -8,9 +8,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";	
 import MenuItem from '@mui/material/MenuItem';
-import InputLabel from '@mui/material/InputLabel';
-import Select from '@mui/material/Select';
-import useAuth from "../../hooks/useAuth";
 import { toast } from 'react-toastify';
 
 export default function EditMotherBoard() {
