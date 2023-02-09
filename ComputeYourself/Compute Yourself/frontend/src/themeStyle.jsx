@@ -59,6 +59,9 @@ const themeStyle = {
       borderRadius: 0, 
       backgroundColor: "grey",
     },    
+    PasswordStrengthMeter: {
+      height: 15,
+    },
     textInput: {
       width: 400,
       margin: 6,
