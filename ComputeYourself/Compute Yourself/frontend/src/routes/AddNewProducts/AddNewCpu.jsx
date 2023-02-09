@@ -1,7 +1,6 @@
 ﻿import AddIcon from '@mui/icons-material/Add';
 import Box from '@mui/material/Box';
 import Button from '@material-ui/core/Button';
-import TextField from '@mui/material/TextField';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
@@ -9,6 +8,7 @@ import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import { Grid } from "@mui/material";	
 import MenuItem from '@mui/material/MenuItem';
+import TextField from '@mui/material/TextField';
 
 export default function AddNewCpu() {
     const [formValues, setFormValues] = useState({

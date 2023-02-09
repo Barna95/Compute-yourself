@@ -5,7 +5,6 @@ import { useState } from 'react';
 import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import { Grid } from "@mui/material";	
-import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 
 export default function AddNewCpuCooler() {
