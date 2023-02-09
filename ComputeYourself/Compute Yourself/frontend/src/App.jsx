@@ -33,6 +33,7 @@ import RequireAuth from "./componentsFolder/RequireAuth"
 import RootLayout from "./layouts/RootLayout";
 import ProductsLayout from "./layouts/ProductsLayout"
 import ShowProductDetails from "./routes/ShowProductDetails";
+import Unauthorized from "./routes/UnauthorizedPage/Unauthorized"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -70,6 +71,8 @@ function App() {
                     <Route path="product/ram/:id/edit" element={<EditRam />} />
                     <Route path="product/gpu/:id/edit" element={<EditGpu />} />
                 </Route>
+
+                <Route path="unauthorized" element={<Unauthorized/> }/>
             </Route>
         )
     );
