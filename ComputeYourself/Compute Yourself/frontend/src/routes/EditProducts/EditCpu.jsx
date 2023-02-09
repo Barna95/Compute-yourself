@@ -4,10 +4,6 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth"
 import TextField from '@mui/material/TextField';
-import InputLabel from '@mui/material/InputLabel';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputAdornment from '@mui/material/InputAdornment';
-import { Stack } from "@mui/system";
 import { Grid } from "@mui/material";
 import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
@@ -107,8 +103,6 @@ export default function EditCpu() {
                     <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Main Image" placeholder={data[keys[17]]} defaultValue=" " value={data[keys[17]]} name={keys[17]} onChange={e => handleChange(e)}/>
                     <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Product Official Website" placeholder={data[keys[18]]} defaultValue=" " value={data[keys[18]]} name={keys[18]} onChange={e => handleChange(e)}/>
                     <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Model Number" placeholder={data[keys[19]]} defaultValue=" " value={data[keys[19]]} name={keys[19]} onChange={e => handleChange(e)}/>
-
-
                     <Grid item md={2}>
                         <Button style={themeStyle.navbarButton} variant="outlined" size="small" type="submit">Save</Button>
                         <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/product/cpu`)}>Back</Button>
