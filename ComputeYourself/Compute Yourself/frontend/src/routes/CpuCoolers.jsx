@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import React from 'react';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth"
 
 export default function CpuCoolers() {
     const [data, setData] = useState([]);
@@ -18,20 +19,29 @@ export default function CpuCoolers() {
                 setData(response.data);
             });
     }, []);
-    
-    return (
-<>
-        <Grid item md={10}>
-        <Button 
-            variant="outlined" 
-            size="medium" 
-            color="success" 
-            onClick={() => navigate(`/product/addnewcpucooler`, { replace: true, state: { formData: data, productType: "cpucooler" } }
-            )}
-            ><AddIcon color="success" ></AddIcon>Cpu Cooler</Button>
 
-        </Grid>
+    const { auth } = useAuth();
+    const isAdmin = auth?.roles?.includes("Admin");
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    const adminField = [];
+    if (isAdmin && loggedIn == "true") {
+        adminField.push(
+            <Grid item md={10}>
+                <Button
+                    variant="outlined"
+                    size="medium"
+                    color="success"
+                    onClick={() => navigate(`/product/addnewcpucooler`, { replace: true, state: { formData: data, productType: "cpucooler" } }
+                    )}
+                ><AddIcon color="success" ></AddIcon>Cpu Cooler</Button>
+            </Grid>
+        );
+    }
+
+    return (
+           <>
+            {adminField }
             <Card dataProperties={data} productType="cpucooler" />
-        </>
+           </>
     )
 }

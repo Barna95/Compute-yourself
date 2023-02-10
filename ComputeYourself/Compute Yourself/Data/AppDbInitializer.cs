@@ -1,5 +1,8 @@
 ﻿using ComputeYourself.Data.Enums;
 using ComputeYourself.Models;
+using ComputeYourself.Models.Identity;
+using ComputeYourself.Static;
+using Microsoft.AspNetCore.Identity;
 
 namespace ComputeYourself.Data
 {
@@ -547,7 +550,7 @@ namespace ComputeYourself.Data
                                           " are high performance 6Gbps SATA SSDs using the latest 3D TLC NAND, designed" + 
                                           " for Read Centric and Mixed-Use server workloads. ",
                             productOfficialWebsite = "https://www.kingston.com/en/ssd/dc500-data-center-solid-state-drive",
-                            mainImage = "https://media.kingston.com/kingston/hero/ktc-hero-ssd-dc500r-dc500m-lg.jpg",
+                            mainImage = "https://media.kingston.com/kingston/product/ktc-product-ssd-dc500r-sedc500r1920g-1-zm-lg.jpg",
                             modelNumber = "DC500R / DC500M",
                             Price = 350.08M,
                             Brand = "Kingston",
@@ -1968,6 +1971,55 @@ namespace ComputeYourself.Data
                     });
                     context.SaveChanges();
                 }
+            }
+        }
+
+        public static async Task SeedUsersAndRolesAsync(IApplicationBuilder applicationBuilder)
+        {
+            using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())
+            {
+
+                //Roles
+                var roleManager = serviceScope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+                if (!await roleManager.RoleExistsAsync(UserRoles.Admin))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
+                if (!await roleManager.RoleExistsAsync(UserRoles.Member))
+                    await roleManager.CreateAsync(new IdentityRole(UserRoles.Member));
+
+                //Users
+                var userManager = serviceScope.ServiceProvider.GetRequiredService<UserManager<User>>();
+                string adminUserEmail = "admin@test.com";
+
+                //var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
+                //if (adminUser == null)
+                //{
+                    var newAdminUser = new User()
+                    {
+                        
+                        UserName = "Admin",
+                        Email = adminUserEmail,
+                        //EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAdminUser, "Pa$$w0rd");
+                    await userManager.AddToRolesAsync(newAdminUser, new[]{ UserRoles.Member,UserRoles.Admin });
+                //}
+
+
+                string appUserEmail = "bob@test.com";
+
+                //var appUser = await userManager.FindByEmailAsync(appUserEmail);
+                //if (appUser == null)
+                //{
+                    var newAppUser = new User()
+                    {
+                        UserName = "Bob",
+                        Email = appUserEmail,
+                        //EmailConfirmed = true
+                    };
+                    await userManager.CreateAsync(newAppUser, "Pa$$w0rd");
+                    await userManager.AddToRoleAsync(newAppUser, UserRoles.Member);
+                //}
             }
         }
     }

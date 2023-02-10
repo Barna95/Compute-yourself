@@ -1,7 +1,12 @@
-﻿import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
+import useAuth from "../../hooks/useAuth"
+import themeStyle from "../../themeStyle"
+import { Grid } from "@mui/material";	
+import TextField from '@mui/material/TextField';
+import { toast } from 'react-toastify';
 
 export default function AddNewCpuCooler() {
     const [formValues, setFormValues] = useState({
@@ -21,17 +26,33 @@ export default function AddNewCpuCooler() {
     const navigate = useNavigate();
     const keys = Object.keys(formValues).map((propName, idx) => { return propName });
     let handleChange = (e) => {
-        formValues[e.target.name] = e.target.value;
-        console.log(formValues);
+        setFormValues({ ...formValues, [e.target.name]: e.target.value });
     }
 
-    let handleSubmit = async () => {
+    const { auth } = useAuth();
+
+    let handleSubmit = async (e) => {
+        e.preventDefault
+        const token = auth.token
         const json = JSON.stringify(formValues);
         await axios.post(`https://localhost:7195/product/cpucooler`, json, {
             headers: {
                 'Content-Type': 'application/json;charset=UTF-8',
+                'Authorization': `Bearer ${token}`
             }
-        })
+        }).then(response => {
+            if (response.status === 200) {
+                toast.success('Created.', {
+                    position: toast.POSITION.TOP_RIGHT
+                });
+                return navigate("/product/cpucooler")
+            }
+        }).catch((error) => {
+            console.log(error.config);
+            toast.error('Oops, something went wrong!', {
+                position: toast.POSITION.BOTTOM_RIGHT
+            });
+        }) 
     };
     // TODO -> input fields be required as its needed.
     // create the input nodes with map but it would be hard to change the different
@@ -39,24 +60,27 @@ export default function AddNewCpuCooler() {
     // so ill just leave it here for now.
     // keys.map((propName, idx) => <div key={idx}> {propName}<input placeholder="" aria-label="{propName}" type="text" name={propName} onChange={e => handleChange(e)} /></div>)
     return (
-        <form onSubmit={handleSubmit}>
-            <div> Name <input placeholder="" aria-label="{keys[3]}" type="text" name={keys[3]} onChange={e => handleChange(e)} required /></div>
-            <div> Description <input placeholder="" aria-label="{keys[4]}" type="text" name={keys[4]} onChange={e => handleChange(e)} required /></div>
-            <div> Price <input placeholder="" aria-label="{keys[5]}" type="number" name={keys[5]} onChange={e => handleChange(e)} required /></div>
-            <div> Brand <input placeholder="" aria-label="{keys[6]}" type="text" name={keys[6]} onChange={e => handleChange(e)} /></div>
-            <div> Warranty <input placeholder="" aria-label="{keys[7]}" type="number" name={keys[7]} onChange={e => handleChange(e)} required /></div>
-            <div> Rating <input placeholder="" aria-label="{keys[8]}" type="number" name={keys[8]} onChange={e => handleChange(e)} required /></div>
-            <div> Cooler Type <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)} required /></div>
-            <div> Height <input placeholder="" aria-label="{keys[1]}" type="text" name={keys[1]} onChange={e => handleChange(e)} required /></div>
-            <div> Cpu Type <input placeholder="" aria-label="{keys[2]}" type="text" name={keys[2]} onChange={e => handleChange(e)} required /></div>
-            <div> Main Image <input placeholder="" aria-label="{keys[9]}" type="text" name={keys[9]} onChange={e => handleChange(e)} required /></div>
-            <div> Product Official Website <input placeholder="" aria-label="{keys[10]}" type="text" name={keys[10]} onChange={e => handleChange(e)} required /></div>
-            <div> Model Number <input placeholder="" aria-label="{keys[11]}" type="text" name={keys[11]} onChange={e => handleChange(e)} required /></div>
-            
-            <div className="button-section">
-            <Button type="submit" variant="outlined" size="small">Save</Button>
-                <Button type="button" variant="outlined" size="small" onClick={() => navigate("/product")}> go back </Button>
-            </div>
+        <form onSubmit={e => handleSubmit(e)}>
+            <Grid container md={12} alignContent="center">
+                <Grid item md={6} padding={2} autoComplete="off" noValidate>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Name" defaultValue=" " name={keys[3]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Description" defaultValue=" " name={keys[4]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Price" defaultValue="0" name={keys[5]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Brand" defaultValue=" " name={keys[6]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Warranty" defaultValue="0" name={keys[7]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-number" type="number" variant="outlined" size = "small" label="Rating" defaultValue="0" name={keys[8]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Cooler Type" defaultValue=" " name={keys[0]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Height" defaultValue=" " name={keys[1]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Cpu Type" defaultValue=" " name={keys[2]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Main Image" defaultValue=" " name={keys[9]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Product Official Website" defaultValue=" " name={keys[10]} onChange={e => handleChange(e)}/>
+                <TextField style={themeStyle.textInput} required id="outlined-required" variant="outlined" size = "small" label="Model Number" defaultValue=" " name={keys[11]} onChange={e => handleChange(e)}/>
+                <Grid item md={2}>
+                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" type="submit">Save</Button>
+                    <Button style={themeStyle.navbarButton} variant="outlined" size="small" onClick={() => navigate(`/product/cpucooler`)}>Back</Button>
+                    </Grid>
+                </Grid>
+            </Grid>
         </form>
     )
 }

@@ -15,15 +15,18 @@
     "@material-ui/icons": "^4.11.3",
     "@material/textfield": "^14.0.0",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.6",
+    "@mui/material": "^5.11.7",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
+    "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.0",
     "react-dom": "^18.2.0",
     "react-modal": "^3.16.1",
-    "react-router-dom": "^6.6.2"
+    "react-password-strength-bar": "^0.4.1",
+    "react-router-dom": "^6.6.2",
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
