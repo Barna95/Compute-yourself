@@ -82,7 +82,7 @@ namespace ComputeYourself
                     };
                 });
             builder.Services.AddAuthorization();
-            builder.Services.AddScoped<TokenService>();
+            builder.Services.AddScoped<ITokenService,TokenService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
