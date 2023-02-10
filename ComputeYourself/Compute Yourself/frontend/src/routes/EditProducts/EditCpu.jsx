@@ -15,11 +15,6 @@ export default function EditCpu() {
     const navigate = useNavigate();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
 
-
-    useEffect(() => {
-        console.log(data);
-    }, [data]);
-
     useEffect(() => {
         axios.get(`https://localhost:7195/product/cpu/${id}`).then(
             (response) => {

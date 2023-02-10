@@ -49,7 +49,6 @@ namespace ComputeYourself
                 })
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
-            builder.Services.AddCors();
             builder.Services.AddDbContext<AppDbContext>(options => options.EnableSensitiveDataLogging());
             builder.Host.UseSerilog((ctx, lc) => lc
                 .WriteTo.Console()
