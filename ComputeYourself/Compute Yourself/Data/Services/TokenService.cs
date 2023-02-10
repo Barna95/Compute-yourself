@@ -23,7 +23,7 @@ namespace ComputeYourself.Data.Services
             var claims = new List<Claim>
             {
                 new (ClaimTypes.Email, user.Email),
-                new (ClaimTypes.Name, user.UserName)
+                new (ClaimTypes.Name, user.UserName),
             };
 
             var roles = await _userManager.GetRolesAsync(user);

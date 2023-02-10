@@ -1,18 +1,18 @@
-﻿import Button from "@mui/material/Button";
+﻿import { useNavigate, useParams } from "react-router-dom";
+
+import { Box } from "@mui/system";
+import Button from "@mui/material/Button";
 import CpuCoolers from "../routes/CpuCoolers";
 import Cpus from "../routes/Cpus";
 import Drives from "../routes/Drives";
 import Gpus from "../routes/Gpus";
 import Grid from "@material-ui/core/Grid";
-import { useParams, useNavigate} from "react-router-dom";
 import MotherBoards from "../routes/MotherBoards";
 import Paper from "@mui/material/Paper";
 import PcCases from "../routes/PcCases";
 import Psus from "../routes/Psus";
 import Rams from "../routes/Rams";
 import React from "react";
-import { Box } from "@mui/system";
-
 
 function ProductsLayout() {
     const navigate = useNavigate();
