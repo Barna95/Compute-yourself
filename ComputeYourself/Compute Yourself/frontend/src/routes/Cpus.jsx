@@ -4,22 +4,25 @@ import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
 import Grid from "@mui/material/Grid";
 import React from 'react';
-import axios from "axios";
+import { AxiosGet } from "../Axios/FetchWithAxios"
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth"
 
 export default function Cpus() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
+    const { auth } = useAuth();
+    const [trigger, setTrigger] = useState("false");
 
     useEffect(() => {
-        axios.get("https://localhost:7195/product/cpu").then(
-            (response) => {
-                setData(response.data);
-            });
-    }, [data]);
+            AxiosGet("cpu").then(
+                (response) => {
+                    setData(response.data);
+                });
+        setTrigger("false");
+    }, [trigger]);
+        
     //Show admin field
-    const { auth } = useAuth();
     const isAdmin = auth?.roles?.includes("Admin");
     const loggedIn = localStorage.getItem("isLoggedIn");
     const adminField = [];
@@ -39,7 +42,7 @@ export default function Cpus() {
     return (
             <>
             {adminField}
-            <Card dataProperties={data} productType="cpu" />
+            <Card dataProperties={data} productType="cpu" trigger={setTrigger}/>
             </>
     );
 }
