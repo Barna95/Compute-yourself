@@ -32,7 +32,7 @@ function adminField(props, value, navigate, loggedIn, isAdmin) {
           onClick={() => {return navigate(`/product/${props.productType}/${value.id}/edit`)}}>
           <EditIcon color="primary"  fontSize="small"></EditIcon> Edit
         </Button>
-        <DeleteButtonCard productType={props.productType} productId={value.id}/>
+            <DeleteButtonCard productType={props.productType} productId={value.id} trigger={props.trigger}/>
       </Stack>
     );
   }
