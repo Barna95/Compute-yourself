@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import useAuth from "../../hooks/useAuth"
-import axios from "axios";
+import { AxiosGetById, AxiosPut } from "../../Axios/FetchWithAxios"
 import { useNavigate, useParams } from "react-router-dom";
 import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";	
 import MenuItem from '@mui/material/MenuItem';
-import { toast } from 'react-toastify';
 
 export default function EditRam() {
     const [data, setData] = useState([]);
@@ -15,7 +14,7 @@ export default function EditRam() {
     let { id } = useParams();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/ram/${id}`).then(
+        AxiosGetById("ram", id).then(
             (response) => {
                 setData(response.data);
             });
@@ -39,24 +38,7 @@ export default function EditRam() {
         e.preventDefault();
         const token = auth.token;
         const json = JSON.stringify(data);
-        await axios.put(`https://localhost:7195/product/ram/${data.id}`, json, {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                toast.success('Edited.', {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                return navigate(`/product/ram/${id}/details`)
-            }
-        }).catch((error) => {
-            console.log(error.config);
-            toast.error('Oops, something went wrong!', {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
-        }) 
+        AxiosPut(token, data.id, json, "ram", navigate);
     };
 
     return (

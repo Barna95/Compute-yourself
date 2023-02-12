@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import axios from "axios";
+import { AxiosGetById, AxiosPut } from "../../Axios/FetchWithAxios"
 import { useNavigate, useParams } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";
 import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import useAuth from "../../hooks/useAuth";
-import { toast } from 'react-toastify';
 
 export default function EditCpu() {
     const [data, setData] = useState([]);
@@ -15,13 +14,8 @@ export default function EditCpu() {
     const navigate = useNavigate();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
 
-
     useEffect(() => {
-        console.log(data);
-    }, [data]);
-
-    useEffect(() => {
-        axios.get(`https://localhost:7195/product/cpu/${id}`).then(
+        AxiosGetById("cpu", id).then(
             (response) => {
                 setData(response.data);
             });
@@ -46,24 +40,7 @@ export default function EditCpu() {
         e.preventDefault();
         const token = auth.token;
         const json = JSON.stringify(data);
-        await axios.put(`https://localhost:7195/product/cpu/${data.id}`, json, {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                toast.success('Edited.', {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                return navigate(`/product/cpu/${id}/details`)
-            }
-        }).catch((error) => {
-            console.log(error.config);
-            toast.error('Oops, something went wrong!', {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
-        }) 
+        AxiosPut(token, data.id, json, "cpu", navigate);
     };
 
     return (
