@@ -19,6 +19,7 @@ export default function CpuCoolers() {
             (response) => {
                 setData(response.data);
             });
+        setTrigger("false");
     }, [trigger]);
 
     const { auth } = useAuth();

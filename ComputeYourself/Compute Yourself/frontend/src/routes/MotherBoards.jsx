@@ -17,6 +17,7 @@ export default function MotherBoards() {
             (response) => {
                 setData(response.data);
             });
+        setTrigger("false");
     }, [trigger]);
 
     const { auth } = useAuth();

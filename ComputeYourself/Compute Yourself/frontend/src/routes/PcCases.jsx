@@ -17,6 +17,7 @@ export default function PcCases() {
             (response) => {
                 setData(response.data);
             });
+        setTrigger("false");
     }, [trigger]);
 
     const { auth } = useAuth();

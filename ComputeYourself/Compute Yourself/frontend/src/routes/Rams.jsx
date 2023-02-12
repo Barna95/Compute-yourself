@@ -17,6 +17,7 @@ export default function Rams() {
             (response) => {
                 setData(response.data);
             });
+        setTrigger("false");
     }, [trigger]);
 
     const { auth } = useAuth();

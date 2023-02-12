@@ -17,6 +17,7 @@ export default function Drives() {
             (response) => {
                 setData(response.data);
             });
+        setTrigger("false");
     }, [trigger]);
 
     //Show admin field
