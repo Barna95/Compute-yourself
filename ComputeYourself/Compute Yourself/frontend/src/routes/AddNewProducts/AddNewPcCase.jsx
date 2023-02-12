@@ -1,4 +1,4 @@
-import axios from "axios";
+import { AxiosPost } from "../../Axios/FetchWithAxios"
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import useAuth from "../../hooks/useAuth"
@@ -6,7 +6,6 @@ import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";	
-import { toast } from 'react-toastify';
 
 export default function AddNewPcCase() {
     const [formValues, setFormValues] = useState({
@@ -35,24 +34,7 @@ export default function AddNewPcCase() {
         e.preventDefault();
         const token = auth.token
         const json = JSON.stringify(formValues);
-        await axios.post(`https://localhost:7195/product/pccase`, json, {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                toast.success('Created.', {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                return navigate("/product/pccase")
-            }
-        }).catch((error) => {
-            console.log(error.config);
-            toast.error('Oops, something went wrong!', {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
-        }) 
+        AxiosPost("pccase", token, json, navigate)
     };
 
     //TODO -> add enum so this works <div> Size Compatibility enum, no touchy <input placeholder="" aria-label="{keys[0]}" type="text" name={keys[0]} onChange={e => handleChange(e)} /></div>

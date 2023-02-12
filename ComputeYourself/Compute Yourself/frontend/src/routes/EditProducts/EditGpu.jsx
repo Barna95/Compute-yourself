@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from "axios";
+import { AxiosGetById, AxiosPut } from "../../Axios/FetchWithAxios"
 import { useNavigate, useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth"
 import themeStyle from "../../themeStyle"
 import Button from '@material-ui/core/Button';
 import TextField from '@mui/material/TextField';
 import { Grid } from "@mui/material";	
-import { toast } from 'react-toastify';
 
 export default function EditGpu() {
     const [data, setData] = useState([]);
@@ -14,7 +13,7 @@ export default function EditGpu() {
     let { id } = useParams();
     const keys = Object.keys(data).map((propName, idx) => { return propName });
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/gpu/${id}`).then(
+        AxiosGetById("gpu", id).then(
             (response) => {
                 setData(response.data);
             });
@@ -31,24 +30,7 @@ export default function EditGpu() {
         e.preventDefault();
         const token = auth.token;
         const json = JSON.stringify(data);
-        await axios.put(`https://localhost:7195/product/gpu/${data.id}`, json, {
-            headers: {
-                'Content-Type': 'application/json;charset=UTF-8',
-                'Authorization': `Bearer ${token}`
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                toast.success('Edited.', {
-                    position: toast.POSITION.TOP_RIGHT
-                });
-                return navigate(`/product/gpu/${id}/details`)
-            }
-        }).catch((error) => {
-            console.log(error.config);
-            toast.error('Oops, something went wrong!', {
-                position: toast.POSITION.BOTTOM_RIGHT
-            });
-        }) 
+        AxiosPut(token, data.id, json, "gpu", navigate);
     };
 
     return (

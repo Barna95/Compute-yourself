@@ -1,23 +1,23 @@
 import { useEffect, useState } from "react";
-
+import { AxiosGet } from "../Axios/FetchWithAxios"
 import AddIcon from '@mui/icons-material/Add';
 import Button from '@material-ui/core/Button';
 import Card from "../componentsFolder/Card/CardOfProduct"
 import Grid from "@mui/material/Grid";
 import React from 'react';
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth"
 
 export default function MotherBoards() {
     const [data, setData] = useState([]);
     const navigate = useNavigate();
+    const [trigger, setTrigger] = useState("false");
     useEffect(() => {
-        axios.get("https://localhost:7195/product/motherboard").then(
+        AxiosGet("motherboard").then(
             (response) => {
                 setData(response.data);
             });
-    }, [data]);
+    }, [trigger]);
 
     const { auth } = useAuth();
     const isAdmin = auth?.roles?.includes("Admin");
@@ -38,7 +38,7 @@ export default function MotherBoards() {
     return (
         <>
             {adminField}
-            <Card dataProperties={data} productType="motherboard" />
+            <Card dataProperties={data} productType="motherboard" trigger={setTrigger} />
         </>
     )
 }

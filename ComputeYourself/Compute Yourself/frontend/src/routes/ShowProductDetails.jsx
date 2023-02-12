@@ -9,7 +9,7 @@ import DeleteButtonForDetails from './DeleteProducts/DeleteButtonDetails';
 import EditIcon from '@mui/icons-material/Edit';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import axios from "axios";
+import { AxiosGetById } from "../Axios/FetchWithAxios"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -28,7 +28,7 @@ export default function ShowProductDetails() {
     //let productKeys = [];
     //const selectKeys = Object.keys(props.dataProperties.map((e) => productKeys.push(Object.keys(e))));
     useEffect(() => {
-        axios.get(`https://localhost:7195/product/${productType}/${id}`).then(
+        AxiosGetById(productType, id).then(
             (response) => {
                 setData(response.data);
             });
