@@ -1,20 +1,22 @@
 ﻿import axios from "axios";
-import { toast } from 'react-toastify';
 import jwt from 'jwt-decode';
+import { toast } from 'react-toastify';
+
+const baseURL = "https://localhost:7195"
 
 async function AxiosGet(productType) {
-    const response = await axios.get(`https://localhost:7195/product/${productType}`)
+    const response = await axios.get(`${baseURL}/product/${productType}`)
     return response;
 }
 
 async function AxiosGetById(productType, id) {
-    const response = axios.get(`https://localhost:7195/product/${productType}/${id}`)
+    const response = axios.get(`${baseURL}/product/${productType}/${id}`)
     return response;
 }
 
 async function AxiosPut(token, id, bodyData, productType, navigate) {
     
-    await axios.put(`https://localhost:7195/product/${productType}/${id}`, bodyData, {
+    await axios.put(`${baseURL}/product/${productType}/${id}`, bodyData, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             'Authorization': `Bearer ${token}`
@@ -35,7 +37,7 @@ async function AxiosPut(token, id, bodyData, productType, navigate) {
 }
 
 async function AxiosPost(productType, token, bodyData, navigate) {
-    await axios.post(`https://localhost:7195/product/${productType}`, bodyData, {
+    await axios.post(`${baseURL}/product/${productType}`, bodyData, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             'Authorization': `Bearer ${token}`
@@ -56,7 +58,7 @@ async function AxiosPost(productType, token, bodyData, navigate) {
 }
 
 async function AxiosDelete(productType, id, token) {
-    await axios.delete(`https://localhost:7195/product/${productType}/${id}`, {
+    await axios.delete(`${baseURL}/product/${productType}/${id}`, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             'Authorization': `Bearer ${token}`
@@ -76,7 +78,7 @@ async function AxiosDelete(productType, id, token) {
 }
 
 async function AxiosLoginPost(bodyData, navigate, setAuth) {
-    const response = await axios.post(`https://localhost:7195/account/login`, bodyData, {
+    const response = await axios.post(`${baseURL}/account/login`, bodyData, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             withCredentials: true,
@@ -124,7 +126,7 @@ async function AxiosLoginPost(bodyData, navigate, setAuth) {
 }
 
 async function AxiosRegisterPost(bodyData, navigate) {
-    await axios.post(`https://localhost:7195/account/register`, bodyData, {
+    await axios.post(`${baseURL}/account/register`, bodyData, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
             withCredentials: true,
