@@ -1,13 +1,11 @@
-﻿using ComputeYourself.Data.Services.Drive;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Drive;
+using API.Models;
 
+namespace API.Controllers;
 
-namespace ComputeYourself.Controllers
+public class DriveController : CrudControllerBase<Drive, IDriveService>
 {
-    public class DriveController : CrudControllerBase<Drive, IDriveService>
+    public DriveController(IDriveService service) : base(service)
     {
-        public DriveController(IDriveService service) : base(service)
-        {
-        }
     }
 }

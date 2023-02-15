@@ -1,12 +1,12 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.CpuCooler
+namespace API.Data.Services.CpuCooler;
+
+public class CpuCoolerService : BaseService<Models.CpuCooler>, ICpuCoolerService
 {
-    public class CpuCoolerService : BaseService<Models.CpuCooler>, ICpuCoolerService
+    private readonly AppDbContext _context;
+
+    public CpuCoolerService(AppDbContext context) : base(context)
     {
-        private readonly AppDbContext _context;
-        public CpuCoolerService(AppDbContext context) : base(context)
-        {
-        }
     }
 }

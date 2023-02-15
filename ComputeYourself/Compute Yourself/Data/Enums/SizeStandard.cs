@@ -1,4 +1,4 @@
-﻿namespace ComputeYourself.Data.Enums;
+﻿namespace API.Data.Enums;
 
 public enum SizeStandard
 {

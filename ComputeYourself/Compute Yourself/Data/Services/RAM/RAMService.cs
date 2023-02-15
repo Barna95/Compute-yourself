@@ -1,15 +1,14 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.RAM
+namespace API.Data.Services.RAM;
+
+public class RAMService : BaseService<Ram>, IRAMService
 {
-    public class RAMService : BaseService<Ram>, IRAMService
-    {
-        private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
-        public RAMService(AppDbContext context) : base(context)
-        {
-            _context = context;
-        }
+    public RAMService(AppDbContext context) : base(context)
+    {
+        _context = context;
     }
 }

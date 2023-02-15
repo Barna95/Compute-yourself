@@ -1,7 +1,6 @@
-﻿namespace ComputeYourself.Data.DTOs
+﻿namespace API.Data.DTOs;
+
+public class RegisterDto : LoginDto
 {
-    public class RegisterDto : LoginDto
-    {
-        public string Email { get; set; }
-    }
+    public string Email { get; set; }
 }

@@ -1,13 +1,11 @@
-﻿using ComputeYourself.Data.Services.CPU;
-using ComputeYourself.Models;
+﻿using API.Data.Services.CPU;
+using API.Models;
 
+namespace API.Controllers;
 
-namespace ComputeYourself.Controllers
+public class CpuController : CrudControllerBase<Cpu, ICPUService>
 {
-    public class CpuController : CrudControllerBase<Cpu, ICPUService>
+    public CpuController(ICPUService service) : base(service)
     {
-        public CpuController(ICPUService service) : base(service)
-        {
-        }
     }
 }

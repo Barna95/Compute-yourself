@@ -1,14 +1,11 @@
-﻿using ComputeYourself.Data.Services.CPU;
-using ComputeYourself.Data.Services.RAM;
-using ComputeYourself.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using API.Data.Services.RAM;
+using API.Models;
 
-namespace ComputeYourself.Controllers
+namespace API.Controllers;
+
+public class RamController : CrudControllerBase<Ram, IRAMService>
 {
-    public class RamController : CrudControllerBase<Ram, IRAMService>
+    public RamController(IRAMService service) : base(service)
     {
-        public RamController(IRAMService service) : base(service)
-        {
-        }
     }
 }

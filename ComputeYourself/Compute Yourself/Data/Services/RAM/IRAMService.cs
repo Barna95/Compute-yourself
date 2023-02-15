@@ -1,9 +1,8 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.RAM
+namespace API.Data.Services.RAM;
+
+public interface IRAMService : IBaseService<Ram>
 {
-    public interface IRAMService : IBaseService<Ram>
-    {
-    }
 }

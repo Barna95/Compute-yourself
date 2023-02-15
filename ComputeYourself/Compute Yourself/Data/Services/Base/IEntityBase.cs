@@ -1,7 +1,6 @@
-﻿namespace ComputeYourself.Data.Services.Base
+﻿namespace API.Data.Services.Base;
+
+public interface IEntityBase
 {
-    public interface IEntityBase
-    {
-        int Id { get; }
-    }
+    int Id { get; }
 }

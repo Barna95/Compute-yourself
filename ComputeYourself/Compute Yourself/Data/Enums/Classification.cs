@@ -1,12 +1,11 @@
-﻿namespace ComputeYourself.Data.Enums
+﻿namespace API.Data.Enums;
+
+public enum Classification
 {
-    public enum Classification
-    {
-        None,
-        Bronze,
-        Silver,
-        Gold,
-        Platinum,
-        Titanium
-    }
+    None,
+    Bronze,
+    Silver,
+    Gold,
+    Platinum,
+    Titanium
 }

@@ -1,14 +1,13 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.MotherBoard
+namespace API.Data.Services.MotherBoard;
+
+public class MotherBoardService : BaseService<Models.MotherBoard>, IMotherBoardService
 {
-    public class MotherBoardService : BaseService<Models.MotherBoard>, IMotherBoardService
-    {
-        private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
-        public MotherBoardService(AppDbContext context) : base(context)
-        {
-            _context = context;
-        }
+    public MotherBoardService(AppDbContext context) : base(context)
+    {
+        _context = context;
     }
 }

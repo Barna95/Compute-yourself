@@ -1,13 +1,11 @@
-﻿using ComputeYourself.Data.Services.CpuCooler;
-using ComputeYourself.Models;
+﻿using API.Data.Services.CpuCooler;
+using API.Models;
 
+namespace API.Controllers;
 
-namespace ComputeYourself.Controllers
+public class CpuCoolerController : CrudControllerBase<CpuCooler, ICpuCoolerService>
 {
-    public class CpuCoolerController : CrudControllerBase<CpuCooler, ICpuCoolerService>
+    public CpuCoolerController(ICpuCoolerService service) : base(service)
     {
-        public CpuCoolerController(ICpuCoolerService service) : base(service)
-        {
-        }
     }
 }

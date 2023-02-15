@@ -1,9 +1,8 @@
-﻿using ComputeYourself.Models.Identity;
+﻿using API.Models.Identity;
 
-namespace ComputeYourself.Data.Services
+namespace API.Data.Services;
+
+public interface ITokenService
 {
-    public interface ITokenService
-    { 
-        Task<string> GenerateToken(User user);
-    }
+    Task<string> GenerateToken(User user);
 }

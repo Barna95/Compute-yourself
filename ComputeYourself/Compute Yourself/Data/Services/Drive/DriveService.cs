@@ -1,14 +1,12 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.Drive
+namespace API.Data.Services.Drive;
+
+public class DriveService : BaseService<Models.Drive>, IDriveService
 {
-    public class DriveService : BaseService<Models.Drive>, IDriveService
+    private readonly AppDbContext _context;
+
+    public DriveService(AppDbContext context) : base(context)
     {
-        private readonly AppDbContext _context;
-
-        public DriveService(AppDbContext context) : base(context)
-        {
-
-        }
     }
 }

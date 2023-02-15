@@ -1,8 +1,7 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.MotherBoard
+namespace API.Data.Services.MotherBoard;
+
+public interface IMotherBoardService : IBaseService<Models.MotherBoard>
 {
-    public interface IMotherBoardService : IBaseService<Models.MotherBoard>
-    {
-    }
 }

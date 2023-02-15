@@ -1,9 +1,7 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.PcCase
+namespace API.Data.Services.PcCase;
+
+public interface IPcCaseService : IBaseService<Models.PcCase>
 {
-    public interface IPcCaseService : IBaseService<Models.PcCase>
-    {
-
-    }
 }

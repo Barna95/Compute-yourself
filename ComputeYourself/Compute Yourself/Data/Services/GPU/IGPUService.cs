@@ -1,9 +1,8 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.GPU
+namespace API.Data.Services.GPU;
+
+public interface IGPUService : IBaseService<Gpu>
 {
-    public interface IGPUService : IBaseService<Gpu>
-    {
-    }
 }

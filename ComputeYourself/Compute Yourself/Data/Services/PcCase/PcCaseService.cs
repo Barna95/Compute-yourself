@@ -1,13 +1,12 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.PcCase
+namespace API.Data.Services.PcCase;
+
+public class PcCaseService : BaseService<Models.PcCase>, IPcCaseService
 {
-    public class PcCaseService : BaseService<Models.PcCase>, IPcCaseService
-    {
-        private readonly AppDbContext _context;
-        public PcCaseService(AppDbContext context) : base(context)
-        {
+    private readonly AppDbContext _context;
 
-        }
+    public PcCaseService(AppDbContext context) : base(context)
+    {
     }
 }

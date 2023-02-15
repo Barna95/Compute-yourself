@@ -1,15 +1,14 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.PSU
+namespace API.Data.Services.PSU;
+
+public class PsuService : BaseService<Psu>, IPsuService
 {
-    public class PsuService : BaseService<Psu>, IPsuService
-    {
-        private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
-        public PsuService(AppDbContext context) : base(context)
-        {
-            _context = context;
-        }
+    public PsuService(AppDbContext context) : base(context)
+    {
+        _context = context;
     }
 }

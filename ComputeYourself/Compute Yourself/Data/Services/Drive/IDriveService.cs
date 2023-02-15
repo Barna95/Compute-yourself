@@ -1,8 +1,7 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.Drive
+namespace API.Data.Services.Drive;
+
+public interface IDriveService : IBaseService<Models.Drive>
 {
-    public interface IDriveService : IBaseService<Models.Drive>
-    {
-    }
 }

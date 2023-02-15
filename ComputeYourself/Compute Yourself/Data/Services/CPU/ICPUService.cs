@@ -1,9 +1,8 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.CPU
+namespace API.Data.Services.CPU;
+
+public interface ICPUService : IBaseService<Cpu>
 {
-    public interface ICPUService : IBaseService<Cpu>
-    {
-    }
 }

@@ -1,14 +1,11 @@
-﻿using ComputeYourself.Data.Services.CPU;
-using ComputeYourself.Data.Services.PSU;
-using ComputeYourself.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using API.Data.Services.PSU;
+using API.Models;
 
-namespace ComputeYourself.Controllers
+namespace API.Controllers;
+
+public class PsuController : CrudControllerBase<Psu, IPsuService>
 {
-    public class PsuController : CrudControllerBase<Psu, IPsuService>
+    public PsuController(IPsuService service) : base(service)
     {
-        public PsuController(IPsuService service) : base(service)
-        {
-        }
     }
 }

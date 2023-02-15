@@ -1,8 +1,7 @@
-﻿using ComputeYourself.Data.Services.Base;
+﻿using API.Data.Services.Base;
 
-namespace ComputeYourself.Data.Services.CpuCooler
+namespace API.Data.Services.CpuCooler;
+
+public interface ICpuCoolerService : IBaseService<Models.CpuCooler>
 {
-    public interface ICpuCoolerService : IBaseService<Models.CpuCooler>
-    {
-    }
 }

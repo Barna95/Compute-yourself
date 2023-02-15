@@ -1,14 +1,13 @@
-﻿using ComputeYourself.Data.Services.Base;
-using ComputeYourself.Models;
+﻿using API.Data.Services.Base;
+using API.Models;
 
-namespace ComputeYourself.Data.Services.CPU
+namespace API.Data.Services.CPU;
+
+public class CPUService : BaseService<Cpu>, ICPUService
 {
-    public class CPUService : BaseService<Cpu>, ICPUService
-    {
-        private readonly AppDbContext _context;
+    private readonly AppDbContext _context;
 
-        public CPUService(AppDbContext context) : base(context)
-        {
-        }
+    public CPUService(AppDbContext context) : base(context)
+    {
     }
 }

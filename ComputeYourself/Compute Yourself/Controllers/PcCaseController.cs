@@ -1,14 +1,11 @@
-﻿using ComputeYourself.Data.Services.CPU;
-using ComputeYourself.Data.Services.PcCase;
-using ComputeYourself.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using API.Data.Services.PcCase;
+using API.Models;
 
-namespace ComputeYourself.Controllers
+namespace API.Controllers;
+
+public class PcCaseController : CrudControllerBase<PcCase, IPcCaseService>
 {
-    public class PcCaseController : CrudControllerBase<PcCase, IPcCaseService>
+    public PcCaseController(IPcCaseService service) : base(service)
     {
-        public PcCaseController(IPcCaseService service) : base(service)
-        {
-        }
     }
 }
