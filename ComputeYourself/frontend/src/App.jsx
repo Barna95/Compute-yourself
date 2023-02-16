@@ -41,7 +41,7 @@ import Unauthorized from "./routes/UnauthorizedPage/Unauthorized"
 // import { productURL } from "./endpoints";
 
 function App() {
-
+    
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route path="/" element={<RootLayout />}>

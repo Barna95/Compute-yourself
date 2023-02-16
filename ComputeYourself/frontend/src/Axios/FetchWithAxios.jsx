@@ -2,7 +2,9 @@
 import jwt from 'jwt-decode';
 import { toast } from 'react-toastify';
 
-const baseURL = "https://localhost:7195"
+const baseURL = import.meta.env.DEV.VITE_REACT_APP_API_URL
+// const baseURL = "https://localhost:7195"
+// axios.defaults.baseURL = import.meta.env.DEV.VITE_REACT_APP_API_URL
 
 async function AxiosGet(productType) {
     const response = await axios.get(`${baseURL}/product/${productType}`)
