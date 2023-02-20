@@ -1,18 +1,34 @@
-﻿import { useState } from "react";
-import Button from '@material-ui/core/Button';
-import { AxiosRegisterPost } from '../Axios/FetchWithAxios'
-import { useNavigate } from "react-router-dom";
-import * as React from 'react';
+﻿import * as React from 'react';
+
 import Avatar from '@mui/material/Avatar';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
+import { AxiosRegisterPost } from '../Axios/FetchWithAxios'
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import PasswordStrengthBar from 'react-password-strength-bar';
-import { withStyles } from '@material-ui/core/styles';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+// import { withStyles } from '@material-ui/core/styles';
+
+// import Button from '@material-ui/core/Button';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default function Register() {
     //account/login account/register

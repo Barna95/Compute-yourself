@@ -2,7 +2,9 @@
 import jwt from 'jwt-decode';
 import { toast } from 'react-toastify';
 
-const baseURL = import.meta.env.DEV.VITE_REACT_APP_API_URL
+// const baseURL = JSON.stringify(import.meta.env.VITE_REACT_APP_API_URL);
+const baseURL = import.meta.env.VITE_REACT_APP_API_URL
+
 // const baseURL = "https://localhost:7195"
 // axios.defaults.baseURL = import.meta.env.DEV.VITE_REACT_APP_API_URL
 
@@ -39,6 +41,7 @@ async function AxiosPut(token, id, bodyData, productType, navigate) {
 }
 
 async function AxiosPost(productType, token, bodyData, navigate) {
+    
     await axios.post(`${baseURL}/product/${productType}`, bodyData, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
@@ -106,6 +109,7 @@ async function AxiosLoginPost(bodyData, navigate, setAuth) {
         if (error.response) {
             // The request was made and the server responded with a status code
             // that falls out of the range of 2xx
+            console.log(baseURL);
             console.log(error.response.data);
             console.log(error.response.status);
             console.log(error.response.headers);

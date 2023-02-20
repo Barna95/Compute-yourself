@@ -14,6 +14,9 @@ export default defineConfig({
       ".json",
       ".vue",
       ".scss"
-    ]}
+    ]},
+    host: true,
+    strictPort: true,
+    port: 5173 // you can replace this port with any port
     
 })

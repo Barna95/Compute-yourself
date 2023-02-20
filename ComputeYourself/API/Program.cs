@@ -43,6 +43,7 @@ public class Program
         builder.Services.AddDbContext<AppDbContext>(options => options
             .UseSqlServer(builder.Configuration
                 .GetConnectionString("DefaultConnectionString")));
+
         builder.Services.AddIdentityCore<User>(opt => { opt.User.RequireUniqueEmail = true; })
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
