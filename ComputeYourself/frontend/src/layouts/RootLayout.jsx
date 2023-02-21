@@ -5,39 +5,17 @@ import Logo from '../assets/banner_gs.png';
 import Mainpicture from '../assets/maintitle.jpg';
 import themeStyle from "../themeStyle"
 import useAuth from "../hooks/useAuth"
-
-// import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@mui/styles';
 
 // import Toolbar from '@material-ui/core/Toolbar';
 
-
-
-
 // import SearchIcon from '@material-ui/icons/Search';
-
-
-
-
 
 // import IconButton from '@material-ui/core/IconButton';
 
-
-
-
-
-
-
-
 // import Button from '@material-ui/core/Button';
+
 // import Grid from "@mui/material/Grid";
-
-
-
-
-
-
-
-
 
 //import Logo from '../assets/logo.svg';
 

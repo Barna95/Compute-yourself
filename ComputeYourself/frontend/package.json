@@ -11,10 +11,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-
     "@material/textfield": "^14.0.0",
     "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.7",
+    "@mui/material": "^5.11.10",
+    "@mui/styles": "^5.11.9",
     "axios": "^1.2.2",
     "bootstrap": "^5.2.3",
     "dotenv": "^16.0.3",
