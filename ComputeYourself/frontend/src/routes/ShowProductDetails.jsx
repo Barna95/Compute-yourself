@@ -1,22 +1,38 @@
 ﻿import * as React from 'react';
+
 import { Grid, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+import { AxiosGetById } from "../Axios/FetchWithAxios"
 import Box from '@mui/material/Box';
-import Button from '@material-ui/core/Button';
 import CardMedia from '@mui/material/CardMedia';
 import DeleteButtonForDetails from './DeleteProducts/DeleteButtonDetails';
 import EditIcon from '@mui/icons-material/Edit';
+import Link from '@mui/material/Link';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import { AxiosGetById } from "../Axios/FetchWithAxios"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
-import Link from '@mui/material/Link';
 import useAuth from "../hooks/useAuth"
+
+// import Button from '@material-ui/core/Button';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default function ShowProductDetails() {
     let { productType, id } = useParams();

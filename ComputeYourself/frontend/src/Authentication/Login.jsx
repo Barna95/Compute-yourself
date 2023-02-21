@@ -11,19 +11,6 @@ import useAuth from '../hooks/useAuth';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-// import Button from '@material-ui/core/Button';
-
-
-
-
-
-
-
-
-
-
-
-
 export default function Register() {
     //account/login account/register
     const navigate = useNavigate()

@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
+
 import AddIcon from '@mui/icons-material/Add';
-import Button from '@material-ui/core/Button';
+import { AxiosGet } from "../Axios/FetchWithAxios"
 import Card from "../componentsFolder/Card/CardOfProduct"
 import Grid from "@mui/material/Grid";
 import React from 'react';
-import { AxiosGet } from "../Axios/FetchWithAxios"
-import { useNavigate } from "react-router-dom";
 import useAuth from "../hooks/useAuth"
+import { useNavigate } from "react-router-dom";
+
+// import Button from '@material-ui/core/Button';
+
+
+
+
+
+
 
 export default function Cpus() {
     const [data, setData] = useState([]);

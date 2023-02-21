@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
-import React from 'react';
 import { AxiosGetById, AxiosPut } from "../../Axios/FetchWithAxios"
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import TextField from '@mui/material/TextField';
+
 import { Grid } from "@mui/material";
+import React from 'react';
+import TextField from '@mui/material/TextField';
 import themeStyle from "../../themeStyle"
-import Button from '@material-ui/core/Button';
 import useAuth from "../../hooks/useAuth";
+
+// import Button from '@material-ui/core/Button';
+
 
 export default function EditCpu() {
     const [data, setData] = useState([]);
