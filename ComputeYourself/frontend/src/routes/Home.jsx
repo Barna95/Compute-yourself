@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
-import { Box, ThemeProvider, createTheme } from '@mui/system';
+import { Box } from '@mui/system';
 import Mainpicture from '../assets/maintitle.jpg';
 import { CardMedia } from '@mui/material';
 import themeStyle from "../themeStyle"

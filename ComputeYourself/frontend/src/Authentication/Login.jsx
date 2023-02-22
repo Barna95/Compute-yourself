@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import useAuth from '../hooks/useAuth';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Button from '@mui/material/Button';
 
 export default function Register() {
     //account/login account/register

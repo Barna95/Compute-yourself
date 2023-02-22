@@ -1,5 +1,4 @@
 ﻿import * as React from 'react';
-
 import Avatar from '@mui/material/Avatar';
 import { AxiosRegisterPost } from '../Axios/FetchWithAxios'
 import Box from '@mui/material/Box';
@@ -12,23 +11,8 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
-// import { withStyles } from '@material-ui/core/styles';
-
-// import Button from '@material-ui/core/Button';
-
-
-
-
-
-
-
-
-
-
-
-
-
+import { withStyles } from '@mui/material/styles';
+import Button from '@mui/material/Button';
 
 export default function Register() {
     //account/login account/register

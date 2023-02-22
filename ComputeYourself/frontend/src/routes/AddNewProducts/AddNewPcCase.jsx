@@ -5,10 +5,7 @@ import themeStyle from "../../themeStyle"
 import useAuth from "../../hooks/useAuth"
 import { useNavigate } from "react-router-dom";
 import { useState } from 'react';
-
-// import Button from '@material-ui/core/Button';
-
-
+import Button from '@mui/material/Button';
 
 export default function AddNewPcCase() {
     const [formValues, setFormValues] = useState({

@@ -1,119 +1,138 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
-
 import { Box } from '@mui/system';
 import Logo from '../assets/banner_gs.png';
 import Mainpicture from '../assets/maintitle.jpg';
 import themeStyle from "../themeStyle"
 import useAuth from "../hooks/useAuth"
-import { withStyles } from '@mui/styles';
+import { styled } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import SearchIcon from '@mui/icons-material/Search';
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+import Grid from "@mui/material/Grid";
 
-// import Toolbar from '@material-ui/core/Toolbar';
+const Layout = styled('div')(({ theme }) => ({
+  flexGrow: 1,
+  width: 'auto',
+  marginLeft: theme.spacing(3),
+  marginRight: theme.spacing(3),
+  [theme.breakpoints.up(1200 + theme.spacing(2))]: {
+    width: 1150,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+}));
 
-// import SearchIcon from '@material-ui/icons/Search';
+const MainTitle = styled('div')(({ theme }) => ({
+  padding: 60,
+  fontSize: 45,
+  textAlign: 'left',
+  color: 'black',
+  borderRadius: 3,
+  backgroundColor: 'grey',
+}));
 
-// import IconButton from '@material-ui/core/IconButton';
+const MainTitlePicture = styled('div')(({ theme }) => ({
+  backgroundImage: `url(${Mainpicture})`,
+  backgroundSize: 'contain',
+}));
 
-// import Button from '@material-ui/core/Button';
+const ToolbarBorder = styled('div')(({ theme }) => ({
+  borderBottom: '4px solid lightgrey',
+}));
 
-// import Grid from "@mui/material/Grid";
+const ToolbarTitle = styled('div')(({ theme }) => ({
+  flex: 1,
+}));
 
-//import Logo from '../assets/logo.svg';
+const ToolbarSecondary = styled('div')(({ theme }) => ({
+  justifyContent: 'space-between',
+}));
 
+const MainFeaturedPost = styled('div')(({ theme }) => ({
+  marginBottom: theme.spacing(3),
+}));
 
-const classes = {
+const MainFeaturedPostContent = styled('div')(({ theme }) => ({
+  borderRadius: 3,
+  backgroundColor: 'grey',
+  padding: `${theme.spacing(4)}px`,
+  [theme.breakpoints.up('md')]: {
+    paddingRight: 0,
+  },
+}));
 
+const MainGrid = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(3),
+}));
+
+const Card = styled('div')(({ theme }) => ({
+  display: 'flex',
+}));
+
+const CardDetails = styled('div')(({ theme }) => ({
+  flex: 1,
+}));
+
+const CardMedia = styled('div')(({ theme }) => ({
+  width: 160,
+}));
+
+const Markdown = styled('div')(({ theme }) => ({
+  padding: `${theme.spacing(3)}px 0`,
+}));
+
+const SidebarAboutBox = styled('div')(({ theme }) => ({
+  padding: theme.spacing(2),
+  backgroundColor: theme.palette.grey[200],
+}));
+
+const SidebarSection = styled('div')(({ theme }) => ({
+  marginTop: theme.spacing(3),
+}));
+
+const Footer = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  textAlign: 'center',
+  marginTop: theme.spacing(8),
+  padding: `${theme.spacing(2)}px 0`,
+}));
+
+export {
+  Layout,
+  MainTitle,
+  MainTitlePicture,
+  ToolbarBorder,
+  ToolbarTitle,
+  ToolbarSecondary,
+  MainFeaturedPost,
+  MainFeaturedPostContent,
+  MainGrid,
+  Card,
+  CardDetails,
+  CardMedia,
+  Markdown,
+  SidebarAboutBox,
+  SidebarSection,
+  Footer,
 };
 
-const styles = theme => ({
-  layout: {
-    width: 'auto',
-    marginLeft: theme.spacing(3),
-    marginRight: theme.spacing(3),
-    [theme.breakpoints.up(1500 + theme.spacing(6))]: {
-      width: 1150,
-      marginLeft: 'auto',
-      marginRight: 'auto',
-    },
-  },
-  mainTitle: {
-    padding: 60,
-    fontSize: 45,
-    textAlign: "left",
-    color: "black",
-    borderRadius: 3,
 
-    backgroundColor: "grey",
-  },
-  mainTitlePicture: {
-    image:`url(${Mainpicture})`,
-    backgroundSize:"contain",
-  },
-  toolbarBorder: {
-    borderBottom: `4px solid lightgrey`,
-  },
-  toolbarTitle: {
-    flex: 1,
-  },
-  toolbarSecondary: {
-    justifyContent: 'space-between',
-  },
-  mainFeaturedPost: {
-    
-    marginBottom: theme.spacing(3),
-  },
-  mainFeaturedPostContent: {
-    borderRadius: 3,
-
-    backgroundColor: "grey",
-    padding: `${theme.spacing(4)}px`,
-    [theme.breakpoints.up('md')]: {
-      paddingRight: 0,
-    },
-  },
-  mainGrid: {
-    marginTop: theme.spacing(3),
-  },
-  card: {
-    display: 'flex',
-  },
-  cardDetails: {
-    flex: 1,
-  },
-  cardMedia: {
-    width: 160,
-  },
-  markdown: {
-    padding: `${theme.spacing(3)}px 0`,
-  },
-  sidebarAboutBox: {
-    padding: theme.spacing(2),
-    backgroundColor: theme.palette.grey[200],
-  },
-  sidebarSection: {
-    marginTop: theme.spacing(3),
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    textAlign: "center",
-    marginTop: theme.spacing(8),
-    padding: `${theme.spacing(2)}px 0`,
-  },
-});
 function RootLayout(props) {
     
   const { classes } = props;
   return (
-    <div className={classes.layout}>
+    <Layout>
       <header>
         <div style={themeStyle.root}>
-          <Toolbar className={classes.toolbarBorder}>
+        </div>
+          <ToolbarBorder>
             <Grid container spacing={1} >
               <Grid container item xs={12} spacing={3}>
                 <Header />
               </Grid>
             </Grid>
-          </Toolbar>
-        </div>
+          </ToolbarBorder>
         <nav>
           <Toolbar>
             <NavBar />
@@ -122,13 +141,13 @@ function RootLayout(props) {
       </header>
       <main>
         <Outlet />
-        <footer className={classes.footer}>
+        <Footer>
           <Box>
             Compute Yourself team 2023.
           </Box>
-        </footer>  
+        </Footer>  
       </main>
-    </div>
+    </Layout>
   );
 }
 
@@ -137,6 +156,7 @@ function Header() {
     let { auth } = useAuth();
     let checkIfLoggedIn = localStorage.getItem("isLoggedIn");
   return (
+    
     <>
       <Grid item md={2}>
         <Link to="/">
@@ -210,8 +230,4 @@ function NavBar() {
   )
 }
 
-// RootLayout.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-export default withStyles(styles)(RootLayout, Header);
+export default (RootLayout);

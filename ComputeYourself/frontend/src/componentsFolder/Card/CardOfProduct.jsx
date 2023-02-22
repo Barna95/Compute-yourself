@@ -1,5 +1,4 @@
 ﻿import { Link, useNavigate } from "react-router-dom";
-
 import Box from '@mui/material/Box';
 import DeleteButtonCard from "../../routes/DeleteProducts/DeleteButtonCard";
 import EditIcon from '@mui/icons-material/Edit';
@@ -8,21 +7,11 @@ import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import useAuth from "../../hooks/useAuth"
-
-// import Button from '@material-ui/core/Button';
-// import CardContent from "@material-ui/core/CardContent";
-// import CardMedia from '@mui/material/CardMedia';
-
-
-// import Grid from "@material-ui/core/Grid";
-
-
-
-// import Typography from "@material-ui/core/Typography";
-
-
-
-
+import Button from '@mui/material/Button';
+import CardContent from "@mui/material/CardContent";
+import CardMedia from '@mui/material/CardMedia';
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function adminField(props, value, navigate, loggedIn, isAdmin) {
 

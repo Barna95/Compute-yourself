@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField';
 import themeStyle from "../../themeStyle"
 import useAuth from "../../hooks/useAuth";
 
-// import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 
 export default function EditCpu() {

@@ -1,5 +1,4 @@
 ﻿import { useNavigate, useParams } from "react-router-dom";
-
 import { Box } from "@mui/system";
 import CpuCoolers from "../routes/CpuCoolers";
 import Cpus from "../routes/Cpus";
@@ -11,26 +10,8 @@ import PcCases from "../routes/PcCases";
 import Psus from "../routes/Psus";
 import Rams from "../routes/Rams";
 import React from "react";
-
-// import Button from "@mui/material/Button";
-
-
-
-
-
-
-
-
-
-
-
-// import Grid from "@material-ui/core/Grid";
-
-
-
-
-
-
+import Button from "@mui/material/Button";
+import Grid from "@mui/material/Grid";
 
 function ProductsLayout() {
     const navigate = useNavigate();

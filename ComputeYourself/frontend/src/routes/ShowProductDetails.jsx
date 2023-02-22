@@ -1,9 +1,7 @@
 ﻿import * as React from 'react';
-
 import { Grid, Typography } from '@mui/material';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-
 import { AxiosGetById } from "../Axios/FetchWithAxios"
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
@@ -18,21 +16,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import useAuth from "../hooks/useAuth"
-
-// import Button from '@material-ui/core/Button';
-
-
-
-
-
-
-
-
-
-
-
-
-
+import Button from '@mui/material/Button';
 
 export default function ShowProductDetails() {
     let { productType, id } = useParams();

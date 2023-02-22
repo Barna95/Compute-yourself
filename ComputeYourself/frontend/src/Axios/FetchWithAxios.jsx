@@ -5,12 +5,13 @@ import { toast } from 'react-toastify';
 // const baseURL = JSON.stringify(import.meta.env.VITE_REACT_APP_API_URL);
 const baseURL = import.meta.env.VITE_REACT_APP_API_URL
 console.log(window.location)
+//const baseURL = "https://localhost:7195"
 
-// const baseURL = "https://localhost:7195"
 // axios.defaults.baseURL = import.meta.env.DEV.VITE_REACT_APP_API_URL
 
 async function AxiosGet(productType) {
     const response = await axios.get(`${baseURL}/product/${productType}`)
+    console.log(response);
     return response;
 }
 

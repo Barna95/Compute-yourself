@@ -1,15 +1,11 @@
 import { AxiosGetById, AxiosPut } from "../../Axios/FetchWithAxios"
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
-
 import { Grid } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import themeStyle from "../../themeStyle"
 import useAuth from "../../hooks/useAuth"
-
-// import Button from '@material-ui/core/Button';
-
-
+import Button from '@mui/material/Button';
 
 export default function EditGpu() {
     const [data, setData] = useState([]);
