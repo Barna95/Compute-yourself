@@ -1,4 +1,5 @@
 ﻿using ComputeYourself.Models;
+using ComputeYourself.Models.Basket;
 using ComputeYourself.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -29,5 +30,6 @@ namespace ComputeYourself.Data
         public DbSet<PcCase> PcCases { get; set; }
         public DbSet<Psu> Psus { get; set; }
         public DbSet<Ram> Rams { get; set; }
+        public DbSet<Basket> Baskets { get; set; }
     }
 }
