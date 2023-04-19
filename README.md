@@ -50,10 +50,6 @@ cd '.\Compute Yourself\'
 ```powershell
 dotnet run
 ```
-6. Run the project
-```powershell
-dotnet run
-```
 
 ### Frontend setup
 
